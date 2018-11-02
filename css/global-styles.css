@@ -1,0 +1,80 @@
+/* Global styles
+------------------------------------*/
+/* border box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+a {
+  text-decoration: none;
+}
+}
+a:hover {
+    text-decoration: none;
+}
+h1, h2 {
+  font-family: "Tahoma", Geneva, sans-serif;
+  font-weight: 400;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.column-narrow {
+  width: 35%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+.column-wide {
+  width: 62%;
+  float: left;
+  min-height: 175px;
+}
+
+/* Nav Bar
+------------------------------------*/
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navItem {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+    text-decoration: none;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+/*------End of global styles---------*/

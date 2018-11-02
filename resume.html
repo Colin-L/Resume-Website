@@ -4,28 +4,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christina Truong | Resume</title>
-  <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colin Leslie resume website" />
+  <meta name="keywords" content="Resume, Colin Leslie" />
+  <meta name="author" content="Colin Leslie" />
+  <title>Colin Leslie | Resume</title>
+  <link rel="stylesheet" href="css/resume-styles.css">
+  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
   <!-- // Intro -->
   <header>
+    <!--Nav bar -->
+    <ul class="navList">
+      <li class="navItem"><a href="index.html">Home</a></li>
+      <li class="navItem"><a href="resume.html">Resume</a></li>
+      <li class="navItem"><a href="portfolio.html">Portfolio</a></li>
+      <li style="float:right">
+<div class="btn-group">
+<button type="button" class="btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Contact
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Separated link</a>
+</div>
+</div>
+    </ul>
+
     <div class="content-wrap">
-      <img class="profile-img column-narrow" src="images/christina-truong.png" alt="Christina Truong">
+      <img class="profile-img column-narrow" src="images/colin-leslie.png" alt="Colin Leslie">
+      <!-- <img class="rounded-circle" src="images/colin-leslie.png" alt="Colin Leslie Profile Picture"> -->
 
       <div class="column-wide">
         <h1>Colin Leslie</h1>
-        <h2>Developer + Student</h2>
-        <p>Detail-oriented Computer Science and Physics student proficient in java and python with experience using a variety of other languages. Skilled at operating in a wide range of platforms. Excellent problem-solving skills; capable of resolving complex
-          software issues in an efficient manner.
+        <h2>Developer, Student</h2>
+        <p>Detail-oriented Computer Science and Physics student proficient in java and python with experience using a variety of other languages.</p>
+        <p> Skilled at operating in a wide range of platforms. Excellent problem-solving skills; capable of resolving complex software issues in an efficient manner.</p>
         </p>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- // Skills -->
+    <section class="skills">
+      <div class="content-wrap">
+        <h2>Skills</h2>
+
+        <!-- Skill -->
+        <div>
+          <h3>Hobby Electronics</h3>
+
+        </div>
+        <div>
+      <p>Completed as well as working on several personal Arduino and Raspberry Pi projects.</p>
+      <p>Very comfortable soldering and wiring circuits.</p>
+      <p>Developed an infrared switched light as well as an autonomous indoor plant lighting and irrigation system.</p>
+
+        </div>
+        <!-- Skill -->
+        <div>
+          <h3>Programming</h3>
+
+        </div>
+        <div>
+      <p>Strong background in Java and Python with 3+ years practice using both languages regularly.</p>
+      <p>Experience with Maple, C, C++, 68000 Assembly, SQL and iOS/Swift.</p>
+        </div>
+
+
+      </div>
+    </section>
     <!-- // Education -->
     <section class="education">
       <div class="content-wrap">
@@ -33,7 +89,8 @@
 
         <!-- School details: copy this block to add more schools. -->
         <h3>Wilfrid Laurier University - Waterloo, ON</h3>
-        <h4>4th year Bachelors of Computer Science student with a minor in Physics, 2015 - Present</h4>
+        <h4>Bachelor of Science Student, 2015 - Present</h4>
+        <p>4<sup>th</sup> year Computer Science student with a minor in Physics </p>
       </div>
     </section>
     <!-- // Work Experience -->
@@ -44,75 +101,75 @@
         <!-- Job Details: copy this block to add more positions. -->
         <div class="column-narrow">
           <h3>Construction Labourer</h3>
-          <p>North Shore Management</p>
+          <p>Coletara</p>
           <p>April 2017 - September 2017</p>
         </div>
         <div class="column-wide">
-          <p>Responsible for keeping a clean and safe workspace for tradesmen by clearing out construction waste and adhering to safety standards. Selected to train two new staff members to ensure project deadlines were met. Experienced working under a variety
-            of leadership styles.
+          <p>Responsible for keeping a clean and safe workspace for tradesmen by clearing out construction waste and adhering to safety standards.</p>
+          <p>Key contributions:</p>
+          <ul>
+              <li>Provided training for all new labourers.</li>
+              <li>Contributed to a perfect saftey record for duration of employment</li>
+          </ul>
+        </div>
+
+        <!-- Job Details -->
+        <div class="column-narrow">
+          <h3>Wedding Setup Coordinator</h3>
+          <p>Dyments Farm</p>
+          <p>July 2016 - September 2016</p>
+        </div>
+
+        <div class="column-wide">
+          <p>Managed the setup and teardown of a wedding venue to the specifications of the clients</p>
+          <p>Key contributions:</p>
+          <ul>
+            <li>Setup 40+ weddings caterring to over 6000 guests </li>
+            <li>Maintained high energy levels while working and interacting with guests to ensure consistent and excellent customer service.</li>
+            <li>Assisted individuals with mobility issues; improving guest and client experience .</li>
+          </ul>
+
           </p>
         </div>
 
         <!-- Job Details -->
         <div class="column-narrow">
-          <h3>Director of Curriculum</h3>
-          <p>Ladies Learning Code</p>
-          <p>July 2014 - February 2016</p>
-        </div>
-
-        <div class="column-wide">
-          <p>Created and managed all adult focused curriculum, instructor training and tech related strategies and duties.</p>
-
-          <p>Key contributions:</p>
-          <ul>
-            <li>Created 9 new workshops focusing on HTML, CSS, JavaScript, jQuery, Wordpress and Responsive Web Design.</li>
-            <li>Created all Hackapalooza content (2 day conference style event), consisting of 2-4 hour workshop sessions focused on front-end coding languages and web development related topics.</li>
-            <li>Lead instructor and created curriculum for the Digital Skills part-time program.</li>
-            <li>Provided training for all lead instructors, across all Canadian chapters, focusing on creating an inclusive and engaging learning environment.</li>
-            <li>Maintained the ladieslearningcode.com website.</li>
-            <li>Created slide deck template for consistent national workshop branding.</li>
-          </ul>
-        </div>
-
-        <!-- Job Details -->
-        <div class="column-narrow">
-          <h3>Lead Front-End Developer</h3>
-          <p>Field ID</p>
-          <p>March 2013 - February 2014</p>
+          <h3>Prep Cook</h3>
+          <p>Dyments Farm</p>
+          <p>June 2015 - November 2015</p>
         </div>
         <div class="column-wide">
-          <p>Lead the front-end development for in-house safety inspection software.</p>
+          <p>Worked alongside the company chef to provide high quality meals for customers assisting with coooking and cleaning where needed</p>
           <p>Key contributions:</p>
           <ul>
-            <li>Responsible for recommendations, setting code standards for the front-end development.</li>
-            <li>Created a fully customized front-end framework, including UI/UX.</li>
-            <li>Standardized the site architecture and design. The framework contains reusable components and extensible classes for customization and flexibility.</li>
+            <li>Prepare simple dishes such as salads, entrees etc.</li>
+            <li>Prepare cooking ingredients by washing and chopping vegetables, cutting meat etc.</li>
+            <li>Maintain a clean and orderly kitchen by washing dishes, sanitizing surfaces, taking out trash etc.</li>
+            <li>Comply with nutrition and sanitation guidelines</li>
           </ul>
+          </p>
         </div>
       </div>
     </section>
 
 
 
-  </main>
+
 
   <!-- // Footer & contact info -->
   <footer>
     <div class="content-wrap">
-      <h2>Let's Keep in Touch!</h2>
+      <h2>Contact</h2>
 
       <!-- Social media and contact links. Add or remove any networks. -->
       <div class="contact-info">
-        <a href="mailto:email@example.com">email@example.com</a>
-        <a href="http://yourwebsite.com">yourwebsite.com</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Facebook</a>
+        <a href="mailto:colinbleslie@gmail.com">colinbleslie@gmail.com</a>
       </div>
 
-      <p>Copyright 2017 by Christina Truong</p>
+      <p>Copyright 2018 by Colin Leslie</p>
     </div>
   </footer>
+</main>
 </body>
 
 </html>

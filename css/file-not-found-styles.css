@@ -1,0 +1,42 @@
+
+body{
+  background: #2B2D42;
+  text-align: center;
+}
+
+main{
+  width: 50%;
+  margin: 20% auto;
+  background: #C53C50;
+  border: ridge;
+  border-color: white;
+  border-width: 10px;
+}
+
+h1{
+  font-size: 50px;
+  padding-bottom: 8%;
+}
+h2{
+  padding: 0 2px;
+  font-size: 35px;
+}
+
+mark{
+  color: white;
+  background: none;
+  /* float: left; */
+
+}
+
+.home-button{
+  padding: 4%;
+  font-size: 25px;
+}
+.home-button a{
+    text-decoration: none;
+    background: #333;
+    color: white;
+    padding: 2%;
+    border: outset;
+}

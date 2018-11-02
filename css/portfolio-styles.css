@@ -1,0 +1,93 @@
+
+.portfolio-icon{
+  float: left;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+body{
+
+  /* background: #8D99AE; */
+  /* background: #2B2D42; */
+  background: #8296b7;
+}
+aside{
+  /* background-color: #2B2D42; */
+  color: white;
+  width: 20%;
+  height: 1000px;
+  float: left;
+  max-width: 175px;
+}
+.projects{
+
+  margin-left: 175px;
+}
+.project-cat{
+  margin-left: 3px;
+}
+
+.container-fluid{
+  margin-bottom: 10px;
+
+}
+.project-text-area{
+    /* float: right; */
+    /* padding-left: 5px; */
+}
+.img-fluid{
+  float: left;
+  margin-right: 5px;
+  /* padding-right: 10px; */
+  border: 1px solid black;
+  /* object-fit: cover; */
+}
+article{
+  /* Projects Background */
+
+  /* background: #5b77a5; */
+  background: #7fa4e2;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-decoration: none;
+    /* z-index: -1; */
+}
+
+.sidenav a {
+    padding: 0px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+
+.foreword{
+  padding-top: 45px;
+}
+
+li, a{
+  list-style-type: none;
+}
+ul {
+  padding: 0;
+}
+
+.sidenav h2{
+  font-size: 20px;
+  padding-top: 10px;
+}

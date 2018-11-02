@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/infrared-light-switch-styles.css">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+</head>
+
+<body>
+  <div >
+
+    <!-- // Intro -->
+    <header>
+        <!--Nav bar -->
+        <ul class="navList">
+            <li class="navItem"><a href="../../index.html">Home</a></li>
+            <li class="navItem"><a href="../../resume.html">Resume</a></li>
+            <li class="navItem"><a href="../../portfolio.html">Portfolio</a></li>
+            <li style="float:right">
+<div class="btn-group">
+<button type="button" class="btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Contact
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Separated link</a>
+</div>
+</div>
+        </ul>
+    </header>
+    <!-- </body>
+  </html> -->
+  <!-- Copy Up to here for new projects -->
+
+  <div class="container">
+  <h2>Infrared Light Switch</h2>
+
+  <p>I had a stick-on desk lamp in the corner of my room that I would use as a reading light. To turn it on I would walk across my room and flip a switch. This got tiring so I needed a way to control this lamp remotely and infrared seemed to be the best method </p>
+  <p>The lamp is powered by a USB drawing about 0.4 Amps at 5V. When the Arduino receives any infrared signal (This makes it, so it can be used with any infrared remote) or the button is pressed it flips a relay and powers the USB port. </p>
+  <p>To keep the power consumption low and the size of the device small, I used a standalone Arduino chip with a 16mHz resonator. </p>
+  <br>
+  <p>Click on the images to enlarge them.</p>
+
+  <div class="row">
+
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img1.jpg" target="_blank">
+            <img src="img1.jpg" alt="Device Casing" style="width:100%">
+            <div class="caption">
+              <p>All of the circuitry fits within the box. The infrared reciever is directly under the perforated section. It can be turned on by sending and IR signal or pressing the red button. </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img2.jpg" target="_blank">
+            <img src="img2.jpg" alt="Device Ports" style="width:100%">
+            <div class="caption">
+              <p>Input and output ports. The device is powered by a 9V 1A DC power adapter. Inside the 9V is converted to 5V to power the Arduino and the relay. When the device is switched on the USB port is powered turning on the lamp.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img3.jpg" target="_blank">
+            <img src="img3.jpg" alt="Device Internals" style="width:100%">
+            <div class="caption">
+              <p>Device internals: Two 5V voltage regulators, 5V Relay, IR reciever, Atmegta 328p, 16MHz Resonator and a 1k ohm Resistor. </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img4.jpg" target="_blank">
+            <img src="img4.jpg" alt="Device Internals 2" style="width:100%">
+            <div class="caption">
+              <p>The circuit board with the Atmegta 328p is slotted in and can be removed for reprogramming. All other components are fixed in place with hot glue.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img5.jpg" target="_blank">
+            <img src="img5.jpg" alt="" style="width:100%">
+            <div class="caption">
+              <p>Two volate regulators were nessisary to keep the Atmega chip and the relay on seperate lines. With only one voltage regulator when the relay would be flipped on it would draw power away from the Atmega chip and cause it to restart.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+    <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img6.jpg" target="_blank">
+            <img src="img6.jpg" alt="" style="width:100%">
+            <div class="caption">
+              <p>Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com</p>
+              <br>
+            </div>
+          </a>
+        </div>
+      </div>
+    <!-- Image -->
+
+<h2 class="code-header">Arduino Code</h2>
+<!-- Code -->
+<!-- HTML generated using hilite.me -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#include &lt;IRremote.h&gt;</span>
+
+<span style="color: #B00040">int</span> RECV_PIN <span style="color: #666666">=</span> <span style="color: #666666">4</span>;
+<span style="color: #B00040">int</span> RELAY_PIN <span style="color: #666666">=</span> <span style="color: #666666">6</span>;
+<span style="color: #B00040">int</span> SWITCH_PIN <span style="color: #666666">=</span> <span style="color: #666666">8</span>;
+<span style="color: #B00040">int</span> buttonState <span style="color: #666666">=</span> HIGH;
+
+IRrecv <span style="color: #0000FF">irrecv</span>(RECV_PIN);
+
+<span style="color: #B00040">int</span> ON <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+decode_results results;
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">setup</span>() {
+  Serial.begin(<span style="color: #666666">9600</span>);
+  pinMode(RELAY_PIN, OUTPUT);
+  irrecv.enableIRIn(); <span style="color: #408080; font-style: italic">// Start the receiver</span>
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">loop</span>() {
+  buttonState <span style="color: #666666">=</span> digitalRead(SWITCH_PIN);
+
+  <span style="color: #008000; font-weight: bold">if</span> (buttonState <span style="color: #666666">==</span> LOW) {
+    <span style="color: #008000; font-weight: bold">if</span> (ON <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+      digitalWrite(RELAY_PIN, HIGH);
+      ON <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+      delay(<span style="color: #666666">500</span>);
+    }
+    <span style="color: #008000; font-weight: bold">else</span>{
+      digitalWrite(RELAY_PIN, LOW);
+      ON <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+      delay(<span style="color: #666666">500</span>);
+    }
+  }
+
+  <span style="color: #008000; font-weight: bold">if</span> (irrecv.decode( <span style="color: #666666">&amp;</span>results) <span style="color: #666666">&amp;&amp;</span> ON <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+    Serial.println(results.value, HEX);
+    digitalWrite(RELAY_PIN, HIGH);
+    ON <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    delay(<span style="color: #666666">400</span>);
+    irrecv.resume(); <span style="color: #408080; font-style: italic">// Receive the next value</span>
+  } <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (irrecv.decode( <span style="color: #666666">&amp;</span>results) <span style="color: #666666">&amp;&amp;</span> ON <span style="color: #666666">==</span> <span style="color: #666666">1</span>) {
+    Serial.println(results.value, HEX);
+    digitalWrite(RELAY_PIN, LOW);
+    ON <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    delay(<span style="color: #666666">400</span>);
+    irrecv.resume(); <span style="color: #408080; font-style: italic">// Receive the next value</span>
+  }
+  delay(<span style="color: #666666">50</span>);
+}
+</pre></td></tr></table></div>
+
+<!-- Code End -->
+
+<!-- // Footer & contact info -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2018 by Colin Leslie</p>
+  </div>
+</footer>
+
+  </body>
+</html>

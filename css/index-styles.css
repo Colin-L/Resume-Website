@@ -1,0 +1,61 @@
+
+.page-header{
+  padding-top: 1%;
+  font-size: 280%;
+}
+
+footer P{
+position: fixed;
+bottom: 10px;
+width: 50%;
+transform: translate(50%);
+text-align: center;
+color: white;
+}
+
+footer {
+  bottom: 10px;
+}
+
+.button-box{
+  /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* margin-top: -75px; */
+    /* margin-left: -150px; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    width: 350px;
+    height: 175px;
+
+  background-color: #EDF2F4;;
+  text-align: center;
+  display: block;
+  border: 4mm ridge rgb(170, 50, 220, .6);
+
+}
+.buttons{
+    display: block;
+    padding-top: 18%;
+    margin: auto;
+
+  }
+}
+
+}
+.button a:hover:not(.active) {
+    background-color: #a5f913;
+}
+
+.index-body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background: url("../images/background-compressed.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background: blue; */
+  height: 100%;
+}

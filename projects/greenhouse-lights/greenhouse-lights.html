@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/projects/greenhouse-lights.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+</head>
+
+<body>
+  <div >
+
+    <!-- // Intro -->
+    <header>
+        <!--Nav bar -->
+        <ul class="navList">
+            <li class="navItem"><a href="../../index.html">Home</a></li>
+            <li class="navItem"><a href="../../resume.html">Resume</a></li>
+            <li class="navItem"><a href="../../portfolio.html">Portfolio</a></li>
+            <li style="float:right">
+<div class="btn-group">
+<button type="button" class="btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Contact
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Separated link</a>
+</div>
+</div>
+        </ul>
+    </header>
+
+<!-- Copy Up to here for new projects -->
+<!-- </body>
+</html> -->
+<div class="container">
+
+<h2>Greenhouse Lights</h2>
+
+<p>I recently got sucked up into the world of gardening and have been fascinated with everything to do with it. This summer I started my own vegetable garden outdoors and had great success. Living in Canada our Winters are too harsh to grow outside so I've opted to create an indoor hydroponic setup that can be uses year round. One downside to indoor gardening is it requires artificial lighting which can be tricky, but I belive I have come up with a good solution.</p>
+<p>I bought a few 50W full spectrum LED grow lights and attached cooling as well as put them on a timer using an Arduino Nano</p>
+<br>
+<p>Click on the images to enlarge them.</p>
+
+<!-- Image Gallary -->
+<div class="row">
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img1.jpg" target="_blank">
+          <img src="img1.jpg" alt="Device Wide Shot" style="width:100%">
+          <div class="caption">
+            <p>Overview of all of the projects components. Top: 50W LED light attached to an old GPU casing for cooling. Middle: Ardunio controlled outlet with cirtuit board and Arduino Nano on top. Bottom: Outlet 120V AC power supply and 12V DC wall adapter for Arduino and GPU fan.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img2.jpg" target="_blank">
+          <img src="img2.jpg" alt="LED Inside Heatsink" style="width:100%">
+          <div class="caption">
+            <p>A closer look at the LED modual. This is the focus of the project and the component that will give my plants energy. The 50W LED produces a TON of heat, on its own with no cooling the LED would exceed 175°C. To keep it from overheating and potentially starting a fire I mounted the LED to an old GPU casing. I was able to screw the LED to the heatsink and I then connected the fan pins to a 12V line. With this cooling the LED now maintains a safer temp of around 75° C.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img3.jpg" target="_blank">
+          <img src="img3.jpg" alt="Circuitry Shot" style="width:100%">
+          <div class="caption">
+            <p>The circuitry for this project. Theres not too much here, it contains: A real time clock modual for keeping track of light cycles, a 18 Ω 5W resistor to slow the fan speed down and a flyback diode (not visible). The rest of the wires are for power running in and out aswell as the 5V pin to flip the relay in the outlet.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img4.jpg" target="_blank">
+          <img src="img4.jpg" alt="Ardunio Nano" style="width:100%">
+          <div class="caption">
+            <p>The Arduino Nano controlling everything.The Nano is powered by 12V Vin doing this saved me a power adapter because I already needed 12V to power the GPU fan. White: Vin, Black Ground, Orange: 5V, Blue: SDA and SCL (Clock pins), Yellow: D8 (Relay Pin) </p>
+            <br>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img5.jpg" target="_blank">
+          <img src="img5.jpg" alt="Relay Outlet Shot" style="width:100%">
+          <div class="caption">
+            <p>A side shot of the outlet modual. There are two wires that run from the Arduino to the outlet box, Relay Pin and Ground. When the Relay Pin is given 5V from the Arduino a 5v 20a relay inside the box is closed powereing the outlet which turns on the light. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img6.jpg" target="_blank">
+          <img src="img6.jpg" alt="Wall Plugs" style="width:100%">
+          <div class="caption">
+            <p>12 DC Wall adapter (Black) and 120V AC line (Grey). The two power cords for the device. I tried to keep the amount of things being pluged in to a minimum and ended up with two. There probably is a way I could have got it down to one wall plug but I'm happy with how it turned out.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img7.jpg" target="_blank">
+          <img src="img7.jpg" alt="LED Light On" style="width:100%">
+          <div class="caption">
+            <p>This is what the light looks like when it's turned on. The light is extremely bright. It's a hard to look at without glasses. This photo was taken with ISO 50 and a cloth over the light to dim it enough to see everything on camera. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="img8.jpg" target="_blank">
+          <img src="img8.jpg" alt="LED Running Temperature" style="width:100%">
+          <div class="caption">
+            <p>The LED moduals running temperature hovers around 75°C when the fan is running. Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!-- Image -->
+
+
+
+  </div>
+<!-- Image Gallary -->
+
+<h2 class="code-header">Arduino Code</h2>
+<!-- Code -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// Date and time functions using a DS1307 RTC connected via I2C and Wire lib</span>
+<span style="color: #BC7A00">#include &lt;Wire.h&gt;</span>
+<span style="color: #BC7A00">#include &quot;RTClib.h&quot;</span>
+
+<span style="color: #BC7A00">#if defined(ARDUINO_ARCH_SAMD)</span>
+<span style="color: #408080; font-style: italic">// for Zero, output on USB Serial console, remove line below if using programming port to program the Zero!</span>
+<span style="color: #BC7A00">#define Serial SerialUSB</span>
+<span style="color: #BC7A00">#endif</span>
+
+RTC_DS1307 rtc;
+
+<span style="color: #B00040">char</span> daysOfTheWeek[<span style="color: #666666">7</span>][<span style="color: #666666">12</span>] <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;Sunday&quot;</span>, <span style="color: #BA2121">&quot;Monday&quot;</span>, <span style="color: #BA2121">&quot;Tuesday&quot;</span>, <span style="color: #BA2121">&quot;Wednesday&quot;</span>, <span style="color: #BA2121">&quot;Thursday&quot;</span>, <span style="color: #BA2121">&quot;Friday&quot;</span>, <span style="color: #BA2121">&quot;Saturday&quot;</span>};
+<span style="color: #B00040">int</span> lightPin <span style="color: #666666">=</span> <span style="color: #666666">8</span>;
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">setup</span> () {
+
+<span style="color: #BC7A00">#ifndef ESP8266</span>
+  <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>Serial); <span style="color: #408080; font-style: italic">// for Leonardo/Micro/Zero</span>
+<span style="color: #BC7A00">#endif</span>
+
+  Serial.begin(<span style="color: #666666">57600</span>);
+  <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.begin()) {
+    Serial.println(<span style="color: #BA2121">&quot;Couldn&#39;t find RTC&quot;</span>);
+    <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>);
+  }
+
+  <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.isrunning()) {
+    Serial.println(<span style="color: #BA2121">&quot;RTC is NOT running!&quot;</span>);
+    <span style="color: #408080; font-style: italic">// following line sets the RTC to the date &amp; time this sketch was compiled</span>
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+  pinMode(lightPin, OUTPUT);
+  digitalWrite(lightPin, HIGH);
+  delay(<span style="color: #666666">5</span>);
+} <span style="color: #408080; font-style: italic">//end setup</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">loop</span> () {
+  DateTime now <span style="color: #666666">=</span> rtc.now();
+
+  <span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.year(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&#39;/&#39;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.month(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&#39;/&#39;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.day(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&quot; (&quot;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&quot;) &quot;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.hour(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&#39;:&#39;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.minute(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(&#39;:&#39;);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.print(now.second(), DEC);</span>
+  <span style="color: #408080; font-style: italic">//    Serial.println();</span>
+
+  <span style="color: #408080; font-style: italic">//Toggle Light</span>
+  <span style="color: #408080; font-style: italic">//digitalWrite(lightPin, !digitalRead(lightPin));</span>
+  <span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
+
+  <span style="color: #408080; font-style: italic">//Turns the light on at 7pm off at 7am. Light is only on during off peak hours</span>
+  <span style="color: #008000; font-weight: bold">if</span> (now.hour() <span style="color: #666666">&gt;</span> <span style="color: #666666">7</span> and now.hour() <span style="color: #666666">&lt;</span> <span style="color: #666666">19</span>) {
+    digitalWrite(lightPin, LOW);
+  } <span style="color: #008000; font-weight: bold">else</span> {
+    digitalWrite(lightPin, HIGH);
+  }
+
+  <span style="color: #408080; font-style: italic">//Poll every minute</span>
+  delay(<span style="color: #666666">60000</span>);
+} <span style="color: #408080; font-style: italic">//Loop End</span>
+</pre></td></tr></table></div>
+
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2018 by Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>

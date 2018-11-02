@@ -1,0 +1,57 @@
+
+
+/* Header & Footer
+------------------------------------*/
+header,
+footer {
+  background: #2B2D42;
+  color: #8D99AE;
+}
+header h1,
+header h2 {
+    color: #EDF2F4;
+    margin: 0;
+}
+
+/* Header styles only */
+header {
+  /*text-align: center;*/
+}
+.profile-img {
+  /*width: 300px;*/
+  border-radius: 50%;
+  /*float: left;*/
+  /*margin-right: 30px;*/
+}
+
+/* Footer styles only */
+footer {
+  text-align: center;
+}
+.contact-info a {
+  padding: 10px;
+  display: inline-block;
+}
+
+body{
+  margin: 0;
+}
+
+
+/* Skills
+------------------------------------*/
+.skills {
+    background: #EDF2F4;
+}
+
+/* Education
+------------------------------------*/
+.education {
+    background: #8D99AE;
+}
+
+/* Work Experience
+------------------------------------*/
+.work {
+    background: #5b77a5;
+}
