@@ -2,19 +2,19 @@
 
 /* Header & Footer
 ------------------------------------*/
-header,
+.resume-header,
 footer {
   background: #2B2D42;
   color: #8D99AE;
 }
-header h1,
-header h2 {
+.resume-header h1,
+.resume-header h2 {
     color: #EDF2F4;
     margin: 0;
 }
 
 /* Header styles only */
-header {
+.resume-header {
   /*text-align: center;*/
 }
 .profile-img {

@@ -12,67 +12,34 @@
 </head>
 
 <body>
-  <!-- // Intro -->
 
   <!-- Nav Bar -->
   <header>
-    <div class="W3navbar">
+    <div class="customnavbar">
       <a href="index.html">Home</a>
       <a href="resume.html">Resume</a>
       <a href="portfolio.html">Portfolio</a>
-      <div class="W3navBar">
+      <div class="customnavBar">
 
 
-      <div class="W3dropdown">
-        <button class="W3dropbtn" onclick="myFunction()">Contact
-          <!-- <i class="fa fa-caret-down"></i> -->
+      <div class="customdropdown">
+        <button class="customdropbtn" onclick="myFunction()">Contact
+
         </button>
-        <div class="W3dropdown-content" id="myDropdown">
+        <div class="customdropdown-content" id="myDropdown">
           <h4>Reach me at:</h4>
           <h4 id="email"><a href="mailto:colinbleslie@gmail.com">ColinBLeslie@Gmail.com</a></h4>
           <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
           <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
-          <button type="button" id="btnCopy" title="Copy to Clipboard"><img src = "images/clipboard.png"></button>
+          <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "images/clipboard.png"></button>
         </div>
       </div>
       </div>
     </div>
-    <script>
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(e) {
-      if (!e.target.matches('.W3dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-          if (myDropdown.classList.contains('show')) {
-            // myDropdown.classList.remove('show');
-          }
-      }
-    }
 
-
-    var $body = document.getElementsByTagName('body')[0];
-         var $btnCopy = document.getElementById('btnCopy');
-         var secretInfo = document.getElementById('secretInfo').innerHTML;
-         var copyToClipboard = function(secretInfo) {
-           var $tempInput = document.createElement('INPUT');
-           $body.appendChild($tempInput);
-           $tempInput.setAttribute('value', secretInfo)
-           $tempInput.select();
-           document.execCommand('copy');
-           $body.removeChild($tempInput);
-         }
-
-         $btnCopy.addEventListener('click', function(ev) {
-           copyToClipboard(secretInfo);
-         });
-    </script>
   </header>
 
-
-
+<script src="javascript/navBar.js"></script>
+  <!-- Nav Bar -->
     </body>
   </html>

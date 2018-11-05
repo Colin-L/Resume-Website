@@ -15,44 +15,39 @@
   <link rel="stylesheet" href="css/resume2-styles.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/test-styles.css">
+
 </head>
 
 <body>
-  <!-- // Intro -->
 
   <!-- Nav Bar -->
   <header>
-    <div class="W3navbar">
+    <div class="customnavbar">
       <a href="index.html">Home</a>
       <a href="resume.html">Resume</a>
       <a href="portfolio.html">Portfolio</a>
-      <div class="W3dropdown">
-        <button class="W3dropbtn" onclick="myFunction()">Contact
-          <!-- <i class="fa fa-caret-down"></i> -->
+      <div class="customnavBar">
+
+
+      <div class="customdropdown">
+        <button class="customdropbtn" onclick="myFunction()">Contact
+
         </button>
-        <div class="W3dropdown-content" id="myDropdown">
-          <h6>Reach me at:</h6>
-          <h6>mailto:colinbleslie@gmail.com</h6>
+        <div class="customdropdown-content" id="myDropdown">
+          <h4>Reach me at:</h4>
+          <h4 id="email"><a href="mailto:colinbleslie@gmail.com">ColinBLeslie@Gmail.com</a></h4>
+          <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+          <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+          <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "images/clipboard.png"></button>
         </div>
       </div>
+      </div>
     </div>
-    <script>
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(e) {
-      if (!e.target.matches('.W3dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-          if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-          }
-      }
-    }
-    </script>
+
   </header>
+
+<script src="javascript/navBar.js"></script>
   <!-- Nav Bar -->
 
     <div class="content-wrap">
