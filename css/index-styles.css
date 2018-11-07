@@ -5,8 +5,8 @@
 }
 
 footer P{
-position: fixed;
-bottom: 10px;
+/* position: fixed; */
+/* bottom: 10px; */
 width: 50%;
 transform: translate(50%);
 text-align: center;
@@ -14,7 +14,10 @@ color: white;
 }
 
 footer {
-  bottom: 10px;
+  /* bottom: 10px; */
+  width: 100%;
+  position: absolute;
+  bottom: 0px;;
 }
 
 .button-box{

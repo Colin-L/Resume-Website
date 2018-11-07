@@ -56,7 +56,8 @@
 
 
 <h2>Automatic Room Heater</h2>
-<p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the desiered threshold it will turn on a space heater until the upper threshold is reached.  </p>
+<p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. </p>
+<p>]The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the desiered threshold it will turn on a space heater until the upper threshold is reached.  </p>
 <br>
 <p>Click on the images to enlarge them.</p>
 
@@ -69,7 +70,7 @@
         <a href="img1.jpg" target="_blank">
           <img src="img1.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Overview of the circuit. The board is powered by a 12V power supply into the arduinos Vin pins. To power all of the segments in the two 7-segment displays I had to use 16 of the arduino nanos I/O pins. After adding the temperature sensor and the relay for the outlet all but 2 of the I/O pins are in use.</p>
           </div>
         </a>
       </div>
@@ -81,7 +82,7 @@
         <a href="img2.jpg" target="_blank">
           <img src="img2.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Since the arduinos I/O pins have to power so many things the nano can get quite hot. To help cool the arduino I attached a small heatsink to the arduino above the voltage regulator. I probably should have put some resistors between the I/O pins and the segments but I didn't have enough to do the whole board and it the nano only gets to about 60°C with the heat sink attached ¯\_(ツ)_/¯ </p>
           </div>
         </a>
       </div>
@@ -93,7 +94,7 @@
         <a href="img3.jpg" target="_blank">
           <img src="img3.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Side view of the device. The outlet box sits snugly in a wood casing and the circuit is stuck to the wood with velcro tape. </p>
           </div>
         </a>
       </div>
@@ -105,7 +106,7 @@
         <a href="img4.jpg" target="_blank">
           <img src="img4.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>The underside of the circuit. I chose to use veroboard for this project since there was already so many connections, using this type of board saved me from having to add a lot more jumpers. </p>
           </div>
         </a>
       </div>
@@ -117,7 +118,7 @@
         <a href="img5.jpg" target="_blank">
           <img src="img5.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Top view of the device. The two relay contacts on the top of the circuit board feed into the outlet box where they connect to a 120V 15A relay that allows the arduino to toggle the outlet on and off.</p>
           </div>
         </a>
       </div>
@@ -129,7 +130,7 @@
         <a href="img6.jpg" target="_blank">
           <img src="img6.jpg" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>The space heater is used for this project. A sunbeam 1500W space heater. An important detail about this heater is that its controlled by physical switches. This allows me to set the dials to the right settings then turn it on and off by switching the outlet supply.</p>
           </div>
         </a>
       </div>
@@ -138,10 +139,10 @@
   <!-- Image -->
     <div class="col-md-6">
       <div class="thumbnail">
-        <a href="img7.png" target="_blank">
-          <img src="img7.png" alt="" style="width:100%">
+        <a href="img7.PNG" target="_blank">
+          <img src="img7.PNG" alt="" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Serial Monitor of the DHT11ErrCount example program from the SimpleDHT library.This program polls a DHT11 sensor every 1.5 seconds and trys to get a reading. For some reason the DHT11 fails to read a temperature value ~9/10 times and I'm not really sure why. I suspect that the problem is with the nano board that I'm using becuase I've tired mutliple DHT11 sensors from different manufacturers with similar results. To compensate for the inconsistant readings there is some additional error handling code. Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com</p>
           </div>
         </a>
       </div>
@@ -149,18 +150,8 @@
   <!-- Image -->
 
   </div>
-<!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
 <!-- Image Gallary -->
 
-
-<!-- Video -->
-<div class="container">
-  <h2>Video Demo</h2>
-    <div class="embed-responsive embed-responsive-16by9">
-<iframe width="1903" height="878" src="https://www.youtube.com/embed/Y7WLTvfZIao" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-<!-- Video -->
 
 <h2 class="code-header">Arduino Code</h2>
 <!-- Code -->

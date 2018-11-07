@@ -29,8 +29,8 @@ Updating Site:
 7.sudo reboot
 
 Alternative Site update method:
-	cd /home/pi/Desktop
-	git clone https://github.com/Colin-L/Resume-Website.git
+	cd /home/pi/Desktop/Resume-Website
+	git pull https://github.com/Colin-L/Resume-Website.git
 	sudo rm -r /var/www/html/*
 	sudo mv -v /Resume-Website/* /var/www/html/
 	sudo reboot
