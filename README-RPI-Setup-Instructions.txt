@@ -40,7 +40,7 @@ Alternative Site update method:
 	cd ./newfolder
 	git clone https://github.com/Colin-L/Resume-Website.git
 	sudo rm -r /var/www/html/*
-	sudo mv -v Resume-Website/* /var/www/html/
+	sudo mv -v /home/pi/Desktop/Site/Resume-Website/* /var/www/html/
 	sudo reboot
 
 Error Handling:
