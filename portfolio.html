@@ -10,9 +10,9 @@
     <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
 <script>
 window.onload = function() {
-    if (screen.width < 1024) {
+    if (screen.width < 512) {
         var mvp = document.getElementById('vp');
-        mvp.setAttribute('content','user-scalable=yes,width=1024');
+        mvp.setAttribute('content','user-scalable=yes,width=512');
     }
 }
 </script>
@@ -40,7 +40,7 @@ window.onload = function() {
             <button class="customdropbtn" onclick="myFunction()">Contact</button>
             <div class="customdropdown-content" id="myDropdown">
               <h4>Reach me at:</h4>
-              <h4 id="email"><a href="mailto:colinbleslie@gmail.com">ColinBLeslie@Gmail.com</a></h4>
+              <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
               <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
               <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "images/clipboard.png"></button>
             </div>
@@ -59,6 +59,7 @@ window.onload = function() {
           <ul>
             <li><a href="#greenhouse-lights" class="sidebar-project">Greenhouse Lights</a></li>
             <li><a href="#infrared-light-switch" class="sidebar-project">Infrared Light Switch</a></li>
+            <li><a href="#room-heater" class="sidebar-project">Automatic Room Heater</a></li>
           </ul>
           <!--  -->
 
@@ -86,8 +87,8 @@ window.onload = function() {
 
     <section class="projects">
       <!-- New Project atricle -->
-      <article class="container-fluid">
-          <div id="PROJECT-ID">
+      <article class="container-fluid" id="first-project">
+          <div id="room-heater">
               <img src="images/room-heater.png" alt="Automatic Room Heater Circuit " class="img-fluid">
               <h2>Automatic Room Heater</h2>
               <div class="project-text-area">

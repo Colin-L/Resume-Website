@@ -3,11 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Colin Leslie resume website" />
   <meta name="keywords" content="Resume, Colin Leslie" />
   <meta name="author" content="Colin Leslie" />
+  <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.onload = function() {
+  if (screen.width < 512) {
+      var mvp = document.getElementById('vp');
+      mvp.setAttribute('content','user-scalable=yes,width=512');
+  }
+}
+</script>
+
+
+
   <title>Colin Leslie | Resume</title>
   <link rel="stylesheet" href="css/resume-styles.css">
   <link rel="stylesheet" href="css/global-styles.css">
@@ -34,7 +44,7 @@
         </button>
         <div class="customdropdown-content" id="myDropdown">
           <h4>Reach me at:</h4>
-          <h4 id="email"><a href="mailto:colinbleslie@gmail.com">ColinBLeslie@Gmail.com</a></h4>
+          <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
           <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
           <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
           <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "images/clipboard.png"></button>
