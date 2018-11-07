@@ -29,12 +29,12 @@ Updating Site:
 7.sudo reboot
 
 Alternative Site update method:
-	cd /home/pi/Desktop/Resume-Website
+	cd /var/www/html/Resume-Website
 	git pull https://github.com/Colin-L/Resume-Website.git
-	sudo rm -r /var/www/html/*
-	sudo mv -v /Resume-Website/* /var/www/html/
 	sudo reboot
 
+
+Start from new repo:
 	cd /home/pi/Desktop
 	mkdir newfolder
 	cd ./newfolder
