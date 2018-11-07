@@ -35,6 +35,13 @@ Alternative Site update method:
 	sudo mv -v /Resume-Website/* /var/www/html/
 	sudo reboot
 
+	cd /home/pi/Desktop
+	mkdir newfolder
+	cd ./newfolder
+	git clone https://github.com/Colin-L/Resume-Website.git
+	sudo rm -r /var/www/html/*
+	sudo mv -v Resume-Website/* /var/www/html/
+	sudo reboot
 
 Error Handling:
 
