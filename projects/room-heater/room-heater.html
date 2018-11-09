@@ -155,15 +155,746 @@
 
 <h2 class="code-header">Arduino Code</h2>
 <!-- Code -->
-<!-- HTML generated using hilite.me -->
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#include &lt;SimpleDHT.h&gt;</span>
+<span style="color: #BC7A00">#include &lt;stdio.h&gt;</span>
 
+<span style="color: #BC7A00">#define MAX_OUT_CHARS 16  </span><span style="color: #408080; font-style: italic">//max nbr of characters to be sent on any one serial command</span>
+<span style="color: #B00040">char</span>   buffer[MAX_OUT_CHARS <span style="color: #666666">+</span> <span style="color: #666666">1</span>];  <span style="color: #408080; font-style: italic">//buffer used to format a line (+1 is for trailing 0)</span>
 
-<!-- Download -->
-<div class="container">
-  <h2>Download</h2>
-  <a class="btn-lg btn-primary" href="http://www.filedropper.com/flippeddownload" role="button">Download zip (81.1 MB)</a>
-</div>
-<!-- Download -->
+<span style="color: #B00040">int</span> MAX_TEMP <span style="color: #666666">=</span> <span style="color: #666666">26</span>;
+<span style="color: #B00040">int</span> MIN_TEMP <span style="color: #666666">=</span> <span style="color: #666666">22</span>;
+<span style="color: #B00040">int</span> temperature <span style="color: #666666">=</span> <span style="color: #666666">999</span>, humidity <span style="color: #666666">=</span> <span style="color: #666666">0</span>, err <span style="color: #666666">=</span> SimpleDHTErrSuccess;
+SimpleDHT11 dht11;
+<span style="color: #B00040">int</span> readCount <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">int</span> errCount <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">int</span> concecutiveFails  <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">int</span> digits;
+<span style="color: #B00040">int</span> onTime <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">int</span> offTime <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">float</span> onOffTimeRatio;
+<span style="color: #B00040">int</span> displayValue <span style="color: #666666">=</span> <span style="color: #666666">99</span>;
+
+<span style="color: #408080; font-style: italic">//PINS</span>
+<span style="color: #B00040">int</span> HEATER_PIN <span style="color: #666666">=</span> <span style="color: #666666">3</span>;
+<span style="color: #B00040">int</span> TEMP_SENSOR_PIN <span style="color: #666666">=</span> A0;
+
+<span style="color: #B00040">int</span> A1_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">8</span>;
+<span style="color: #B00040">int</span> B1_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">7</span>;
+<span style="color: #B00040">int</span> C1_SEGMENT <span style="color: #666666">=</span> A2;
+<span style="color: #B00040">int</span> D1_SEGMENT <span style="color: #666666">=</span> A1;
+<span style="color: #B00040">int</span> E1_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">13</span>;
+<span style="color: #B00040">int</span> F1_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">10</span>;
+<span style="color: #B00040">int</span> G1_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">9</span>;
+<span style="color: #B00040">int</span> DECIMAL1_SEGMENT <span style="color: #666666">=</span> A3;
+
+<span style="color: #B00040">int</span> A2_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">11</span>;
+<span style="color: #B00040">int</span> B2_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">2</span>;
+<span style="color: #B00040">int</span> C2_SEGMENT <span style="color: #666666">=</span> A6;
+<span style="color: #B00040">int</span> D2_SEGMENT <span style="color: #666666">=</span> A5;
+<span style="color: #B00040">int</span> E2_SEGMENT <span style="color: #666666">=</span> A4;
+<span style="color: #B00040">int</span> F2_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">6</span>;
+<span style="color: #B00040">int</span> G2_SEGMENT <span style="color: #666666">=</span> <span style="color: #666666">5</span>;
+<span style="color: #B00040">int</span> DECIMAL2_SEGMENT <span style="color: #666666">=</span> A7;
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">setup</span>() {
+  Serial.begin(<span style="color: #666666">115200</span>);
+  pinMode(HEATER_PIN,OUTPUT);
+
+  <span style="color: #408080; font-style: italic">//Segment 1</span>
+  pinMode(A1_SEGMENT,OUTPUT);
+  pinMode(B1_SEGMENT,OUTPUT);
+  pinMode(C1_SEGMENT,OUTPUT);
+  pinMode(D1_SEGMENT,OUTPUT);
+  pinMode(E1_SEGMENT,OUTPUT);
+  pinMode(F1_SEGMENT,OUTPUT);
+  pinMode(G1_SEGMENT,OUTPUT);
+  pinMode(DECIMAL1_SEGMENT,OUTPUT);
+
+  <span style="color: #408080; font-style: italic">//Segment 2</span>
+  pinMode(A2_SEGMENT,OUTPUT);
+  pinMode(B2_SEGMENT,OUTPUT);
+  pinMode(C2_SEGMENT,OUTPUT);
+  pinMode(D2_SEGMENT,OUTPUT);
+  pinMode(E2_SEGMENT,OUTPUT);
+  pinMode(F2_SEGMENT,OUTPUT);
+  pinMode(G2_SEGMENT,OUTPUT);
+  pinMode(DECIMAL2_SEGMENT,OUTPUT);
+
+  <span style="color: #408080; font-style: italic">//Tests that everything is working on startup</span>
+  <span style="color: #408080; font-style: italic">//Will turn on  heater for 5 seconds and countdown then turn off</span>
+  <span style="color: #408080; font-style: italic">//and start normal function</span>
+  digitalWrite(HEATER_PIN,HIGH);
+  Serial.println(<span style="color: #BA2121">&quot;Setup:&quot;</span>);
+  <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> i<span style="color: #666666">=9</span>; i<span style="color: #666666">&gt;-1</span>; i<span style="color: #666666">--</span>){
+    displayNumber(i<span style="color: #666666">*11</span>);
+    delay(<span style="color: #666666">500</span>);
+  }
+  digitalWrite(HEATER_PIN,LOW);
+  displayNumber(<span style="color: #666666">99</span>);
+} <span style="color: #408080; font-style: italic">//Setup end</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">loop</span>() {
+  temperature <span style="color: #666666">=</span> readTemperature();
+  Serial.print(<span style="color: #BA2121">&quot;Total reads: &quot;</span>); Serial.print(readCount);
+  Serial.print(<span style="color: #BA2121">&quot;, err: &quot;</span>); Serial.print(errCount);
+  Serial.print(<span style="color: #BA2121">&quot;, success rate: &quot;</span>); Serial.print((readCount <span style="color: #666666">-</span> errCount) <span style="color: #666666">*</span> <span style="color: #666666">100.0</span> <span style="color: #666666">/</span> (<span style="color: #B00040">float</span>)readCount); Serial.println(<span style="color: #BA2121">&quot;%&quot;</span>);
+
+  <span style="color: #408080; font-style: italic">//If the temperature reading succceded display the value, otherwise display the last successful reading</span>
+  <span style="color: #008000; font-weight: bold">if</span> (temperature <span style="color: #666666">!=</span> <span style="color: #666666">999</span>){
+    displayValue <span style="color: #666666">=</span> temperature;
+  }
+  displayNumber(displayValue);
+  delay(<span style="color: #666666">1000</span>);
+  clearDisplay(<span style="color: #666666">0</span>);
+  clearDisplay(<span style="color: #666666">1</span>);
+  delay(<span style="color: #666666">6000</span>);
+
+  <span style="color: #008000; font-weight: bold">if</span> (displayValue <span style="color: #666666">&gt;=</span> MAX_TEMP) {
+    digitalWrite(HEATER_PIN,LOW);
+  }
+
+  <span style="color: #008000; font-weight: bold">if</span> (displayValue <span style="color: #666666">&lt;=</span> MIN_TEMP) {
+    digitalWrite(HEATER_PIN,HIGH);
+  }
+}
+
+<span style="color: #408080; font-style: italic">//----------------------------------------------------Functions---------------------------------------------------</span>
+<span style="color: #B00040">int</span> <span style="color: #0000FF">readTemperature</span>() {
+  byte t <span style="color: #666666">=</span> <span style="color: #666666">999</span>;
+  byte h <span style="color: #666666">=</span> <span style="color: #666666">999</span>;
+  err <span style="color: #666666">=</span> SimpleDHTErrSuccess;
+  readCount <span style="color: #666666">++</span>;
+  <span style="color: #008000; font-weight: bold">if</span> ((err <span style="color: #666666">=</span> dht11.read(TEMP_SENSOR_PIN, <span style="color: #666666">&amp;</span>t, <span style="color: #666666">&amp;</span>h, <span style="color: #008000">NULL</span>)) <span style="color: #666666">!=</span> SimpleDHTErrSuccess) {
+    Serial.print(<span style="color: #BA2121">&quot;Read DHT11 failed, err=&quot;</span>); Serial.println(err);
+    concecutiveFails <span style="color: #666666">++</span>;
+    errCount <span style="color: #666666">++</span>;
+    <span style="color: #408080; font-style: italic">//If the reading fails 100 times in a row it will set the temp to 99. This will turn off the heater.</span>
+    <span style="color: #408080; font-style: italic">//This is to prevent the heater from staying on forever in the event that the sensor keeps failing </span>
+    <span style="color: #408080; font-style: italic">//while the heater is on</span>
+    <span style="color: #008000; font-weight: bold">if</span> (concecutiveFails <span style="color: #666666">&gt;=100</span>){
+      Serial.println(<span style="color: #BA2121">&quot;Concecutive Fails: &quot;</span>); Serial.println(concecutiveFails);
+      <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">99</span>;
+    }
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">999</span>;
+  }
+  Serial.println(<span style="color: #BA2121">&quot;======================================================================&quot;</span>);
+  Serial.print(<span style="color: #BA2121">&quot;Temperature: &quot;</span>); Serial.print(t); Serial.println(<span style="color: #BA2121">&quot; *C &quot;</span>);
+  Serial.print(<span style="color: #BA2121">&quot;Humidity:    &quot;</span>); Serial.print(h); Serial.println(<span style="color: #BA2121">&quot;% &quot;</span>);
+  Serial.println(<span style="color: #BA2121">&quot;======================================================================&quot;</span>);
+  concecutiveFails <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+  <span style="color: #008000; font-weight: bold">return</span> (<span style="color: #B00040">int</span>)t;
+} <span style="color: #408080; font-style: italic">//Read temperature end</span>
+
+<span style="color: #408080; font-style: italic">//Given a 2 or 1 digit number it will display it on the two seven segment displays</span>
+<span style="color: #408080; font-style: italic">//digit[0] Tens digit, digit[1] Ones digit</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayNumber</span>(<span style="color: #B00040">int</span> num){
+  <span style="color: #B00040">int</span> digit[<span style="color: #666666">2</span>];
+  <span style="color: #008000; font-weight: bold">if</span> (num <span style="color: #666666">&gt;</span> <span style="color: #666666">9</span>){
+    digit[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> num <span style="color: #666666">/</span> <span style="color: #666666">10</span>;
+    digit[<span style="color: #666666">1</span>] <span style="color: #666666">=</span> num <span style="color: #666666">%</span> <span style="color: #666666">10</span>;
+    digits <span style="color: #666666">=</span> <span style="color: #666666">2</span>;
+  }<span style="color: #008000; font-weight: bold">else</span>{
+    digits <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    digit[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> num;
+  }
+  <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i<span style="color: #666666">&lt;</span>digits; i<span style="color: #666666">++</span>){
+    <span style="color: #008000; font-weight: bold">switch</span>(digit[i]){ <span style="color: #408080; font-style: italic">//Switch on digit[i]: </span>
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1</span>:
+        displayOne(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">2</span>:
+        displayTwo(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">3</span>:
+        displayThree(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">4</span>:
+        displayFour(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">5</span>:
+        displayFive(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">6</span>:
+        displaySix(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">7</span>:
+        displaySeven(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">8</span>:
+        displayEight(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">9</span>:
+        displayNine(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">0</span>:
+        displayZero(i);
+        <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #A0A000">default:</span>
+        Serial.println(<span style="color: #BA2121">&quot;Default Switch Case Reached Somehow&quot;</span>);
+  }
+}
+}
+<span style="color: #408080; font-style: italic">//Digit position: 0 first 7-segment 1 second 7-segment</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">clearDisplay</span>(<span style="color: #B00040">int</span> digitPosition){
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,LOW);
+  digitalWrite(B1_SEGMENT,LOW);
+  digitalWrite(C1_SEGMENT,LOW);
+  digitalWrite(D1_SEGMENT,LOW);
+  digitalWrite(E1_SEGMENT,LOW);
+  digitalWrite(F1_SEGMENT,LOW);
+  digitalWrite(G1_SEGMENT,LOW);
+  digitalWrite(DECIMAL1_SEGMENT,LOW);
+  }<span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,LOW);
+  digitalWrite(B2_SEGMENT,LOW);
+  digitalWrite(C2_SEGMENT,LOW);
+  digitalWrite(D2_SEGMENT,LOW);
+  digitalWrite(E2_SEGMENT,LOW);
+  digitalWrite(F2_SEGMENT,LOW);
+  digitalWrite(G2_SEGMENT,LOW);
+  digitalWrite(DECIMAL2_SEGMENT,LOW);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayOne</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayTwo</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(E1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(E2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayThree</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayFour</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayFive</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displaySix</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  digitalWrite(E1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  digitalWrite(E2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displaySeven</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayEight</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  digitalWrite(E1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  digitalWrite(E2_SEGMENT,HIGH);
+  }
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayNine</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(G1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(G2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+}
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">displayZero</span>(<span style="color: #B00040">int</span> digitPosition){
+  clearDisplay(digitPosition);
+  <span style="color: #008000; font-weight: bold">if</span> (digitPosition <span style="color: #666666">==</span> <span style="color: #666666">0</span>){
+  digitalWrite(A1_SEGMENT,HIGH);
+  digitalWrite(B1_SEGMENT,HIGH);
+  digitalWrite(F1_SEGMENT,HIGH);
+  digitalWrite(C1_SEGMENT,HIGH);
+  digitalWrite(D1_SEGMENT,HIGH);
+  digitalWrite(E1_SEGMENT,HIGH);
+  }
+  <span style="color: #008000; font-weight: bold">else</span>{
+  digitalWrite(A2_SEGMENT,HIGH);
+  digitalWrite(B2_SEGMENT,HIGH);
+  digitalWrite(F2_SEGMENT,HIGH);
+  digitalWrite(C2_SEGMENT,HIGH);
+  digitalWrite(D2_SEGMENT,HIGH);
+  digitalWrite(E2_SEGMENT,HIGH);
+}
+}
+</pre></td></tr></table></div>
+<!-- Code -->
+
 
 <!-- Footer -->
 <footer>
