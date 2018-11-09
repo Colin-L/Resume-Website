@@ -61,4 +61,8 @@ footer {
   background-size: cover;
   /* background: blue; */
   min-height: 100%;
+  overflow: auto;
+}
+html{
+  overflow: hidden;
 }
