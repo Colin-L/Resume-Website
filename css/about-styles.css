@@ -32,3 +32,9 @@ img{
 .card-text{
   margin: 3px;
 }
+
+/* Makes background extend all the way to the botom on mobile */
+body, html {
+  min-height:100%;
+  height:100%;
+}

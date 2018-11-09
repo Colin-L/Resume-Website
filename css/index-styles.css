@@ -60,7 +60,9 @@ footer {
   background-size: cover;
   min-height: 100%;
 }
+
+/* Makes background extend all the way to the botom on mobile */
 body, html {
   min-height:100%;
-  height:100%;  /* if not working try vh instead of % */
+  height:100%;
 }
