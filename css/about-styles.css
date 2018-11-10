@@ -25,8 +25,11 @@ img{
         background-color: #EDF2F4;
 }
 
-.card-body{
+.card{
   border: 1px solid black;
+}
+.card-body{
+  border-top: 1px solid black;
 }
 
 .card-text{
