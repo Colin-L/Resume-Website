@@ -55,10 +55,15 @@
 <div class="container">
 
 
-<h2>Title</h2>
-<p></p>
-<br>
-<p>Click on the images to enlarge them.</p>
+  <h2>Greenhouse Lights V2.0</h2>
+
+  <p>I recently got sucked up into the world of gardening and have been fascinated with everything to do with it. This summer I started my own vegetable garden outdoors and had great success. Living in Canada our Winters are too harsh to grow outside so I've opted to create an indoor hydroponic setup that can be used year round. One downside to indoor gardening is it requires artificial lighting which can be tricky, but I belive I have come up with a good solution.</p>
+  <p>I bought a few 50W full spectrum LED grow lights and have set them up to operate on a timer using Arduino</p>
+
+  <p>This is the second version of this project. The first version could only support a single 50W LED light and had no ability to control the cooling fan. The new version has a much cleaner look, can support up to 8 Lights and has full PWM control of the cooling fans.</p>
+  <p>If you want to see the first version of this project <a href="./greenhouse-lights-old/greenhouse-lights.html">Click here.</a> </p>
+  <br>
+  <p>Click on the images to enlarge them.</p>
 
 <!-- Image Gallary -->
 <div class="row">
@@ -67,9 +72,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img1.jpg" target="_blank">
-          <img src="img1.jpg" alt="Device Casing" style="width:100%">
+          <img src="img1.jpg" alt="Device Overview" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Overview of all of the project components. Left: Arduino controlled outlet with an Arduino nano mounted to the circuit board. Right: 50W Full spectrum LED light mounted to a CPU heatsink and a 12v fan.</p>
           </div>
         </a>
       </div>
@@ -79,9 +84,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img2.jpg" target="_blank">
-          <img src="img2.jpg" alt="Device Casing" style="width:100%">
+          <img src="img2.jpg" alt="Circuit Picture" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>The brains of the device. The circuit here is pretty simple. The 2 terminal contacts on the left are to switch the outlet on and off. The 16 terminal contacts along the bottom are for the + and - wires of the cooling fans. The 2 termial contacts in the top right are for 12V Vin and ground, it supplys power to the fans and Arduino. The remaining compontents are an IRLB8721 MOSFET transistor for the fans PWM control and a DS1307 real time clock to keep track of time.</p>
           </div>
         </a>
       </div>
@@ -91,9 +96,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img3.jpg" target="_blank">
-          <img src="img3.jpg" alt="Device Casing" style="width:100%">
+          <img src="img3.jpg" alt="Light Module Side View" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Side view of light module. These particular LED lights produce a TON of heat, its comparable to the heat output of a typical GPU. To prevent the light from over heating (and burning down my house) a large heatsink and fan are required.</p>
           </div>
         </a>
       </div>
@@ -103,9 +108,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img4.jpg" target="_blank">
-          <img src="img4.jpg" alt="Device Casing" style="width:100%">
+          <img src="img4.jpg" alt="Light module with LED ON " style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>This is what the light looks like when it's on. These LEDs are very bright, they will turn any room a nice shade of bight purple. Looking at them for more than a moment will make everything look green for a while after.</p>
           </div>
         </a>
       </div>
@@ -115,9 +120,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img5.jpg" target="_blank">
-          <img src="img5.jpg" alt="Device Casing" style="width:100%">
+          <img src="img5.jpg" alt="Device Front View" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Front view of the device. Everything is mounted to a wood frame. I only had 2 90° brackets on hand and I didnt want to go to the hardware store so I made do. One bracket for the top and one on the bottom, it's a bit wobbly but it works.</p>
           </div>
         </a>
       </div>
@@ -127,9 +132,9 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <a href="img6.jpg" target="_blank">
-          <img src="img6.jpg" alt="Device Casing" style="width:100%">
+          <img src="img6.jpg" alt="Device Side View" style="width:100%">
           <div class="caption">
-            <p></p>
+            <p>Side view of the device. Inside the outlet housing I've added a 15A 120V relay to turn on and off the outlet. Two wires feed into the housing from the Arduino to control the relay. Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com</p>
           </div>
         </a>
       </div>
@@ -140,27 +145,125 @@
 <!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
 <!-- Image Gallary -->
 
-
-<!-- Video -->
-<div class="container">
-  <h2>Video Demo</h2>
-    <div class="embed-responsive embed-responsive-16by9">
-<iframe width="1903" height="878" src="https://www.youtube.com/embed/Y7WLTvfZIao" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-<!-- Video -->
-
 <h2 class="code-header">Arduino Code</h2>
 <!-- Code -->
-<!-- HTML generated using hilite.me -->
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// Date and time functions using a DS1307 RTC connected via I2C and Wire lib</span>
+<span style="color: #BC7A00">#include &lt;Wire.h&gt;</span>
+<span style="color: #BC7A00">#include &quot;RTClib.h&quot;</span>
 
+<span style="color: #BC7A00">#if defined(ARDUINO_ARCH_SAMD)</span>
+<span style="color: #408080; font-style: italic">// for Zero, output on USB Serial console, remove line below if using programming port to program the Zero!</span>
+<span style="color: #BC7A00">#define Serial SerialUSB</span>
+<span style="color: #BC7A00">#endif</span>
 
-<!-- Download -->
-<div class="container">
-  <h2>Download</h2>
-  <a class="btn-lg btn-primary" href="http://www.filedropper.com/flippeddownload" role="button">Download zip (81.1 MB)</a>
-</div>
-<!-- Download -->
+RTC_DS1307 rtc;
+
+<span style="color: #B00040">char</span> daysOfTheWeek[<span style="color: #666666">7</span>][<span style="color: #666666">12</span>] <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;Sunday&quot;</span>, <span style="color: #BA2121">&quot;Monday&quot;</span>, <span style="color: #BA2121">&quot;Tuesday&quot;</span>, <span style="color: #BA2121">&quot;Wednesday&quot;</span>, <span style="color: #BA2121">&quot;Thursday&quot;</span>, <span style="color: #BA2121">&quot;Friday&quot;</span>, <span style="color: #BA2121">&quot;Saturday&quot;</span>};
+<span style="color: #B00040">int</span> relayPin <span style="color: #666666">=</span> <span style="color: #666666">3</span>;
+<span style="color: #B00040">int</span> MOSFETpin <span style="color: #666666">=</span> <span style="color: #666666">10</span>;
+<span style="color: #B00040">int</span> FAN_SPEED <span style="color: #666666">=</span> <span style="color: #666666">105</span>;  <span style="color: #408080; font-style: italic">//0-255 127 is 50%</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">setPwmFrequency</span>(<span style="color: #B00040">int</span> pin, <span style="color: #B00040">int</span> divisor) {
+  byte mode;
+  <span style="color: #008000; font-weight: bold">if</span>(pin <span style="color: #666666">==</span> <span style="color: #666666">5</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">6</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">9</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">10</span>) {
+    <span style="color: #008000; font-weight: bold">switch</span>(divisor) {
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x01</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">8</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x02</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">64</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x03</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">256</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x04</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1024</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x05</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #A0A000">default:</span> <span style="color: #008000; font-weight: bold">return</span>;
+    }
+    <span style="color: #008000; font-weight: bold">if</span>(pin <span style="color: #666666">==</span> <span style="color: #666666">5</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">6</span>) {
+      TCCR0B <span style="color: #666666">=</span> TCCR0B <span style="color: #666666">&amp;</span> <span style="color: #666666">0</span>b11111000 <span style="color: #666666">|</span> mode;
+    } <span style="color: #008000; font-weight: bold">else</span> {
+      TCCR1B <span style="color: #666666">=</span> TCCR1B <span style="color: #666666">&amp;</span> <span style="color: #666666">0</span>b11111000 <span style="color: #666666">|</span> mode;
+    }
+  } <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span>(pin <span style="color: #666666">==</span> <span style="color: #666666">3</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">11</span>) {
+    <span style="color: #008000; font-weight: bold">switch</span>(divisor) {
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x01</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">8</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x02</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">32</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x03</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">64</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x04</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">128</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x05</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">256</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x06</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1024</span>: mode <span style="color: #666666">=</span> <span style="color: #666666">0x07</span>; <span style="color: #008000; font-weight: bold">break</span>;
+      <span style="color: #A0A000">default:</span> <span style="color: #008000; font-weight: bold">return</span>;
+    }
+    TCCR2B <span style="color: #666666">=</span> TCCR2B <span style="color: #666666">&amp;</span> <span style="color: #666666">0</span>b11111000 <span style="color: #666666">|</span> mode;
+  }
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">setup</span> () {
+
+<span style="color: #BC7A00">#ifndef ESP8266</span>
+  <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>Serial); <span style="color: #408080; font-style: italic">// for Leonardo/Micro/Zero</span>
+<span style="color: #BC7A00">#endif</span>
+
+  Serial.begin(<span style="color: #666666">57600</span>);
+  <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.begin()) {
+    Serial.println(<span style="color: #BA2121">&quot;Couldn&#39;t find RTC&quot;</span>);
+    <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>);
+  }
+
+  <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.isrunning()) {
+    Serial.println(<span style="color: #BA2121">&quot;RTC is NOT running!&quot;</span>);
+    <span style="color: #408080; font-style: italic">// following line sets the 0RTC to the date &amp; time this sketch was compiled</span>
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+  <span style="color: #408080; font-style: italic">//rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));</span>
+  pinMode(MOSFETpin, OUTPUT);
+  pinMode(relayPin, OUTPUT);
+
+  <span style="color: #408080; font-style: italic">// Set pin 10&#39;s PWM frequency to 31 Hz (31250/1024 = 31)</span>
+  setPwmFrequency(<span style="color: #666666">10</span>, <span style="color: #666666">1024</span>);
+
+  <span style="color: #408080; font-style: italic">//Turn everything on/off for 3 seconds to make sure its working</span>
+  analogWrite(MOSFETpin, FAN_SPEED);
+  digitalWrite(relayPin, HIGH);
+  delay(<span style="color: #666666">3000</span>);
+  analogWrite(MOSFETpin, <span style="color: #666666">0</span>);
+  digitalWrite(relayPin, LOW);
+  delay(<span style="color: #666666">3000</span>);
+} <span style="color: #408080; font-style: italic">//end setup</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">loop</span> () {
+  DateTime now <span style="color: #666666">=</span> rtc.now();
+
+<span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
+      Serial.print(now.year(), DEC);
+      Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
+      Serial.print(now.month(), DEC);
+      Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
+      Serial.print(now.day(), DEC);
+      Serial.print(<span style="color: #BA2121">&quot; (&quot;</span>);
+      Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+      Serial.print(<span style="color: #BA2121">&quot;) &quot;</span>);
+      Serial.print(now.hour(), DEC);
+      Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
+      Serial.print(now.minute(), DEC);
+      Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
+      Serial.print(now.second(), DEC);
+      Serial.println();
+
+<span style="color: #408080; font-style: italic">//    Toggle Light</span>
+<span style="color: #408080; font-style: italic">//    digitalWrite(relayPin, !digitalRead(relayPin));</span>
+<span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
+
+  <span style="color: #408080; font-style: italic">//Turns the light on at 5pm off at 11am. Light is only on during off peak hours</span>
+  <span style="color: #008000; font-weight: bold">if</span> (now.hour() <span style="color: #666666">&gt;=</span> <span style="color: #666666">11</span> and now.hour() <span style="color: #666666">&lt;</span> <span style="color: #666666">17</span>) {
+    digitalWrite(relayPin, LOW);
+    analogWrite(MOSFETpin, <span style="color: #666666">0</span>);
+  } <span style="color: #008000; font-weight: bold">else</span> {
+    digitalWrite(relayPin, HIGH);
+    analogWrite(MOSFETpin, FAN_SPEED);
+  }
+
+  <span style="color: #408080; font-style: italic">//Poll every 5 seconds</span>
+  delay(<span style="color: #666666">5000</span>);
+} <span style="color: #408080; font-style: italic">//Loop End</span>
+</pre></div>
+<!-- code -->
 
 <!-- Footer -->
 <footer>
