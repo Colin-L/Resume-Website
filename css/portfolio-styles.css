@@ -92,6 +92,10 @@ ul {
   padding-top: 10px;
 }
 
+#see-more{
+  margin-bottom: 5px;
+}
+
 #first-project {
   max-height: 400px;
 }
