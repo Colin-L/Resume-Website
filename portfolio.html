@@ -52,14 +52,16 @@ window.onload = function() {
 
   <script src="javascript/navBar.js"></script>
     <!-- Nav Bar -->
+
+    <!-- Side nav -->
     <aside class="sidebar">
         <div class="sidenav">
           <!-- New project -->
           <h2 class="project-cat">Arduino</h2>
           <ul>
+            <li><a href="#room-heater" class="sidebar-project">Automatic Room Heater</a></li>
             <li><a href="#greenhouse-lights" class="sidebar-project">Greenhouse Lights</a></li>
             <li><a href="#infrared-light-switch" class="sidebar-project">Infrared Light Switch</a></li>
-            <li><a href="#room-heater" class="sidebar-project">Automatic Room Heater</a></li>
           </ul>
           <!--  -->
 
@@ -78,6 +80,7 @@ window.onload = function() {
 
         </div>
     </aside>
+    <!-- Side nav -->
 
     <div class="foreword">
         <h1>Portfolio</h1>
@@ -92,7 +95,7 @@ window.onload = function() {
               <img src="images/room-heater.png" alt="Automatic Room Heater Circuit " class="img-fluid">
               <h2>Automatic Room Heater</h2>
               <div class="project-text-area">
-                <p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the desiered threshold it will turn on a space heater until the upper threshold is reached.  </p>
+                <p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the lower threshold it will turn on a space heater until the upper threshold is reached.  </p>
                 <!-- <p><a href="projects\room-heater\room-heater.html">Click here to see more</a></p> -->
                 <a href="projects\room-heater\room-heater.html" type="button" class="btn btn-primary">See Full Project</a>
               </div>
@@ -133,15 +136,15 @@ window.onload = function() {
                 <h2>Flipped (Game)</h2>
                 <div class="project-text-area">
                   <p>For an iPhone programming class final project my partner Randy Dang and I created a simple platformer game where the player physics depend on the physical orientation of the device.</p>
-                  <p>Our plan is to make a unique 2D platformer game using Swifts sprite kit. Players will navigate
-                  from right to left through various levels using an on screen D-pad, jumping on platforms and
-                  navigating around deadly obstacles in order to reach the level exit and progress the game.</p>
-                  <p>What make this game different from other platformers is that it will take advantage of the phones
-                  physical orientation. Every level will the player to rotate the screen several times to complete the
-                  level. To do this the playable characters size and jump height will be relative to the screen
-                  height. Such that while in the landscape orientation the player will be able to fit under smaller
-                  gaps but will have a lower jump height. When the phone is in portrait mode the player will be
-                  able to jump higher as well as have a taller sprite. Levels will be designed in such a way to take
+                  <p>Our plan was to make a unique 2D platformer game using Swifts sprite kit. Players will navigate
+                  from left to right through various levels using an on screen D-pad, jumping on platforms and
+                  maneuvering around deadly obstacles in order to reach the level exit and progress the game.</p>
+                  <p>What makes this game different from other platformers is that it takes advantage of the phones
+                  physical orientation. Each level the player will need to rotate the screen several times to reach the exit.
+                  The characters size and jump height are relative to the screen
+                  height, while in the landscape orientation the player will be able to fit under smaller
+                  gaps but will have a lower jump height. When the phone is in portrait mode the player can
+                  jump higher and has a taller sprite. Levels are designed in such a way to take
                   advantage of this mechanic.</p>
 
                   <p>To complete each level the player must jump run and rotate to win!</p>
@@ -156,7 +159,8 @@ window.onload = function() {
                 <img src="images/file-transfer.png" alt="File Transfer Program" class="img-fluid">
                 <h2>File Transfer Program</h2>
                 <div class="project-text-area">
-                  <p>For a computer netoworks class my partner Luka Sitas and I created a program that can be used to transfer files accross a network. The program transfers files using a TCP connection. It has two modes, reliable and unreliable. Thses modes are used to simulate a good and a bad internet connection, this is used to demonstrate that the program can handle packet loss. With the program in the unreliable mode every tenth packet is lost and another has to be resent using TCP protocols.</p>
+                  <p>For a computer networks class my partner Luka Sitas and I created a program that can be used to transfer files accross a network.</p>
+                  <p>The program transfers files using a TCP connection. It has two modes, reliable and unreliable. Thses modes are used to simulate a good and a bad internet connection, this is used to demonstrate that the program can handle packet loss. With the program in the unreliable mode every tenth packet is lost and another has to be resent using TCP protocols.</p>
                     <!-- <p><a href="projects\file-transfer-program\file-transfer-program.html">Click here to see more</a></p> -->
                     <a href="projects\file-transfer-program\file-transfer-program.html" type="button" class="btn btn-primary">See Full Project</a>
                 </div>
