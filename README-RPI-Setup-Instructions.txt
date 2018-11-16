@@ -50,3 +50,10 @@ Error Handling:
 		sudo raspi-config
 		boot Options
 		Console auto login
+
+
+Updating programs that start on boot
+
+sudo nano ~/.config/lxsession/LXDE-pi/autostart
+
+sudo /usr/bin/python3 /home/pi/PYTHON/time-lapse.py
