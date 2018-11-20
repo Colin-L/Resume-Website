@@ -8,204 +8,262 @@
     <meta name="keywords" content="Colin Leslie, Portfolio" />
     <meta name="author" content="Colin Leslie" />
     <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
-<script>
-window.onload = function() {
-    if (screen.width < 850) {
-        var mvp = document.getElementById('vp');
-        mvp.setAttribute('content','user-scalable=yes,width=850');
-    }
-}
-</script>
-
-
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/portfolio-styles.css">
-    <link rel="stylesheet" href="css/global-styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-129132395-1');
-    </script>
-  </head>
 
-  <body>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
 
-    <!-- Nav Bar -->
-    <header>
+  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="css/portfolio-styles.css">
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129132395-1');
+  </script>
+</head>
+<body>
+  <!-- Nav Bar -->
+  <header>
       <div class="customnavbar">
-        <a href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="portfolio.html">Portfolio</a>
-        <div class="customnavBar">
-          <div class="customdropdown">
-            <button class="customdropbtn" onclick="myFunction()">Contact</button>
-            <div class="customdropdown-content" id="myDropdown">
-              <h4>Reach me at:</h4>
-              <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
-              <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
-              <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "images/clipboard.png"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </header>
-
-  <script src="javascript/navBar.js"></script>
-    <!-- Nav Bar -->
-
-    <!-- Side nav -->
-    <aside class="sidebar">
-        <div class="sidenav">
-          <!-- New project -->
-          <h2 class="project-cat">Arduino</h2>
-          <ul>
-            <li><a href="#room-heater" class="sidebar-project">Automatic Room Heater</a></li>
-            <li><a href="#greenhouse-lights" class="sidebar-project">Greenhouse Lights</a></li>
-            <li><a href="#infrared-light-switch" class="sidebar-project">Infrared Light Switch</a></li>
-          </ul>
-          <!--  -->
-
-          <h2 class="project-cat">iPhone (Swift)</h2>
-          <ul>
-            <li><a href="#flipped" class="sidebar-project">Flipped (Game)</a></li>
-          </ul>
-          <h2 class="project-cat">Java</h2>
-          <ul>
-            <li><a href="#file-transfer" class="sidebar-project">File Transfer Program</a></li>
-          </ul>
-          <!-- <h2 class="project-cat">Python</h2>
-          <ul>
-            <li><a href="#prime-generator" class="sidebar-project">Amazon Prime Account Generator</a></li>
-          </ul> -->
-
-        </div>
-    </aside>
-    <!-- Side nav -->
-
-    <div class="foreword">
-        <h1>Portfolio</h1>
-        <p>I love to program and make things in my free time. I've always got a few projects on the go. Working on fun things like this keeps programming interesting for me. </p>
-        <p>Here I showcase finish projects and projects that I'm currently working on. If you have any questions about a anything here feel free to contact me at <a href="mailto:colinbleslie@gmail.com">colinbleslie@gmail.com </a></p>
-    </div>
-
-    <section class="projects">
-      <!-- New Project atricle -->
-      <article class="container-fluid" id="first-project">
-          <div id="room-heater">
-              <img src="images/room-heater.png" alt="Automatic Room Heater Circuit " class="img-fluid">
-              <h2>Automatic Room Heater</h2>
-              <div class="project-text-area">
-                <p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the lower threshold it will turn on a space heater until the upper threshold is reached.  </p>
-                <!-- <p><a href="projects\room-heater\room-heater.html">Click here to see more</a></p> -->
-                <a href="projects\room-heater\room-heater.html" type="button" class="btn btn-primary">See Full Project</a>
+          <a href="index.html">Home</a>
+          <a href="resume.html">Resume</a>
+          <a href="portfolio.html">Portfolio</a>
+          <div class="customnavBar">
+              <div class="customdropdown">
+                  <button class="customdropbtn" onclick="myFunction()">Contact
+                  </button>
+                  <div class="customdropdown-content" id="myDropdown">
+                      <h4>Reach me at:</h4>
+                      <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+                      <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+                      <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+                      <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id="clipboardImg" src="images/clipboard.png"></button>
+                  </div>
               </div>
           </div>
-      </article>
-        <article class="container-fluid" id="greenhouse-lights">
-          <div >
-                <img src="images/greenhouse-lights.jpg" alt="Greenhouse Lights " class="img-fluid">
-                <h2>Greenhouse Lights</h2>
-                <div class="project-text-area">
-                  <p>I recently got sucked up into the world of gardening and have been fascinated with everything to do with it. This summer I started my own vegetable garden outdoors and had great success. Living in Canada our Winters are too harsh to grow outside so I've opted to create an indoor hydroponic setup that can be used year round. One downside to indoor gardening is it requires artificial lighting which can be tricky, but I belive I have come up with a good solution.</p>
-                  <p>I bought a few 50W full spectrum LED grow lights and attached cooling as well as put them on a timer using an Arduino Nano.</p>
-                  <!-- <p><a href="projects\greenhouse-lights\greenhouse-lights.html">Click here to see more</a></p> -->
-                  <a href="projects\greenhouse-lights\greenhouse-lights.html" type="button" class="btn btn-primary">See Full Project</a>
+      </div>
+
+  </header>
+
+  <!-- Bootstrap row -->
+  <div class="row" id="body-row">
+      <!-- Sidebar -->
+      <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+          <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+          <!-- Bootstrap List Group -->
+          <ul class="list-group sticky-top sticky-offset">
+              <!-- Separator with title -->
+              <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                  <small>Project Navigator</small>
+              </li>
+              <!-- /END Separator -->
+              <!-- Menu with submenu -->
+              <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start submenu">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="fa fa-microchip fa-lg mr-3"></span>
+                      <span class="menu-collapse">Arduino</span>
+                      <span class="fas fa-caret-down ml-auto"></span>
+                  </div>
+              </a>
+              <!-- Submenu content -->
+              <div id="submenu1" class="collapse sidebar-submenu">
+                  <a href="#room-heater" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">Automatic Room Heater</span>
+                  </a>
+                  <a href="#greenhouse-lights" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">Greenhouse Lights</span>
+                  </a>
+                  <a href="#infrared-light-switch" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">Infrared Light Switch</span>
+                  </a>
+              </div>
+              <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start submenu">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="fa fa-mobile fa-lg mr-3 "></span>
+                      <span class="menu-collapsed">iPhone (Swift)</span>
+                      <span class="fas fa-caret-down ml-auto"></span>
+                  </div>
+              </a>
+              <!-- Submenu content -->
+              <div id="submenu2" class="collapse sidebar-submenu">
+                  <a href="#flipped" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">Flipped (Game)</span>
+                  </a>
+              </div>
+              <a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start submenu submenu">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="fab fa-java fa-lg mr-3"></span>
+                      <span class="menu-collapsed">Java</span>
+                      <span class="fas fa-caret-down ml-auto"></span>
+                  </div>
+              </a>
+              <div id="submenu3" class="collapse sidebar-submenu">
+                  <a href="#file-transfer" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">File Transfer Program</span>
+                  </a>
+              </div>
+              <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start submenu">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="fab fa-python fa-lg mr-3"></span>
+                      <span class="menu-collapsed">Python</span>
+                      <span class="fas fa-caret-down ml-auto"></span>
+                  </div>
+              </a>
+              <div id="submenu4" class="collapse sidebar-submenu">
+                  <a href="#" class="list-group-item list-group-item-action bg-info text-white">
+                      <span class="menu-collapsed">Image Classifier</span>
+                  </a>
+              </div>
+              <!-- Separator without title -->
+              <li class="list-group-item sidebar-separator menu-collapsed"></li>
+              <!-- /END Separator -->
+
+          </ul>
+      </div>
+      <!-- sidebar-container END -->
+      <!-- MAIN -->
+      <div class="col py-3">
+
+          <h1>
+              Portfolio
+              <small class="text-muted">Colin Leslie</small>
+          </h1>
+
+
+          <div class="card">
+              <div class="card-body">
+                <p>I love to program and make things in my free time. I've always got a few projects on the go. Working on fun things like this keeps programming interesting for me. </p>
+                <p>Here I showcase finish projects and projects that I'm currently working on. If you have any questions about a anything here feel free to contact me at <a href="mailto:colinbleslie@gmail.com">colinbleslie@gmail.com </a></p>
+              </div>
+          </div>
+
+          <hr>
+
+          <section class="projects">
+            <!-- New Project atricle -->
+            <article class="container-fluid" id="first-project">
+                <div id="room-heater">
+                    <img src="images/room-heater.png" alt="Automatic Room Heater Circuit " class="img-fluid">
+                    <h2>Automatic Room Heater</h2>
+                    <div class="project-text-area">
+                      <p>For my indoor hydroponics system I was running into some issues with the temperature. My hydroponics system is setup in a room in the basement of my house, as a result it can get quite cold down there if no extra heating is used. If the room temperature drops below 18°C plant growth will slow down significantly. From what I understand the ideal temperature range for plant growth is 22°C to 26°C so I built this device to keep the room within that range. The device takes temperature readings from a DHT11 temperature sensor, outputs the reading in celsius to two seven segment displays and if the temperture is below the lower threshold it will turn on a space heater until the upper threshold is reached.  </p>
+                      <!-- <p><a href="projects\room-heater\room-heater.html">Click here to see more</a></p> -->
+                      <a href="projects\room-heater\room-heater.html" type="button" class="btn btn-primary">See Full Project</a>
+                    </div>
                 </div>
-            </div>
-        </article>
-        <!--  -->
-      <!-- New Project atricle -->
-        <article class="container-fluid">
-            <div id="infrared-light-switch">
-                <img src="images/infrared-light-switch.png" alt="Infrared Light Switch " class="img-fluid">
-                <h2>Infrared Light Switch</h2>
-                <div class="project-text-area">
-                    <p>I had a stick-on desk lamp in the corner of my room that I would use as a reading light. To turn it on I would walk across my room and flip a switch. This got tiring so I needed a way to control this lamp remotely and infrared seemed to be the best method </p>
-                    <p>The lamp is powered by a USB drawing about 0.4 Amps at 5V. When the Arduino receives any infrared signal (This makes it, so it can be used with any infrared remote) or the button is pressed it flips a relay and powers the USB port. </p>
-                    <p>To keep the power consumption low and the size of the device small, I used a standalone Arduino chip with a 16mHz resonator. </p>
-                    <!-- <p><a href="projects\infrared-light-switch\infrared-light-switch.html">Click here to see more</a></p> -->
-                    <a href="projects\infrared-light-switch\infrared-light-switch.html" type="button" class="btn btn-primary">See Full Project</a>
-                </div>
-            </div>
-        </article>
-        <!--  -->
+            </article>
+              <article class="container-fluid" id="greenhouse-lights">
+                <div >
+                      <img src="images/greenhouse-lights.jpg" alt="Greenhouse Lights " class="img-fluid">
+                      <h2>Greenhouse Lights</h2>
+                      <div class="project-text-area">
+                        <p>I recently got sucked up into the world of gardening and have been fascinated with everything to do with it. This summer I started my own vegetable garden outdoors and had great success. Living in Canada our Winters are too harsh to grow outside so I've opted to create an indoor hydroponic setup that can be used year round. One downside to indoor gardening is it requires artificial lighting which can be tricky, but I belive I have come up with a good solution.</p>
+                        <p>I bought a few 50W full spectrum LED grow lights and attached cooling as well as put them on a timer using an Arduino Nano.</p>
+                        <!-- <p><a href="projects\greenhouse-lights\greenhouse-lights.html">Click here to see more</a></p> -->
+                        <a href="projects\greenhouse-lights\greenhouse-lights.html" type="button" class="btn btn-primary">See Full Project</a>
+                      </div>
+                  </div>
+              </article>
+              <!--  -->
+            <!-- New Project atricle -->
+              <article class="container-fluid">
+                  <div id="infrared-light-switch">
+                      <img src="images/infrared-light-switch.png" alt="Infrared Light Switch " class="img-fluid">
+                      <h2>Infrared Light Switch</h2>
+                      <div class="project-text-area">
+                          <p>I had a stick-on desk lamp in the corner of my room that I would use as a reading light. To turn it on I would walk across my room and flip a switch. This got tiring so I needed a way to control this lamp remotely and infrared seemed to be the best method </p>
+                          <p>The lamp is powered by a USB drawing about 0.4 Amps at 5V. When the Arduino receives any infrared signal (This makes it, so it can be used with any infrared remote) or the button is pressed it flips a relay and powers the USB port. </p>
+                          <p>To keep the power consumption low and the size of the device small, I used a standalone Arduino chip with a 16mHz resonator. </p>
+                          <!-- <p><a href="projects\infrared-light-switch\infrared-light-switch.html">Click here to see more</a></p> -->
+                          <a href="projects\infrared-light-switch\infrared-light-switch.html" type="button" class="btn btn-primary">See Full Project</a>
+                      </div>
+                  </div>
+              </article>
+              <!--  -->
 
-        <article class="container-fluid">
-            <div id="flipped">
-                <img src="images/flipped.png" alt="Flipped (Game)" class="img-fluid">
-                <h2>Flipped (Game)</h2>
-                <div class="project-text-area">
-                  <p>For an iPhone programming class final project my partner Randy Dang and I created a simple platformer game where the player physics depend on the physical orientation of the device.</p>
-                  <p>Our plan was to make a unique 2D platformer game using Swifts sprite kit. Players will navigate
-                  from left to right through various levels using an on screen D-pad, jumping on platforms and
-                  maneuvering around deadly obstacles in order to reach the level exit and progress the game.</p>
-                  <p>What makes this game different from other platformers is that it takes advantage of the phones
-                  physical orientation. Each level the player will need to rotate the screen several times to reach the exit.
-                  The characters size and jump height are relative to the screen
-                  height, while in the landscape orientation the player will be able to fit under smaller
-                  gaps but will have a lower jump height. When the phone is in portrait mode the player can
-                  jump higher and has a taller sprite. Levels are designed in such a way to take
-                  advantage of this mechanic.</p>
+              <article class="container-fluid">
+                  <div id="flipped">
+                      <img src="images/flipped.png" alt="Flipped (Game)" class="img-fluid">
+                      <h2>Flipped (Game)</h2>
+                      <div class="project-text-area">
+                        <p>For an iPhone programming class final project my partner Randy Dang and I created a simple platformer game where the player physics depend on the physical orientation of the device.</p>
+                        <p>Our plan was to make a unique 2D platformer game using Swifts sprite kit. Players will navigate
+                        from left to right through various levels using an on screen D-pad, jumping on platforms and
+                        maneuvering around deadly obstacles in order to reach the level exit and progress the game.</p>
+                        <p>What makes this game different from other platformers is that it takes advantage of the phones
+                        physical orientation. Each level the player will need to rotate the screen several times to reach the exit.
+                        The characters size and jump height are relative to the screen
+                        height, while in the landscape orientation the player will be able to fit under smaller
+                        gaps but will have a lower jump height. When the phone is in portrait mode the player can
+                        jump higher and has a taller sprite. Levels are designed in such a way to take
+                        advantage of this mechanic.</p>
 
-                  <p>To complete each level the player must jump run and rotate to win!</p>
-                  <p>This game was made mostly as a proof of concept. Our goal was to get the game mechanics down without much focus on the visuals</p>
-                  <!-- <p><a href="projects\flipped\flipped.html">Click here to see more</a></p> -->
-                  <a id="see-more"href="projects\flipped\flipped.html" type="button" class="btn btn-primary">See Full Project</a>
-                </div>
-            </div>
-        </article>
-        <article class="container-fluid">
-            <div id="file-transfer">
-                <img src="images/file-transfer.png" alt="File Transfer Program" class="img-fluid">
-                <h2>File Transfer Program</h2>
-                <div class="project-text-area">
-                  <p>For a computer networks class my partner Luka Sitas and I created a program that can be used to transfer files accross a network.</p>
-                  <p>The program transfers files using a TCP connection. It has two modes, reliable and unreliable. Thses modes are used to simulate a good and a bad internet connection, this is used to demonstrate that the program can handle packet loss. With the program in the unreliable mode every tenth packet is lost and another has to be resent using TCP protocols.</p>
-                    <!-- <p><a href="projects\file-transfer-program\file-transfer-program.html">Click here to see more</a></p> -->
-                    <a href="projects\file-transfer-program\file-transfer-program.html" type="button" class="btn btn-primary">See Full Project</a>
-                </div>
-            </div>
-        </article>
-        <!-- <article class="container-fluid">
-            <div id="prime-generator">
-                <img src="images/prime-generator.png" alt="Amazon Prime Account Generator " class="img-fluid">
-                <h2>Amazon Prime Account Generator</h2>
-                <div class="project-text-area">
-                  <p>A few years ago amazon came out with their Amazon Prime subscription service offering free two day shipping. Along with it they released a free 30 day Amazon trial program were new users could take advantage of all the features amazon prime offers for free for 30 days to encourage people to pay for the service after their trial period ended.</p>
-                  <p>It bacme apparent that this program could be exploited by making a new account every month and signing up for their free trial. This works so well because amazon doesn't do any email verification so any string that follows the format of an email would be enough to create an account (eg. Asdf@foo.ca would be valid).</p>
-                  <p>For a few years before I really learned how to program I would manually make a new account every month and cancel the trial so I did not get charged at the end of it. Then in 2016 I discovered selenium py a tool that allows you to control a Firefox browser using Python code. With selenium py I was able to write a program that would automate the account creation process for me, saving me about 5 minutes of manual work per account. </p>
-                    <p><a href="projects\prime-generator\prime-generator.html">Click here to see more</a></p>
-                </div>
-            </div>
-        </article> -->
+                        <p>To complete each level the player must jump run and rotate to win!</p>
+                        <p>This game was made mostly as a proof of concept. Our goal was to get the game mechanics down without much focus on the visuals</p>
+                        <!-- <p><a href="projects\flipped\flipped.html">Click here to see more</a></p> -->
+                        <a id="see-more"href="projects\flipped\flipped.html" type="button" class="btn btn-primary">See Full Project</a>
+                      </div>
+                  </div>
+              </article>
+              <article class="container-fluid">
+                  <div id="file-transfer">
+                      <img src="images/file-transfer.png" alt="File Transfer Program" class="img-fluid">
+                      <h2>File Transfer Program</h2>
+                      <div class="project-text-area">
+                        <p>For a computer networks class my partner Luka Sitas and I created a program that can be used to transfer files accross a network.</p>
+                        <p>The program transfers files using a TCP connection. It has two modes, reliable and unreliable. Thses modes are used to simulate a good and a bad internet connection, this is used to demonstrate that the program can handle packet loss. With the program in the unreliable mode every tenth packet is lost and another has to be resent using TCP protocols.</p>
+                          <!-- <p><a href="projects\file-transfer-program\file-transfer-program.html">Click here to see more</a></p> -->
+                          <a href="projects\file-transfer-program\file-transfer-program.html" type="button" class="btn btn-primary">See Full Project</a>
+                      </div>
+                  </div>
+              </article>
+              <!-- <article class="container-fluid">
+                  <div id="prime-generator">
+                      <img src="images/prime-generator.png" alt="Amazon Prime Account Generator " class="img-fluid">
+                      <h2>Amazon Prime Account Generator</h2>
+                      <div class="project-text-area">
+                        <p>A few years ago amazon came out with their Amazon Prime subscription service offering free two day shipping. Along with it they released a free 30 day Amazon trial program were new users could take advantage of all the features amazon prime offers for free for 30 days to encourage people to pay for the service after their trial period ended.</p>
+                        <p>It bacme apparent that this program could be exploited by making a new account every month and signing up for their free trial. This works so well because amazon doesn't do any email verification so any string that follows the format of an email would be enough to create an account (eg. Asdf@foo.ca would be valid).</p>
+                        <p>For a few years before I really learned how to program I would manually make a new account every month and cancel the trial so I did not get charged at the end of it. Then in 2016 I discovered selenium py a tool that allows you to control a Firefox browser using Python code. With selenium py I was able to write a program that would automate the account creation process for me, saving me about 5 minutes of manual work per account. </p>
+                          <p><a href="projects\prime-generator\prime-generator.html">Click here to see more</a></p>
+                      </div>
+                  </div>
+              </article> -->
 
-        <!-- NEW PROJECT TEMPLATE -->
-        <!-- <article class="container-fluid">
-            <div id="PROJECT-ID">
-                <img src="images/PROJECT-THUMBNAIL.png" alt="THUMBNAIL-ALT-TEXT " class="img-fluid">
-                <h2>PROJECT-TITLE</h2>
-                <div class="project-text-area">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum sed arcu non odio euismod lacinia at. Non odio euismod lacinia at quis risus. Posuere urna nec tincidunt praesent. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Rhoncus est pellentesque elit ullamcorper dignissim cras. At lectus urna duis convallis convallis tellus. Felis eget nunc lobortis mattis aliquam faucibus purus. Felis eget nunc lobortis mattis aliquam faucibus purus in massa. Pharetra convallis posuere morbi leo. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Bibendum neque egestas congue quisque egestas.
+              <!-- NEW PROJECT TEMPLATE -->
+              <!-- <article class="container-fluid">
+                  <div id="PROJECT-ID">
+                      <img src="images/PROJECT-THUMBNAIL.png" alt="THUMBNAIL-ALT-TEXT " class="img-fluid">
+                      <h2>PROJECT-TITLE</h2>
+                      <div class="project-text-area">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum sed arcu non odio euismod lacinia at. Non odio euismod lacinia at quis risus. Posuere urna nec tincidunt praesent. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Rhoncus est pellentesque elit ullamcorper dignissim cras. At lectus urna duis convallis convallis tellus. Felis eget nunc lobortis mattis aliquam faucibus purus. Felis eget nunc lobortis mattis aliquam faucibus purus in massa. Pharetra convallis posuere morbi leo. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Bibendum neque egestas congue quisque egestas.
 
-Tincidunt eget nullam non nisi est sit amet facilisis magna. Pellentesque sit amet porttitor eget. Maecenas accumsan lacus vel facilisis volutpat. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Eget dolor morbi non arcu risus quis varius quam. Tortor consequat id porta nibh venenatis cras sed felis. Viverra accumsan in nisl nisi. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Venenatis urna   cursus eget nunc. Rhoncus est pellentesque elit ullamcorper dignissim. Ante in nibh mauris cursus mattis molestie a iaculis at. Sed ullamcorper morbi tincidunt ornare massa eget. Feugiat nisl pretium fusce id velit. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Dolor sed viverra ipsum nunc aliquet bibendum enim. Consectetur purus ut faucibus pulvinar elementum integer.</p>
-                  <a href="projects\PROJECT-ID\PROJECT-HTML-FILE.html" type="button" class="btn btn-primary">See Full Project</a>
-                </div>
-            </div>
-        </article> -->
-        <!-- NEW PROJECT TEMPLATE -->
-
-    </section>
-
-    </article>
-
-</body>
-
-</html>
+      Tincidunt eget nullam non nisi est sit amet facilisis magna. Pellentesque sit amet porttitor eget. Maecenas accumsan lacus vel facilisis volutpat. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Eget dolor morbi non arcu risus quis varius quam. Tortor consequat id porta nibh venenatis cras sed felis. Viverra accumsan in nisl nisi. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Venenatis urna   cursus eget nunc. Rhoncus est pellentesque elit ullamcorper dignissim. Ante in nibh mauris cursus mattis molestie a iaculis at. Sed ullamcorper morbi tincidunt ornare massa eget. Feugiat nisl pretium fusce id velit. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Dolor sed viverra ipsum nunc aliquet bibendum enim. Consectetur purus ut faucibus pulvinar elementum integer.</p>
+                        <a href="projects\PROJECT-ID\PROJECT-HTML-FILE.html" type="button" class="btn btn-primary">See Full Project</a>
+                      </div>
+                  </div>
+              </article> -->
+              <!-- NEW PROJECT TEMPLATE -->
+          </section>
+      </div>
+      <!-- Main Col END -->
+  </div>
+  <!-- body-row END -->
+  <script src="javascript/navBar.js"></script>
+  <script src="javascript/sidebar.js"></script>
+    </body>
+  </html>

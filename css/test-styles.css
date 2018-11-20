@@ -1,5 +1,47 @@
+body{
+  background-color: #ccd6e8;
+}
+
+/* ForeWord */
+.card-body{
+  padding: 0;
+  padding-left: 2px;
+  background-color: #dadfe8;
+}
+/* ForeWord */
+
+/* Projects */
+.img-fluid{
+  float: left;
+  margin-right: 5px;
+  /* padding-right: 10px; */
+  border: 1px solid black;
+  /* object-fit: cover; */
+}
+.container-fluid{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+
+}
+article{
+  /* Projects Background */
+  /* background: #5b77a5; */
+  background: #7fa4e2;
+}
+#see-more{
+  margin-bottom: 5px;
+}
+/* Projects */
 
 
+
+.submenu{
+padding-top: 10px;
+padding-bottom: 10px;
+margin-bottom: 1px;
+}
 
 .sticky-offset {
     /*top: 56px;*/
