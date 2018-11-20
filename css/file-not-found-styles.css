@@ -2,36 +2,38 @@
 body{
   background: #2B2D42;
   text-align: center;
+  margin: 0;
+}
+header{
+  width: 100%;
 }
 
 main{
-  width: 50%;
-  margin: 20% auto;
+  width: 35%;
+  margin-top: 50px;
+  display: inline-block;
   background: #C53C50;
   border: ridge;
   border-color: white;
-  border-width: 10px;
+  border-width: 5px;
+  text-align: center;
 }
-
 h1{
-  font-size: 50px;
+  font-size: 30px;
   padding-bottom: 8%;
 }
-h2{
+.not-found{
   padding: 0 2px;
-  font-size: 35px;
+  font-size: 20px;
 }
-
 mark{
   color: white;
   background: none;
   /* float: left; */
-
 }
-
 .home-button{
   padding: 4%;
-  font-size: 25px;
+  font-size: 20px;
 }
 .home-button a{
     text-decoration: none;
