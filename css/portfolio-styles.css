@@ -2,6 +2,8 @@ body{
   background-color: #ccd6e8;
 }
 
+
+
 /* ForeWord */
 .card-body{
   padding: 0;
@@ -109,4 +111,8 @@ margin-bottom: 1px;
   display: inline;
   text-align: right;
   padding-left: 10px;
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: none;
 }
