@@ -35,7 +35,8 @@ footer {
   background-color: #EDF2F4;;
   text-align: center;
   display: block;
-  border: 4mm ridge rgb(170, 50, 220, .6);
+  /* border: 4mm ridge rgb(170, 50, 220, .6); */
+  border: 4mm ridge #5B77A5;
 
 }
 .buttons{
@@ -53,7 +54,9 @@ footer {
 .index-body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  background: url("../images/background-compressed.jpg") no-repeat center center fixed;
+  /* background: url("../images/background-compressed.jpg") no-repeat center center fixed; */
+  background: url("../images/31-compressed.jpg") no-repeat center center fixed;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
