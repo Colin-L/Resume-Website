@@ -2,6 +2,8 @@ body {
   /* background-color: #ccd6e8; */
   /* background-image: linear-gradient(#cce6e8,#cce4e8); */
   /* background-image: radial-gradient(#cce6e8,#cce4e8); */
+  background-color: #8D99AE;
+  /* background-color: #2B2D42; */
 }
 
 /* ForeWord */
@@ -30,7 +32,9 @@ article {
   /* Projects Background: Light blue color (#7fa4e2)*/
   /* background: #7fa4e2;   */
   /* background-image: linear-gradient(#7fbde2,#7fa4e2); */
-  background-image: radial-gradient(#7fbde2, #7fa4e2);
+  /* background-image: radial-gradient(#7fbde2, #7fa4e2); */
+  background-color: #5b77a5;
+  /* color: gray; */
   border: 1px solid gray;
 }
 
