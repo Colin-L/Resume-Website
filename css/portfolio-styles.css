@@ -39,6 +39,15 @@ article {
 }
 
 /* Projects */
+
+#about-site{
+  margin-top: 50px;
+}
+/* #flipped{
+  border: none;
+  margin-right: 0;
+} */
+
 .submenu {
   padding-top: 10px;
   padding-bottom: 10px;

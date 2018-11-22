@@ -63,6 +63,9 @@ footer {
   background-size: cover;
   min-height: 100%;
 }
+#footer-button{
+  margin-left: 2px;
+}
 
 /* Makes background extend all the way to the botom on mobile */
 body, html {
