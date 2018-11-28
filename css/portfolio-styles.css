@@ -1,3 +1,10 @@
+/* CLEAR-FIX */
+.clearfix:after {
+    visibility: hidden; display: block; font-size: 0;
+    content: " "; clear: both; height: 0;
+}
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
 body {
   /* background-color: #ccd6e8; */
   /* background-image: linear-gradient(#cce6e8,#cce4e8); */
@@ -52,6 +59,8 @@ article {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 1px;
+  /* overflow:visible; */
+
 }
 
 .sticky-offset {
@@ -61,12 +70,14 @@ article {
 #body-row {
   margin-left: 0;
   margin-right: 0;
+  /* overflow: visible; */
 }
 
 #sidebar-container {
   min-height: 100vh;
   background-color: #333;
   padding: 0;
+  /* overflow: visible; */
 }
 
 /* Sidebar sizes when expanded and expanded */
@@ -80,13 +91,13 @@ article {
 
 /* Menu item*/
 #sidebar-container .list-group a {
-  height: 50px;
+  height: auto;
   color: white;
 }
 
 /* Submenu item*/
 #sidebar-container .list-group .sidebar-submenu a {
-  height: 45px;
+  height: auto;
   padding-left: 30px;
 }
 
