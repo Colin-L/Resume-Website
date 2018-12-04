@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colin Leslie resume website" />
+  <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+  <meta name="author" content="Colin Leslie" />
+  <title>Exploration Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+  <link rel="stylesheet" href="../../css/projects/PROJECT.css">
+  <link rel="stylesheet" href="../../css/global-styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="icon" href="../../images/favicon.ico">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+</head>
+
+<body>
+
+  <!-- Nav Bar -->
+  <header>
+    <div class="customnavbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../resume.html">Resume</a>
+      <a href="../../portfolio.html">Portfolio</a>
+      <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src="../../images/clipboard.png"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <script src="../../javascript/navBar.js"></script>
+  <!-- Nav Bar -->
+
+  <!-- Copy Up to here for new projects -->
+  <!-- </body>
+</html> -->
+  <div class="container">
+
+
+    <h2>Exploration Project</h2>
+    <h4>Paul Hohbaum and Colin Leslie</h4>
+    <hr>
+    <p>The purpose of this project was to experiment with a new device and a raspberry pi to try to create something new. We chose to use a 32x128 OLED display.</p>
+    <p>The program we wrote for the display spawns a square on the screen that will navigate around the display to collect some food circles that are randomly spawned when the program is started.The square stops moving once all of the food has been
+      collected.</p>
+    <br>
+    <p>Click on the images to enlarge them.</p>
+
+    <!-- Image Gallary -->
+    <div class="row">
+
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img1.jpg" target="_blank">
+            <img src="img1.jpg" alt="Device Overview" style="width:100%">
+            <div class="caption">
+              <p>An overview of what the device looks like. The raspberry pi is connected to a breadboard using a cobbler. Four jumper cables are used to connect the cobbler to the OLED display. The display uses the I2C interface.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img2.jpg" target="_blank">
+            <img src="img2.jpg" alt="Game Start" style="width:100%">
+            <div class="caption">
+              <p>How the game looks after its collected several peices of food. The square spawns at a random location along with 50-100 peices of food also randomly spawned. The square then navigates to the closest peice of food to consume it.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img3.jpg" target="_blank">
+            <img src="img3.jpg" alt="Game" style="width:100%">
+            <div class="caption">
+              <p>The square has now collected a few peices of food.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img4.jpg" target="_blank">
+            <img src="img4.jpg" alt="Collecting Food" style="width:100%">
+            <div class="caption">
+              <p>Only one peice of food left. The program is almost done.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img5.jpg" target="_blank">
+            <img src="img5.jpg" alt="All food collected" style="width:100%">
+            <div class="caption">
+              <p>Once the square has collected each peice of food it stops moving and the program stops.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <!-- Image -->
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <a href="img6.jpg" target="_blank">
+            <img src="img6.jpg" alt="Terminal Output" style="width:100%">
+            <div class="caption">
+              <p>This is what the terminal output looks like after the game is complete. On startup each of the locations of the food is displayed. After the square collects a food item the consol prints 'Mhmm yummy'. Once there is no more food it
+                prints 'All done!'.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+    </div>
+    <!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
+    <!-- Image Gallary -->
+
+    <h2>Challanges</h2>
+    <hr>
+    <p>The most difficult part was getting the OLED to display something. Since we didn't have a part number for the OLED it was tough to find a library that was compatible. In the end we used Adafruits Python_SSD1306 library which made drawing shapes much simplier.</p>
+    <br>
+    <h2>Useful URLS</h2>
+    <hr>
+    <p><a href="https://github.com/adafruit/Adafruit_Python_SSD1306">Github Link for the Adafruit Library</a></p>
+    <p><a href="https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf">SSD1306 Datasheet</a></p>
+    <p><a href="https://www.youtube.com/watch?v=RjyulqVsz2o">A video of someone using this display with an Arduino</a></p>
+    <br>
+
+
+    <!-- Video -->
+    <div class="container">
+      <h2>Video Demo</h2>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/EpADOHI6XgM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- Video -->
+
+
+    <h2 class="code-header">Python Code</h2>
+    <p>As mentioned above the Adafruit_Python_SSD1306 is required to run the program. It can be found <a href="https://github.com/adafruit/Adafruit_Python_SSD1306">here</a>.</p>
+    <!-- Code -->
+    <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic"># Copyright (c) 2014 Adafruit Industries</span>
+<span style="color: #408080; font-style: italic"># Author: Tony DiCola</span>
+<span style="color: #408080; font-style: italic">#</span>
+<span style="color: #408080; font-style: italic"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span style="color: #408080; font-style: italic"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span style="color: #408080; font-style: italic"># in the Software without restriction, including without limitation the rights</span>
+<span style="color: #408080; font-style: italic"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span style="color: #408080; font-style: italic"># copies of the Software, and to permit persons to whom the Software is</span>
+<span style="color: #408080; font-style: italic"># furnished to do so, subject to the following conditions:</span>
+<span style="color: #408080; font-style: italic">#</span>
+<span style="color: #408080; font-style: italic"># The above copyright notice and this permission notice shall be included in</span>
+<span style="color: #408080; font-style: italic"># all copies or substantial portions of the Software.</span>
+<span style="color: #408080; font-style: italic">#</span>
+<span style="color: #408080; font-style: italic"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span style="color: #408080; font-style: italic"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span style="color: #408080; font-style: italic"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span style="color: #408080; font-style: italic"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span style="color: #408080; font-style: italic"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span style="color: #408080; font-style: italic"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span style="color: #408080; font-style: italic"># THE SOFTWARE.</span>
+
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">IMPORTS</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">time</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">random</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">Adafruit_GPIO.SPI</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">SPI</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">Adafruit_SSD1306</span>
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">PIL</span> <span style="color: #008000; font-weight: bold">import</span> Image
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">PIL</span> <span style="color: #008000; font-weight: bold">import</span> ImageDraw
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">PIL</span> <span style="color: #008000; font-weight: bold">import</span> ImageFont
+<span style="color: #408080; font-style: italic">#--------------------------------------------------------------------------</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">LIBRARY</span>
+<span style="color: #BA2121; font-style: italic">(the part that makes the OLED work, credit to the people who wrote the library)</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #408080; font-style: italic"># Raspberry Pi pin configuration:</span>
+RST <span style="color: #666666">=</span> <span style="color: #666666">24</span>
+<span style="color: #408080; font-style: italic"># Note the following are only used with SPI:</span>
+DC <span style="color: #666666">=</span> <span style="color: #666666">23</span>
+SPI_PORT <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+SPI_DEVICE <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+
+<span style="color: #408080; font-style: italic"># Beaglebone Black pin configuration:</span>
+<span style="color: #408080; font-style: italic"># RST = &#39;P9_12&#39;</span>
+<span style="color: #408080; font-style: italic"># Note the following are only used with SPI:</span>
+<span style="color: #408080; font-style: italic"># DC = &#39;P9_15&#39;</span>
+<span style="color: #408080; font-style: italic"># SPI_PORT = 1</span>
+<span style="color: #408080; font-style: italic"># SPI_DEVICE = 0</span>
+
+<span style="color: #408080; font-style: italic"># 128x32 display with hardware I2C:</span>
+disp <span style="color: #666666">=</span> Adafruit_SSD1306<span style="color: #666666">.</span>SSD1306_128_32(rst<span style="color: #666666">=</span>RST)
+
+<span style="color: #408080; font-style: italic"># 128x64 display with hardware I2C:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)</span>
+
+<span style="color: #408080; font-style: italic"># Note you can change the I2C address by passing an i2c_address parameter like:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3C)</span>
+
+<span style="color: #408080; font-style: italic"># Alternatively you can specify an explicit I2C bus number, for example</span>
+<span style="color: #408080; font-style: italic"># with the 128x32 display you would use:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST, i2c_bus=2)</span>
+
+<span style="color: #408080; font-style: italic"># 128x32 display with hardware SPI:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST, dc=DC, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000))</span>
+
+<span style="color: #408080; font-style: italic"># 128x64 display with hardware SPI:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000))</span>
+
+<span style="color: #408080; font-style: italic"># Alternatively you can specify a software SPI implementation by providing</span>
+<span style="color: #408080; font-style: italic"># digital GPIO pin numbers for all the required display pins.  For example</span>
+<span style="color: #408080; font-style: italic"># on a Raspberry Pi with the 128x32 display you might use:</span>
+<span style="color: #408080; font-style: italic"># disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST, dc=DC, sclk=18, din=25, cs=22)</span>
+
+<span style="color: #408080; font-style: italic"># Initialize library.</span>
+disp<span style="color: #666666">.</span>begin()
+
+<span style="color: #408080; font-style: italic"># Clear display.</span>
+disp<span style="color: #666666">.</span>clear()
+disp<span style="color: #666666">.</span>display()
+
+<span style="color: #408080; font-style: italic"># Create blank image for drawing.</span>
+<span style="color: #408080; font-style: italic"># Make sure to create image with mode &#39;1&#39; for 1-bit color.</span>
+width <span style="color: #666666">=</span> disp<span style="color: #666666">.</span>width
+height <span style="color: #666666">=</span> disp<span style="color: #666666">.</span>height
+image <span style="color: #666666">=</span> Image<span style="color: #666666">.</span>new(<span style="color: #BA2121">&#39;1&#39;</span>, (width, height))
+
+<span style="color: #408080; font-style: italic"># Get drawing object to draw on image.</span>
+draw <span style="color: #666666">=</span> ImageDraw<span style="color: #666666">.</span>Draw(image)
+<span style="color: #408080; font-style: italic">#--------------------------------------------------------------------------</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">Global Variables</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #408080; font-style: italic">#Random starting co-ordinates</span>
+x <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">0</span>,<span style="color: #666666">124</span>)
+y <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">0</span>,<span style="color: #666666">28</span>)
+
+<span style="color: #408080; font-style: italic">#User defined variables</span>
+player_size <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+grow <span style="color: #666666">=</span> <span style="color: #008000">False</span>
+speed <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+food_size <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+num_food <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">50</span>,<span style="color: #666666">100</span>)
+<span style="color: #408080; font-style: italic">#--------------------------------------------------------------------------</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">FUNCTIONS</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #408080; font-style: italic">#Starts the program, creates the food and draws it</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Start</span>():
+    food_location <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(num_food):
+        food_x <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">0</span>,<span style="color: #666666">128-</span>player_size)
+        food_y <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">0</span>,<span style="color: #666666">32-</span>player_size)
+        food <span style="color: #666666">=</span> [food_x,food_y]
+        food_location<span style="color: #666666">.</span>append(food)
+
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Starting position is {},{}&quot;</span><span style="color: #666666">.</span>format(x,y))
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;There is {} food to eat&quot;</span><span style="color: #666666">.</span>format(num_food))
+
+    i<span style="color: #666666">=1</span>
+    <span style="color: #008000; font-weight: bold">for</span> food <span style="color: #AA22FF; font-weight: bold">in</span> food_location:
+        food_x <span style="color: #666666">=</span> food[<span style="color: #666666">0</span>]
+        food_y <span style="color: #666666">=</span> food[<span style="color: #666666">1</span>]
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Food {} is at location {},{}&quot;</span><span style="color: #666666">.</span>format(i,food_x,food_y))
+        i<span style="color: #666666">+=1</span>
+    <span style="color: #008000; font-weight: bold">return</span> food_location
+
+<span style="color: #408080; font-style: italic">#Returns the distance to the food</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">foodDistance</span>(x,y,food):
+    food_x <span style="color: #666666">=</span> food[<span style="color: #666666">0</span>]
+    food_y <span style="color: #666666">=</span> food[<span style="color: #666666">1</span>]
+
+    dist_x <span style="color: #666666">=</span> <span style="color: #008000">abs</span>(food_x <span style="color: #666666">-</span> x)
+    dist_y <span style="color: #666666">=</span> <span style="color: #008000">abs</span>(food_y <span style="color: #666666">-</span> y)
+
+    total_distance <span style="color: #666666">=</span> dist_x <span style="color: #666666">+</span> dist_y
+
+    <span style="color: #008000; font-weight: bold">return</span> total_distance
+
+<span style="color: #408080; font-style: italic">#Gets the minimum distance to the next food</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">getMinDistance</span>(x,y,food_location):
+
+    <span style="color: #008000">min</span> <span style="color: #666666">=</span> food_location[<span style="color: #666666">0</span>]
+    min_distance <span style="color: #666666">=</span> foodDistance(x,y,<span style="color: #008000">min</span>)
+
+    <span style="color: #008000; font-weight: bold">for</span> food <span style="color: #AA22FF; font-weight: bold">in</span> food_location:
+        temp <span style="color: #666666">=</span> food
+        temp_food_distance <span style="color: #666666">=</span> foodDistance(x,y,temp)
+
+        <span style="color: #008000; font-weight: bold">if</span> (temp_food_distance <span style="color: #666666">&lt;</span> min_distance):
+            <span style="color: #008000">min</span> <span style="color: #666666">=</span> temp
+            min_distance <span style="color: #666666">=</span> foodDistance(x,y,<span style="color: #008000">min</span>)
+
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">min</span>
+
+
+<span style="color: #408080; font-style: italic">#Moves the player to the x,y coordinate of the food it is chasing</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">getFood</span>(x,y,food):
+    food_x <span style="color: #666666">=</span> food[<span style="color: #666666">0</span>]
+    food_y <span style="color: #666666">=</span> food[<span style="color: #666666">1</span>]
+
+    <span style="color: #008000; font-weight: bold">while</span> (food_x <span style="color: #666666">!=</span> x):
+        <span style="color: #008000; font-weight: bold">if</span> (food_x <span style="color: #666666">&gt;</span> x):
+            x <span style="color: #666666">=</span> plusX(x,y)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            x <span style="color: #666666">=</span> minusX(x,y)
+
+    <span style="color: #008000; font-weight: bold">while</span> (food_y <span style="color: #666666">!=</span> y):
+        <span style="color: #008000; font-weight: bold">if</span> (food_y <span style="color: #666666">&gt;</span> y):
+            y <span style="color: #666666">=</span> plusY(x,y)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            y <span style="color: #666666">=</span> minusY(x,y)
+
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Mmmm yummy&quot;</span>)
+    <span style="color: #008000; font-weight: bold">return</span> x,y
+
+<span style="color: #408080; font-style: italic">#Draws a peice of food at a given location on the display</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">drawFood</span>(food_location):
+    <span style="color: #008000; font-weight: bold">for</span> food <span style="color: #AA22FF; font-weight: bold">in</span> food_location:
+        food_x <span style="color: #666666">=</span> food[<span style="color: #666666">0</span>]
+        food_y <span style="color: #666666">=</span> food[<span style="color: #666666">1</span>]
+        draw<span style="color: #666666">.</span>ellipse((food_x,food_y,food_x<span style="color: #666666">+</span>food_size,food_y<span style="color: #666666">+</span>food_size), outline<span style="color: #666666">=0</span>, fill<span style="color: #666666">=1</span>)
+<span style="color: #408080; font-style: italic">#--------------------------------------------------------------------------</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">MOVEMENT FUNCTIONS</span>
+
+<span style="color: #BA2121; font-style: italic">- All of the directions take an input of x,y of the player</span>
+<span style="color: #BA2121; font-style: italic">- If the player will go out of bounds, the function will return</span>
+<span style="color: #BA2121; font-style: italic">  the same x or y values that were meant to be changed</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #408080; font-style: italic">#Moves the player to the right (positive x direction)</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">plusX</span>(x,y):
+
+    <span style="color: #008000; font-weight: bold">if</span> (x<span style="color: #666666">+</span>player_size <span style="color: #666666">&lt;</span> width):
+        draw<span style="color: #666666">.</span>rectangle((x,y,x<span style="color: #666666">+</span>player_size,y<span style="color: #666666">+</span>player_size), outline<span style="color: #666666">=0</span>, fill<span style="color: #666666">=20</span>)
+        disp<span style="color: #666666">.</span>image(image)
+        disp<span style="color: #666666">.</span>display()
+        x<span style="color: #666666">+=</span>speed
+    <span style="color: #008000; font-weight: bold">return</span> x
+
+<span style="color: #408080; font-style: italic">#Moves the player to the left (negative x direction)</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">minusX</span>(x,y):
+
+    <span style="color: #008000; font-weight: bold">if</span> (x <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>):
+        draw<span style="color: #666666">.</span>rectangle((x,y,x<span style="color: #666666">+</span>player_size,y<span style="color: #666666">+</span>player_size), outline<span style="color: #666666">=0</span>, fill<span style="color: #666666">=1</span>)
+        disp<span style="color: #666666">.</span>image(image)
+        disp<span style="color: #666666">.</span>display()
+        x<span style="color: #666666">-=</span>speed
+    <span style="color: #008000; font-weight: bold">return</span> x
+
+<span style="color: #408080; font-style: italic">#Moves the player down (positive y direction)</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">plusY</span>(x,y):
+
+    <span style="color: #008000; font-weight: bold">if</span> (y<span style="color: #666666">+</span>player_size <span style="color: #666666">&lt;</span> height):
+        draw<span style="color: #666666">.</span>rectangle((x,y,x<span style="color: #666666">+</span>player_size,y<span style="color: #666666">+</span>player_size), outline<span style="color: #666666">=0</span>, fill<span style="color: #666666">=1</span>)
+        disp<span style="color: #666666">.</span>image(image)
+        disp<span style="color: #666666">.</span>display()
+        y<span style="color: #666666">+=</span>speed
+    <span style="color: #008000; font-weight: bold">return</span> y
+
+<span style="color: #408080; font-style: italic">#Moves the player up (negative y direction)</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">minusY</span>(x,y):
+
+    <span style="color: #008000; font-weight: bold">if</span> (y <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>):
+        draw<span style="color: #666666">.</span>rectangle((x,y,x<span style="color: #666666">+</span>player_size,y<span style="color: #666666">+</span>player_size), outline<span style="color: #666666">=0</span>, fill<span style="color: #666666">=1</span>)
+        disp<span style="color: #666666">.</span>image(image)
+        disp<span style="color: #666666">.</span>display()
+        y<span style="color: #666666">-=</span>speed
+    <span style="color: #008000; font-weight: bold">return</span> y
+<span style="color: #408080; font-style: italic">#--------------------------------------------------------------------------=</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">MAIN PROGRAM</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+Done <span style="color: #666666">=</span> <span style="color: #008000">False</span>
+<span style="color: #008000; font-weight: bold">while</span> (Done <span style="color: #666666">==</span> <span style="color: #008000">False</span>):
+    <span style="color: #008000; font-weight: bold">try</span>:
+
+        <span style="color: #408080; font-style: italic">#TODO implement keyboard controls</span>
+        <span style="color: #408080; font-style: italic">#Direction = up == key w</span>
+        <span style="color: #408080; font-style: italic">#Direction = down == key s</span>
+        <span style="color: #408080; font-style: italic">#Direction = left == key a</span>
+        <span style="color: #408080; font-style: italic">#Direction = right == key d</span>
+
+        <span style="color: #408080; font-style: italic">#Makes the fod list and draws the food</span>
+        food_location <span style="color: #666666">=</span> Start()
+        drawFood(food_location)
+
+        <span style="color: #408080; font-style: italic">#Runs until all the food is eaten</span>
+        <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(num_food):
+
+            <span style="color: #408080; font-style: italic">#Finds the food that is closest</span>
+            min_food <span style="color: #666666">=</span> getMinDistance(x,y,food_location)
+
+            <span style="color: #408080; font-style: italic">#Goes to the closest food</span>
+            x,y <span style="color: #666666">=</span> getFood(x,y,min_food)
+
+            <span style="color: #408080; font-style: italic">#Removes that peice of food from the location list and num_food</span>
+            food_location<span style="color: #666666">.</span>remove(min_food)
+            num_food <span style="color: #666666">-=</span> <span style="color: #666666">1</span>
+
+            <span style="color: #408080; font-style: italic">#Grows the player if the option is picked</span>
+            <span style="color: #008000; font-weight: bold">if</span> (grow <span style="color: #666666">==</span> <span style="color: #008000">True</span>):
+                player_size<span style="color: #666666">+=0.5</span>
+
+
+        Done <span style="color: #666666">=</span> <span style="color: #008000">True</span>
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;All done!&quot;</span>)
+
+    <span style="color: #008000; font-weight: bold">except</span> <span style="color: #D2413A; font-weight: bold">KeyboardInterrupt</span>:
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Goodbye!&quot;</span>)
+        <span style="color: #008000">exit</span>()
+</pre></div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="content-wrap">
+
+        <p>Copyright 2018 Paul Hohbaum and Colin Leslie</p>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </div>
+
+</body>
+
+</html>
