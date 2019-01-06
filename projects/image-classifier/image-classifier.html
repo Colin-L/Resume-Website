@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/projects/PROJECT.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <div class="customnavbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../portfolio.html">Portfolio</a>
+        <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "../../images/clipboard.png"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </header>
+
+  <script src="../../javascript/navBar.js"></script>
+    <!-- Nav Bar -->
+
+<!-- Copy Up to here for new projects -->
+<!-- </body>
+</html> -->
+<div class="container">
+
+
+<h2>Simple Image Classifier</h2>
+<p>For a image processing class my partners Randy Dang, Kevin Liang and I, were tasked with making a simple image classifier cabable if identifying pictures of numbers.</p>
+<p>There are 100 total images included. 10 of each digit. 5 images for each digit are randomly selected to be used for training data and the remaining 50 images are used for testing the classifier.</p>
+<p>The classifier uses a simple algorithm where the image is divided up into 9 sections and a feature vector is created that stores the ratio of black pixels to white pixels for each section. Feature vectors for each digit are created from the training data and are used to classify testing data.</p>
+<br>
+<p>Click on the images to enlarge them.</p>
+
+<!-- Image Gallary -->
+<div class="row">
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="1.png" target="_blank">
+          <img src="1.png" alt="Digit Images" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>All of the images for testing and training. The images are all saved in png format and collected from google images. The goal was to find a variety of digits will differnet fonts to test the robustness of the classifier.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="3.png" target="_blank">
+          <img src="3.png" alt="5 Divided into 9 sections" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>Each of the training images are divided up into 9 equal sections so that a feature vector can be created. This method assumes that images of the same number will have a similar ratio of black pixels to white pixels in each of the sections.</p>
+            <p>The advantage of this method is that it works even when the training and testing images are different sizes. To improve the classification rate of this program a thinning algorithm could be added to compensate for different line widths.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="4.png" target="_blank">
+          <img src="4.png" alt="5 Feature Vector" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>To create the feature vector the ratio of black pixels to white pixels is determined for each of the 9 sections. Digits should have similar feature vectors, the program finds the average ratio of all the training data for each digit and that is used in the classification stage.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="5.png" target="_blank">
+          <img src="5.png" alt="Another 5 feature vector" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>Another image of 5 with the ratio of black pixels to white pixels overlayed for each of the sections. This shows how the sections are similar for the same digits. </p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="7.png" target="_blank">
+          <img src="7.png" alt="Sample Output" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>Once all of the training data has been processes and there are average feature vectors for each of the digits have been created the testing phase can begin. In testing a image is selected and its feature vector is determined. That feature vector is then compared to all the average feature vectors found in the training phase. The vector with the minimum euclidian distance to the testing vector is what the image will be classified as. Since the training and testing data are randomly selected the results vary with each run, the classification rate is usually between 30%-60%.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  </div>
+<!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
+<!-- Image Gallary -->
+<h2>Future Improvements</h2>
+<hr>
+<p>Currently the image classifier is pretty basic in function and its classification rate is too low to be of much real use. As mentioned above I'd like to implement a thinning algoithm to help character recognition. I would also like to experient with implemnting a support vector machine that can do image recognition to identify more complex images such as objects.</p>
+
+<h2 class="code-header">Python Code</h2>
+<!-- Code -->
+<!-- HTML generated using hilite.me -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">PIL</span> <span style="color: #008000; font-weight: bold">import</span> Image
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">random</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">getVector</span>(imgName):
+    im <span style="color: #666666">=</span> Image<span style="color: #666666">.</span>open(imgName)<span style="color: #666666">.</span>convert(<span style="color: #BA2121">&quot;L&quot;</span>)
+    width, height <span style="color: #666666">=</span> im<span style="color: #666666">.</span>size
+
+    white1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white2 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white3 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white4 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white5 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white6 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white7 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white8 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    white9 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+
+    black1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black2 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black3 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black4 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black5 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black6 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black7 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black8 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    black9 <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+
+    x1 <span style="color: #666666">=</span> width<span style="color: #666666">/3</span>
+    x2 <span style="color: #666666">=</span> <span style="color: #666666">2*</span>x1
+
+    y1 <span style="color: #666666">=</span> height<span style="color: #666666">/3</span>
+    y2 <span style="color: #666666">=</span> <span style="color: #666666">2*</span>y1
+
+    <span style="color: #408080; font-style: italic"># Sectors</span>
+    <span style="color: #408080; font-style: italic"># 1 2 3</span>
+    <span style="color: #408080; font-style: italic"># 4 5 6</span>
+    <span style="color: #408080; font-style: italic"># 7 8 9</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(width):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(height):
+           <span style="color: #408080; font-style: italic">#Sector 1</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&lt;</span>x1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y1:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j)) <span style="color: #666666">&gt;</span> <span style="color: #666666">127</span>:
+                    white1 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black1 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 2</span>
+            <span style="color: #008000; font-weight: bold">if</span> x1<span style="color: #666666">&lt;</span>i <span style="color: #AA22FF; font-weight: bold">and</span> i<span style="color: #666666">&lt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y1:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white2 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black2 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 3</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&gt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y1:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white3 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black3 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 4</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&lt;</span>x1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white4 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black4 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 5</span>
+            <span style="color: #008000; font-weight: bold">if</span> x1<span style="color: #666666">&lt;</span>i <span style="color: #AA22FF; font-weight: bold">and</span> i<span style="color: #666666">&lt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white5 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black5 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 6</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&gt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&lt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white6 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black6 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 7</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&lt;</span>x1 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white7 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black7 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 8</span>
+            <span style="color: #008000; font-weight: bold">if</span> x1<span style="color: #666666">&lt;</span>i <span style="color: #AA22FF; font-weight: bold">and</span> i<span style="color: #666666">&lt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white8 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black8 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #408080; font-style: italic">#Sector 9</span>
+            <span style="color: #008000; font-weight: bold">if</span> i<span style="color: #666666">&gt;</span>x2 <span style="color: #AA22FF; font-weight: bold">and</span> j<span style="color: #666666">&gt;</span>y2:
+                <span style="color: #008000; font-weight: bold">if</span> im<span style="color: #666666">.</span>getpixel((i,j))<span style="color: #666666">&gt;127</span>:
+                    white9 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">else</span>:
+                    black9 <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    featureVector <span style="color: #666666">=</span> [black1<span style="color: #666666">/</span>white1,black2<span style="color: #666666">/</span>white2,black3<span style="color: #666666">/</span>white3,black4<span style="color: #666666">/</span>white4,black5<span style="color: #666666">/</span>white5,black6<span style="color: #666666">/</span>white6,black7<span style="color: #666666">/</span>white7,black8<span style="color: #666666">/</span>white8,black9<span style="color: #666666">/</span>white9]
+    <span style="color: #008000; font-weight: bold">return</span> featureVector
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">getCenterMass</span>(featureVectors):
+<span style="color: #408080; font-style: italic">#Inputs: featureVectors: A list of feature vectors containing all the featureVectors</span>
+<span style="color: #408080; font-style: italic">#for one digit</span>
+<span style="color: #408080; font-style: italic">#Outputs: center_mass: The average vector of a given set of vectors</span>
+    center_mass <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> x <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">9</span>):
+        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+        <span style="color: #008000; font-weight: bold">for</span> y <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (<span style="color: #008000">len</span>(featureVectors) <span style="color: #666666">-</span> <span style="color: #666666">1</span>):
+            <span style="color: #008000">sum</span> <span style="color: #666666">+=</span> featureVectors[y][x]
+        center_mass<span style="color: #666666">.</span>append(<span style="color: #008000">sum</span><span style="color: #666666">/</span>(<span style="color: #008000">len</span>(featureVectors)))
+    <span style="color: #008000; font-weight: bold">return</span> center_mass
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">getEDistance</span>(centerMass,featureVector):
+<span style="color: #408080; font-style: italic">#Inputs: featureVector: The feature vector of the image we want to classify</span>
+<span style="color: #408080; font-style: italic">#        centerMass : The average vector of a given set of vectors</span>
+<span style="color: #408080; font-style: italic">#Outputs: distance: The euclidean distance between the feature vector and the</span>
+<span style="color: #408080; font-style: italic"># centermass.</span>
+    distance <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">for</span> x <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (<span style="color: #666666">9</span>):   <span style="color: #408080; font-style: italic">#Distance</span>
+        distance <span style="color: #666666">+=</span> <span style="color: #008000">pow</span>((featureVector[x]<span style="color: #666666">-</span>centerMass[x]), <span style="color: #666666">2</span>)
+    distance <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(distance)
+    <span style="color: #008000; font-weight: bold">return</span> distance
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">classifyNumber</span>(featureVector,centerMasses):
+<span style="color: #408080; font-style: italic">#Inputs: featureVector: The feature vector of the image we want to classify</span>
+<span style="color: #408080; font-style: italic">#       centerMasses: A list containing feature vectors for numbers 1-10</span>
+<span style="color: #408080; font-style: italic">#Outputs: number: the number the program thinks the image is of</span>
+<span style="color: #408080; font-style: italic">#The function finds the center of mass with the minimium euclidian distance to the</span>
+<span style="color: #408080; font-style: italic">#feature vector. The center mass with the minimium distance is decided to be the number</span>
+    min_distance <span style="color: #666666">=</span> <span style="color: #666666">9999999</span>
+    <span style="color: #008000; font-weight: bold">for</span> x <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (<span style="color: #666666">10</span>):   <span style="color: #408080; font-style: italic">#Distance</span>
+        distance <span style="color: #666666">=</span> getEDistance(centerMasses[x],featureVector)
+        <span style="color: #008000; font-weight: bold">if</span> distance <span style="color: #666666">&lt;</span> min_distance:
+            min_distance <span style="color: #666666">=</span> distance
+            number <span style="color: #666666">=</span> x
+    <span style="color: #008000; font-weight: bold">return</span> number
+
+
+<span style="color: #408080; font-style: italic">#Main</span>
+
+<span style="color: #408080; font-style: italic">#Training</span>
+<span style="color: #408080; font-style: italic">#Loads 5 images selected randomly from a pool of 10 images for each number to train the algorithm</span>
+seed <span style="color: #666666">=</span> <span style="color: #008000">list</span>(<span style="color: #008000">range</span>(<span style="color: #666666">0</span>, <span style="color: #666666">10</span>))
+random<span style="color: #666666">.</span>shuffle(seed)
+centerMass <span style="color: #666666">=</span> []
+centerMasses <span style="color: #666666">=</span> []
+featureVectors <span style="color: #666666">=</span> []
+temp <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">5</span>):
+        <span style="color: #408080; font-style: italic">#Image file names will be follow the format [digit][image number].png</span>
+        <span style="color: #408080; font-style: italic">#The 4th image of a number 2 would be named 24.png</span>
+        imgFileName <span style="color: #666666">=</span> <span style="color: #008000">str</span>(i) <span style="color: #666666">+</span> <span style="color: #008000">str</span>(seed[j]) <span style="color: #666666">+</span><span style="color: #BA2121">&quot;.png&quot;</span>
+        temp<span style="color: #666666">.</span>append(getVector(imgFileName))
+    featureVectors<span style="color: #666666">.</span>append(temp)
+    temp <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>):
+    centerMasses<span style="color: #666666">.</span>append(getCenterMass(featureVectors[i]))
+
+<span style="color: #408080; font-style: italic">#Testing</span>
+<span style="color: #408080; font-style: italic">#Create feature vectors of all reamining images and classify them by comparing them to</span>
+<span style="color: #408080; font-style: italic">#the center of masses for each digit that was found during training</span>
+featureVectors <span style="color: #666666">=</span> []
+temp <span style="color: #666666">=</span> []
+img_file_name <span style="color: #666666">=</span> []
+temp_file_name <span style="color: #666666">=</span> []
+img_number <span style="color: #666666">=</span>[]
+actual_number <span style="color: #666666">=</span>[]
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">5</span>,<span style="color: #666666">10</span>):
+        <span style="color: #408080; font-style: italic">#Image file names will be follow the format [digit][image number].png</span>
+        <span style="color: #408080; font-style: italic">#The 4th image of a number 2 would be named 24.png</span>
+        imgFileName <span style="color: #666666">=</span> <span style="color: #008000">str</span>(i) <span style="color: #666666">+</span> <span style="color: #008000">str</span>(seed[j]) <span style="color: #666666">+</span><span style="color: #BA2121">&quot;.png&quot;</span>
+        img_number<span style="color: #666666">.</span>append(i)
+        temp_file_name<span style="color: #666666">.</span>append(imgFileName)
+        temp<span style="color: #666666">.</span>append(getVector(imgFileName))
+    featureVectors<span style="color: #666666">.</span>append(temp)
+    img_file_name<span style="color: #666666">.</span>append(temp_file_name)
+    actual_number<span style="color: #666666">.</span>append(img_number)
+    temp_file_name <span style="color: #666666">=</span> []
+    img_number <span style="color: #666666">=</span> []
+    temp <span style="color: #666666">=</span> []
+<span style="color: #408080; font-style: italic">#Classify each number in testing set</span>
+correct <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+incorrect <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(featureVectors[i])):
+        numberGuess <span style="color: #666666">=</span> classifyNumber(featureVectors[i][j],centerMasses)
+        <span style="color: #408080; font-style: italic"># print(&quot;Correct: &quot; + str(correct-1) + &quot; Incorrect: &quot; +str(incorrect-1) + &quot; %: &quot; + str((correct/incorrect)*100))</span>
+        <span style="color: #008000; font-weight: bold">print</span>(img_file_name[i][j] <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; Number Guess: {0:d} Actual Number: {1:d}&quot;</span><span style="color: #666666">.</span>format(numberGuess,actual_number[i][j]))
+        <span style="color: #008000; font-weight: bold">if</span> (numberGuess <span style="color: #666666">==</span> i):
+            correct <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            incorrect <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+correctPercentage <span style="color: #666666">=</span> (correct<span style="color: #666666">/</span>incorrect)<span style="color: #666666">*100</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Correct/Incorrect%: {0:.2f}&quot;</span><span style="color: #666666">.</span>format(correctPercentage))
+</pre></td></tr></table></div>
+
+
+
+<!-- Download -->
+<div class="container">
+  <h2>Download</h2>
+  <a class="btn-lg btn-primary" href="http://www.filedropper.com/a7classification" role="button">Download zip (0.55 MB)</a>
+</div>
+<!-- Download -->
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2018 by Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>
