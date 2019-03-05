@@ -55,9 +55,10 @@ table {
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+}
+th{
+  font-size: 2rem;
+  margin: 1px;
 }
 tr:nth-child(even) {
   background-color: #BBCAE3;
@@ -80,9 +81,11 @@ tr:nth-child(odd) {
 .center-cell{
   text-align: center;
 }
-.btn-info{
-  color: black;
+.btn{
+  /* color: black; */
+  margin: 2px;
 }
+
 
 /* Programming Experience */
 
