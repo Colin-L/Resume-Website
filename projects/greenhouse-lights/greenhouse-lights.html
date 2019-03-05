@@ -63,7 +63,7 @@
 <div class="container">
 
 
-  <h2>Greenhouse Lights V2.0</h2>
+  <h2>Greenhouse Lights V2.1</h2>
 
   <p>I recently got sucked up into the world of gardening and have been fascinated with everything to do with it. This summer I started my own vegetable garden outdoors and had great success. Living in Canada our Winters are too harsh to grow outside so I've opted to create an indoor hydroponic setup that can be used year round. One downside to indoor gardening is it requires artificial lighting which can be tricky, but I belive I have come up with a good solution.</p>
   <p>I bought a few 50W full spectrum LED grow lights and have set them up to operate on a timer using Arduino</p>
@@ -155,22 +155,181 @@
 
 <h2 class="code-header">Arduino Code</h2>
 <!-- Code -->
-<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// Date and time functions using a DS1307 RTC connected via I2C and Wire lib</span>
-<span style="color: #BC7A00">#include &lt;Wire.h&gt;</span>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#include &lt;Wire.h&gt;</span>
 <span style="color: #BC7A00">#include &quot;RTClib.h&quot;</span>
 
-<span style="color: #BC7A00">#if defined(ARDUINO_ARCH_SAMD)</span>
-<span style="color: #408080; font-style: italic">// for Zero, output on USB Serial console, remove line below if using programming port to program the Zero!</span>
-<span style="color: #BC7A00">#define Serial SerialUSB</span>
-<span style="color: #BC7A00">#endif</span>
+<span style="color: #408080; font-style: italic">//-----------------------Pins-----------------------------------------------------------</span>
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> RELAY_PIN <span style="color: #666666">=</span> <span style="color: #666666">3</span>;
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> MOSFET_PIN <span style="color: #666666">=</span> <span style="color: #666666">10</span>;
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> BUTTON_PIN <span style="color: #666666">=</span> <span style="color: #666666">2</span>;
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> FAN_SPEED <span style="color: #666666">=</span> <span style="color: #666666">105</span>;  <span style="color: #408080; font-style: italic">//0-255 127 is 50%</span>
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> PULLUP_PIN <span style="color: #666666">=</span> <span style="color: #666666">9</span>;   <span style="color: #408080; font-style: italic">//Provides 5V to button</span>
+<span style="color: #408080; font-style: italic">//--------------------------------------------------------------------------------------</span>
+
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> LIGHTS_ON_HOUR <span style="color: #666666">=</span> <span style="color: #666666">19</span>;
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> LIGHTS_OFF_HOUR <span style="color: #666666">=</span> <span style="color: #666666">7</span>;
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">int</span> BUTTON_ON_TIME <span style="color: #666666">=</span> <span style="color: #666666">20</span>; <span style="color: #408080; font-style: italic">//Turn lights on for 20 mins when button is pressed</span>
 
 RTC_DS1307 rtc;
+<span style="color: #B00040">long</span> offTime <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+<span style="color: #B00040">bool</span> lightsOn <span style="color: #666666">=</span> <span style="color: #008000">false</span>;
 
-<span style="color: #B00040">char</span> daysOfTheWeek[<span style="color: #666666">7</span>][<span style="color: #666666">12</span>] <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;Sunday&quot;</span>, <span style="color: #BA2121">&quot;Monday&quot;</span>, <span style="color: #BA2121">&quot;Tuesday&quot;</span>, <span style="color: #BA2121">&quot;Wednesday&quot;</span>, <span style="color: #BA2121">&quot;Thursday&quot;</span>, <span style="color: #BA2121">&quot;Friday&quot;</span>, <span style="color: #BA2121">&quot;Saturday&quot;</span>};
-<span style="color: #B00040">int</span> relayPin <span style="color: #666666">=</span> <span style="color: #666666">3</span>;
-<span style="color: #B00040">int</span> MOSFETpin <span style="color: #666666">=</span> <span style="color: #666666">10</span>;
-<span style="color: #B00040">int</span> FAN_SPEED <span style="color: #666666">=</span> <span style="color: #666666">105</span>;  <span style="color: #408080; font-style: italic">//0-255 127 is 50%</span>
+<span style="color: #408080; font-style: italic">//Interupt function </span>
+<span style="color: #408080; font-style: italic">//offTime is a long int, it stores the time in secondstime for when the lights should turn off</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">turnOnLights</span>() {
+  Serial.print(<span style="color: #BA2121">&quot;Button Pressed: Turning On lights for &quot;</span>);
+  Serial.print(BUTTON_ON_TIME);
+  Serial.println(<span style="color: #BA2121">&quot; minutes&quot;</span>);
+  DateTime now <span style="color: #666666">=</span> rtc.now();
+  offTime <span style="color: #666666">=</span> now.secondstime() <span style="color: #666666">+</span> BUTTON_ON_TIME<span style="color: #666666">*60</span>;
+}
+<span style="color: #B00040">void</span> <span style="color: #0000FF">buttonInterrupt</span>(){
+  lightsOn <span style="color: #666666">=</span> <span style="color: #008000">true</span>;
+}
 
+<span style="color: #408080; font-style: italic">//Sets up the pwm for the fan speed</span>
 <span style="color: #B00040">void</span> <span style="color: #0000FF">setPwmFrequency</span>(<span style="color: #B00040">int</span> pin, <span style="color: #B00040">int</span> divisor) {
   byte mode;
   <span style="color: #008000; font-weight: bold">if</span>(pin <span style="color: #666666">==</span> <span style="color: #666666">5</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">6</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">9</span> <span style="color: #666666">||</span> pin <span style="color: #666666">==</span> <span style="color: #666666">10</span>) {
@@ -203,81 +362,93 @@ RTC_DS1307 rtc;
 }
 
 <span style="color: #B00040">void</span> <span style="color: #0000FF">setup</span> () {
-
-<span style="color: #BC7A00">#ifndef ESP8266</span>
-  <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>Serial); <span style="color: #408080; font-style: italic">// for Leonardo/Micro/Zero</span>
-<span style="color: #BC7A00">#endif</span>
-
+  <span style="color: #408080; font-style: italic">//------------RTC Setup-----------------------------------------------------------</span>
   Serial.begin(<span style="color: #666666">57600</span>);
+  Serial.println(<span style="color: #BA2121">&quot;Setup&quot;</span>);
   <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.begin()) {
     Serial.println(<span style="color: #BA2121">&quot;Couldn&#39;t find RTC&quot;</span>);
     <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>);
   }
-
   <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span> rtc.isrunning()) {
     Serial.println(<span style="color: #BA2121">&quot;RTC is NOT running!&quot;</span>);
     <span style="color: #408080; font-style: italic">// following line sets the 0RTC to the date &amp; time this sketch was compiled</span>
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
-  <span style="color: #408080; font-style: italic">//rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));</span>
-  pinMode(MOSFETpin, OUTPUT);
-  pinMode(relayPin, OUTPUT);
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  <span style="color: #408080; font-style: italic">//---------------------------------------------------------------------------------</span>
+  pinMode(MOSFET_PIN, OUTPUT);
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT);
+  pinMode(PULLUP_PIN,OUTPUT);
 
-  <span style="color: #408080; font-style: italic">// Set pin 10&#39;s PWM frequency to 31 Hz (31250/1024 = 31)</span>
-  setPwmFrequency(<span style="color: #666666">10</span>, <span style="color: #666666">1024</span>);
+  digitalWrite(PULLUP_PIN,HIGH);
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN),buttonInterrupt, FALLING);
+
+  <span style="color: #408080; font-style: italic">// Set MOSFET_PIN&#39;s PWM frequency to 31 Hz (31250/1024 = 31)</span>
+  setPwmFrequency(MOSFET_PIN, <span style="color: #666666">1024</span>);
 
   <span style="color: #408080; font-style: italic">//Turn everything on/off for 3 seconds to make sure its working</span>
-  analogWrite(MOSFETpin, FAN_SPEED);
-  digitalWrite(relayPin, HIGH);
+  analogWrite(MOSFET_PIN, FAN_SPEED);
+  digitalWrite(RELAY_PIN, HIGH);
   delay(<span style="color: #666666">3000</span>);
-  analogWrite(MOSFETpin, <span style="color: #666666">0</span>);
-  digitalWrite(relayPin, LOW);
+  analogWrite(MOSFET_PIN, <span style="color: #666666">0</span>);
+  digitalWrite(RELAY_PIN, LOW);
   delay(<span style="color: #666666">3000</span>);
 } <span style="color: #408080; font-style: italic">//end setup</span>
 
 <span style="color: #B00040">void</span> <span style="color: #0000FF">loop</span> () {
   DateTime now <span style="color: #666666">=</span> rtc.now();
-
 <span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
-      Serial.print(now.year(), DEC);
-      Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
-      Serial.print(now.month(), DEC);
-      Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
-      Serial.print(now.day(), DEC);
-      Serial.print(<span style="color: #BA2121">&quot; (&quot;</span>);
-      Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
-      Serial.print(<span style="color: #BA2121">&quot;) &quot;</span>);
-      Serial.print(now.hour(), DEC);
-      Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
-      Serial.print(now.minute(), DEC);
-      Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
-      Serial.print(now.second(), DEC);
-      Serial.println();
-
-<span style="color: #408080; font-style: italic">//    Toggle Light</span>
-<span style="color: #408080; font-style: italic">//    digitalWrite(relayPin, !digitalRead(relayPin));</span>
+  <span style="color: #B00040">char</span> daysOfTheWeek[<span style="color: #666666">7</span>][<span style="color: #666666">12</span>] <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;Sunday&quot;</span>, <span style="color: #BA2121">&quot;Monday&quot;</span>, <span style="color: #BA2121">&quot;Tuesday&quot;</span>, <span style="color: #BA2121">&quot;Wednesday&quot;</span>, <span style="color: #BA2121">&quot;Thursday&quot;</span>, <span style="color: #BA2121">&quot;Friday&quot;</span>, <span style="color: #BA2121">&quot;Saturday&quot;</span>};
+  Serial.print(now.year(), DEC);
+  Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
+  Serial.print(now.month(), DEC);
+  Serial.print(<span style="color: #BA2121">&#39;/&#39;</span>);
+  Serial.print(now.day(), DEC);
+  Serial.print(<span style="color: #BA2121">&quot; (&quot;</span>);
+  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+  Serial.print(<span style="color: #BA2121">&quot;) &quot;</span>);
+  Serial.print(now.hour(), DEC);
+  Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
+  Serial.print(now.minute(), DEC);
+  Serial.print(<span style="color: #BA2121">&#39;:&#39;</span>);
+  Serial.print(now.second(), DEC);
+  Serial.println();
+<span style="color: #408080; font-style: italic">//Toggle Light</span>
+<span style="color: #408080; font-style: italic">//digitalWrite(RELAY_PIN, !digitalRead(RELAY_PIN));</span>
 <span style="color: #408080; font-style: italic">//--------------    DEBUG   --------------</span>
 
-  <span style="color: #408080; font-style: italic">//Turns the light on at 5pm off at 11am. Light is only on during off peak hours</span>
-  <span style="color: #008000; font-weight: bold">if</span> (now.hour() <span style="color: #666666">&gt;=</span> <span style="color: #666666">11</span> and now.hour() <span style="color: #666666">&lt;</span> <span style="color: #666666">17</span>) {
-    digitalWrite(relayPin, LOW);
-    analogWrite(MOSFETpin, <span style="color: #666666">0</span>);
-  } <span style="color: #008000; font-weight: bold">else</span> {
-    digitalWrite(relayPin, HIGH);
-    analogWrite(MOSFETpin, FAN_SPEED);
+  <span style="color: #008000; font-weight: bold">if</span> (lightsOn){
+    turnOnLights();
+    lightsOn <span style="color: #666666">=</span> <span style="color: #008000">false</span>;
   }
 
-  <span style="color: #408080; font-style: italic">//Poll every 5 seconds</span>
-  delay(<span style="color: #666666">5000</span>);
+  <span style="color: #408080; font-style: italic">//Turns the light on at 5pm off at 11am. This is so light is only on during off peak hours</span>
+  <span style="color: #408080; font-style: italic">//or if the button is pressed the lights will be on for 20 minutes</span>
+  <span style="color: #008000; font-weight: bold">if</span> (offTime <span style="color: #666666">&gt;=</span> now.secondstime()){
+    digitalWrite(RELAY_PIN, HIGH);
+    analogWrite(MOSFET_PIN, FAN_SPEED);
+  }<span style="color: #008000; font-weight: bold">else</span>{
+    <span style="color: #008000; font-weight: bold">if</span> (now.hour() <span style="color: #666666">&gt;=</span> LIGHTS_OFF_HOUR and now.hour() <span style="color: #666666">&lt;</span> LIGHTS_ON_HOUR) {
+      digitalWrite(RELAY_PIN, LOW);
+      analogWrite(MOSFET_PIN, <span style="color: #666666">0</span>);
+    } <span style="color: #008000; font-weight: bold">else</span> {
+      digitalWrite(RELAY_PIN, HIGH);
+      analogWrite(MOSFET_PIN, FAN_SPEED);
+    }
+  }
+  <span style="color: #408080; font-style: italic">//Poll every second</span>
+  delay(<span style="color: #666666">1000</span>);
 } <span style="color: #408080; font-style: italic">//Loop End</span>
-</pre></div>
+</pre></td></tr></table></div>
+
 <!-- code -->
 
 <!-- Footer -->
 <footer>
   <div class="content-wrap">
 
-    <p>Copyright 2018 by Colin Leslie</p>
+    <p>Copyright 2019. Colin Leslie</p>
   </div>
 </footer>
 <!-- Footer -->
