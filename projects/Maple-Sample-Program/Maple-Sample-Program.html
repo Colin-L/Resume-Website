@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/projects/PROJECT.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <div class="customnavbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../portfolio.html">Portfolio</a>
+        <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "../../images/clipboard.png"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </header>
+
+  <script src="../../javascript/navBar.js"></script>
+    <!-- Nav Bar -->
+
+<!-- Copy Up to here for new projects -->
+<!-- </body>
+</html> -->
+<div class="container">
+
+
+<h2>Maple Romberg Numerical Integration </h2>
+<p>For a Scientific Computation class we had to do a lot of work with the mathmatics software maple. For an assignment we had to impement Romberg Integration using maple. </p>
+<p>"Romberg integration is an extrapolation technique which allows us to take a sequence, approximate solutions to an integral and calculate a better approximation. This technique assumes that the function we are integrating is sufficiently differentiable". <sup><a href="https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/13Integration/romberg/complete.html">[1]</a></sup> </p>
+<br>
+
+<h2>Maple Code</h2>
+<p><img src="101Maple.PNG" alt="image" /></p>
+<br>
+<h2>Testing</h2>
+<p>1. Integrating <img src="math1.PNG" alt=""> on the interval [1,0] gives the following. To obtain 10 digits of accuracy when computed to the exact answer 7 rows of the Romberg array are required.</p>
+<p><img src="101Answer.PNG" alt="image" /></p>
+<p>2. Integrating <img src="math2.PNG" alt=""> on the interval <img src="math3.PNG" alt=""> gives the following. To obtain 8 digits of accuracy when computed to the exact answer 10 rows of the Romberg array are required.</p>
+<p><img src="102Answer.PNG" alt="image" /></p>
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2019. Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>
