@@ -44,6 +44,49 @@ body{
     background: #EDF2F4;
 }
 
+/* Programming Experience */
+
+/* Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+tr:nth-child(even) {
+  background-color: #BBCAE3;
+}
+tr:nth-child(odd) {
+  /* background-color: #5B77A5; */
+  background-color: #879EC5;
+}
+/* Table */
+.vertical-menu {
+  width: 100%;
+  height: 200px;
+  overflow-y: auto;
+}
+.programming-experience{
+  background-color:red ;
+  color: #2B2D42;
+  background: #2B2D42;
+}
+.center-cell{
+  text-align: center;
+}
+.btn-info{
+  color: black;
+}
+
+/* Programming Experience */
+
+
 /* Education
 ------------------------------------*/
 .education {

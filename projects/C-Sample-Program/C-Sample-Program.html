@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/projects/PROJECT.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <div class="customnavbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../portfolio.html">Portfolio</a>
+        <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "../../images/clipboard.png"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </header>
+
+  <script src="../../javascript/navBar.js"></script>
+    <!-- Nav Bar -->
+
+</html>
+<div class="container">
+
+
+<h2>Shortest Remaining Time First Process Scheduler</h2>
+<p></p>
+<br>
+
+<h2 class="code-header">C Code</h2>
+<!-- Code -->
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/*</span>
+<span style="color: #408080; font-style: italic"> ============================================================================</span>
+<span style="color: #408080; font-style: italic"> Name        : ProcessScheduler.c</span>
+<span style="color: #408080; font-style: italic"> Author      : Colin Leslie</span>
+<span style="color: #408080; font-style: italic"> Version     : 1.1</span>
+<span style="color: #408080; font-style: italic"> Copyright   : Copyright Colin Leslie 2018</span>
+<span style="color: #408080; font-style: italic"> Description : Shortest Remaining Time First Process Scheduler</span>
+<span style="color: #408080; font-style: italic"> ============================================================================</span>
+<span style="color: #408080; font-style: italic"> */</span>
+
+<span style="color: #BC7A00">#include &lt;stdio.h&gt;</span>
+<span style="color: #BC7A00">#include &lt;stdlib.h&gt;</span>
+<span style="color: #BC7A00">#include &lt;string.h&gt;</span>
+
+<span style="color: #408080; font-style: italic">//Var</span>
+<span style="color: #B00040">int</span> global_time <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+	<span style="color: #B00040">int</span> ex_time[<span style="color: #666666">20</span>];
+	<span style="color: #B00040">int</span> time;
+	<span style="color: #B00040">int</span> process_id;
+	<span style="color: #B00040">int</span> service_time;
+	<span style="color: #B00040">int</span> timeWhenBlocked;
+	<span style="color: #B00040">int</span> waitTime;
+	<span style="color: #B00040">int</span> totalTimeBlocked;
+	<span style="color: #B00040">int</span> runningTime;
+	<span style="color: #B00040">int</span> timeWhenReady;
+	<span style="color: #B00040">int</span> totalTimeReady;
+} process;
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+	<span style="color: #B00040">int</span> priority;
+	process data;
+} <span style="color: #B00040">node_t</span>;
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+	<span style="color: #B00040">node_t</span> <span style="color: #666666">*</span>nodes;
+	<span style="color: #B00040">int</span> length;
+	<span style="color: #B00040">int</span> size;
+} priorityQueue;
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+	<span style="color: #B00040">node_t</span> <span style="color: #666666">*</span>nodes;
+	<span style="color: #B00040">int</span> len;
+	<span style="color: #B00040">int</span> size;
+} <span style="color: #B00040">heap_t</span>;
+<span style="color: #408080; font-style: italic">//Functions</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">printProcess</span>(process p) {
+	printf(<span style="color: #BA2121">&quot;%d %d %d %d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, p.process_id, p.runningTime, p.totalTimeReady,
+			p.totalTimeBlocked);
+	<span style="color: #008000; font-weight: bold">return</span>;
+}
+
+process <span style="color: #0000FF">initProcess</span>() {
+	process p;
+	<span style="color: #B00040">int</span> i;
+	p.process_id <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.runningTime <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.service_time <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.time <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.timeWhenBlocked <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.totalTimeBlocked <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.waitTime <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.timeWhenReady <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	p.totalTimeReady <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+	<span style="color: #008000; font-weight: bold">for</span> (i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">20</span>; i<span style="color: #666666">++</span>) {
+		p.ex_time[i] <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	}
+	<span style="color: #008000; font-weight: bold">return</span> p;
+}
+
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">push</span>(<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>h, <span style="color: #B00040">int</span> priority, process data) {
+	<span style="color: #008000; font-weight: bold">if</span> (h<span style="color: #666666">-&gt;</span>len <span style="color: #666666">+</span> <span style="color: #666666">1</span> <span style="color: #666666">&gt;=</span> h<span style="color: #666666">-&gt;</span>size) {
+		h<span style="color: #666666">-&gt;</span>size <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>size <span style="color: #666666">?</span> h<span style="color: #666666">-&gt;</span>size <span style="color: #666666">*</span> <span style="color: #666666">2</span> <span style="color: #666666">:</span> <span style="color: #666666">4</span>;
+		h<span style="color: #666666">-&gt;</span>nodes <span style="color: #666666">=</span> (<span style="color: #B00040">node_t</span> <span style="color: #666666">*</span>) realloc(h<span style="color: #666666">-&gt;</span>nodes, h<span style="color: #666666">-&gt;</span>size <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">node_t</span>));
+	}
+	<span style="color: #B00040">int</span> i <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>len <span style="color: #666666">+</span> <span style="color: #666666">1</span>;
+	<span style="color: #B00040">int</span> j <span style="color: #666666">=</span> i <span style="color: #666666">/</span> <span style="color: #666666">2</span>;
+	<span style="color: #008000; font-weight: bold">while</span> (i <span style="color: #666666">&gt;</span> <span style="color: #666666">1</span> <span style="color: #666666">&amp;&amp;</span> h<span style="color: #666666">-&gt;</span>nodes[j].priority <span style="color: #666666">&gt;</span> priority) {
+		h<span style="color: #666666">-&gt;</span>nodes[i] <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>nodes[j];
+		i <span style="color: #666666">=</span> j;
+		j <span style="color: #666666">=</span> j <span style="color: #666666">/</span> <span style="color: #666666">2</span>;
+	}
+	h<span style="color: #666666">-&gt;</span>nodes[i].priority <span style="color: #666666">=</span> priority;
+	h<span style="color: #666666">-&gt;</span>nodes[i].data <span style="color: #666666">=</span> data;
+	h<span style="color: #666666">-&gt;</span>len<span style="color: #666666">++</span>;
+}
+<span style="color: #B00040">int</span> <span style="color: #0000FF">isEmpty</span>(<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>h) {
+	<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span>h<span style="color: #666666">-&gt;</span>len) { <span style="color: #408080; font-style: italic">//if empty</span>
+		<span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">1</span>;
+	}
+	<span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
+}
+
+process <span style="color: #0000FF">pop</span>(<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>h) {
+	<span style="color: #B00040">int</span> i, j, k;
+	<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span>h<span style="color: #666666">-&gt;</span>len) {
+		process empty;
+		<span style="color: #008000; font-weight: bold">return</span> empty;
+	}
+	process data <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>nodes[<span style="color: #666666">1</span>].data;
+	h<span style="color: #666666">-&gt;</span>nodes[<span style="color: #666666">1</span>] <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>nodes[h<span style="color: #666666">-&gt;</span>len];
+	h<span style="color: #666666">-&gt;</span>len<span style="color: #666666">--</span>;
+	i <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+	<span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>) {
+		k <span style="color: #666666">=</span> i;
+		j <span style="color: #666666">=</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> i;
+		<span style="color: #008000; font-weight: bold">if</span> (j <span style="color: #666666">&lt;=</span> h<span style="color: #666666">-&gt;</span>len <span style="color: #666666">&amp;&amp;</span> h<span style="color: #666666">-&gt;</span>nodes[j].priority <span style="color: #666666">&lt;</span> h<span style="color: #666666">-&gt;</span>nodes[k].priority) {
+			k <span style="color: #666666">=</span> j;
+		}
+		<span style="color: #008000; font-weight: bold">if</span> (j <span style="color: #666666">+</span> <span style="color: #666666">1</span> <span style="color: #666666">&lt;=</span> h<span style="color: #666666">-&gt;</span>len
+				<span style="color: #666666">&amp;&amp;</span> h<span style="color: #666666">-&gt;</span>nodes[j <span style="color: #666666">+</span> <span style="color: #666666">1</span>].priority <span style="color: #666666">&lt;</span> h<span style="color: #666666">-&gt;</span>nodes[k].priority) {
+			k <span style="color: #666666">=</span> j <span style="color: #666666">+</span> <span style="color: #666666">1</span>;
+		}
+		<span style="color: #008000; font-weight: bold">if</span> (k <span style="color: #666666">==</span> i) {
+			<span style="color: #008000; font-weight: bold">break</span>;
+		}
+		h<span style="color: #666666">-&gt;</span>nodes[i] <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>nodes[k];
+		i <span style="color: #666666">=</span> k;
+	}
+	h<span style="color: #666666">-&gt;</span>nodes[i] <span style="color: #666666">=</span> h<span style="color: #666666">-&gt;</span>nodes[h<span style="color: #666666">-&gt;</span>len <span style="color: #666666">+</span> <span style="color: #666666">1</span>];
+	<span style="color: #008000; font-weight: bold">return</span> data;
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(<span style="color: #B00040">int</span> argc, <span style="color: #B00040">char</span> <span style="color: #008000; font-weight: bold">const</span> <span style="color: #666666">*</span>argv[]) {
+
+	<span style="color: #B00040">int</span> blocked;
+	process processZero, temp;
+	<span style="color: #B00040">int</span> i,line;
+	line <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+	<span style="color: #B00040">char</span> input[<span style="color: #666666">100</span>];
+	process processes[<span style="color: #666666">30</span>]; <span style="color: #408080; font-style: italic">//Max of 30 processes</span>
+	temp <span style="color: #666666">=</span> initProcess();
+	processZero <span style="color: #666666">=</span> initProcess();
+	<span style="color: #008000; font-weight: bold">for</span> (i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">30</span>; i<span style="color: #666666">++</span>) {
+		processes[i] <span style="color: #666666">=</span> temp;
+	}
+
+	setbuf(stdout, <span style="color: #008000">NULL</span>);
+	gets(input);
+	<span style="color: #008000; font-weight: bold">while</span> (strcmp(input, <span style="color: #BA2121">&quot;&quot;</span>) <span style="color: #666666">!=</span> <span style="color: #666666">0</span>) {
+		processes[line].time <span style="color: #666666">=</span> atoi(strtok(input, <span style="color: #BA2121">&quot; &quot;</span>));
+		processes[line].process_id <span style="color: #666666">=</span> atoi(strtok(<span style="color: #008000">NULL</span>, <span style="color: #BA2121">&quot; &quot;</span>));
+		processes[line].service_time <span style="color: #666666">=</span> atoi(strtok(<span style="color: #008000">NULL</span>, <span style="color: #BA2121">&quot; &quot;</span>));
+
+		i <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+		processes[line].ex_time[i] <span style="color: #666666">=</span> atoi(strtok(<span style="color: #008000">NULL</span>, <span style="color: #BA2121">&quot; &quot;</span>));
+		<span style="color: #008000; font-weight: bold">while</span> (processes[line].ex_time[i] <span style="color: #666666">!=</span> <span style="color: #666666">0</span>) {
+			i<span style="color: #666666">++</span>;
+			processes[line].ex_time[i] <span style="color: #666666">=</span> atoi(strtok(<span style="color: #008000">NULL</span>, <span style="color: #BA2121">&quot; &quot;</span>));
+
+		} <span style="color: #408080; font-style: italic">//while end</span>
+		line<span style="color: #666666">++</span>;
+		gets(input);
+	} <span style="color: #408080; font-style: italic">//get input end</span>
+	printf(<span style="color: #BA2121">&quot;[Shortest Remaining Time First]</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>);
+	<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>newQueue <span style="color: #666666">=</span> (<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>) calloc(<span style="color: #666666">1</span>, <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">heap_t</span>));
+	<span style="color: #008000; font-weight: bold">for</span> (i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> line <span style="color: #666666">+</span> <span style="color: #666666">1</span>; i<span style="color: #666666">++</span>) { <span style="color: #408080; font-style: italic">//insert processes into  newQueue</span>
+		push(newQueue, processes[i].time, processes[i]);
+	}
+	<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>readyQueue <span style="color: #666666">=</span> (<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>) calloc(<span style="color: #666666">1</span>, <span style="color: #008000; font-weight: bold">sizeof</span>(<span style="color: #B00040">heap_t</span>));
+
+	<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>blockedQueue <span style="color: #666666">=</span> (<span style="color: #B00040">heap_t</span> <span style="color: #666666">*</span>) calloc(<span style="color: #666666">1</span>,
+			<span style="color: #008000; font-weight: bold">sizeof</span>(priorityQueue));
+
+	process newProcess;
+	newProcess <span style="color: #666666">=</span> initProcess();
+	<span style="color: #008000; font-weight: bold">while</span> (isEmpty(newQueue) <span style="color: #666666">!=</span> <span style="color: #666666">1</span> <span style="color: #666666">||</span> isEmpty(readyQueue) <span style="color: #666666">!=</span> <span style="color: #666666">1</span>
+			<span style="color: #666666">||</span> isEmpty(blockedQueue) <span style="color: #666666">!=</span> <span style="color: #666666">1</span>) {
+		<span style="color: #408080; font-style: italic">//printf(&quot;New: %d, Ready: %d, Blocked: %d\n&quot;, isEmpty(newQueue),</span>
+		<span style="color: #408080; font-style: italic">//	isEmpty(readyQueue), isEmpty(blockedQueue));</span>
+		blocked <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+		<span style="color: #408080; font-style: italic">//move items from new queue to readyQueue if appropriate</span>
+		newProcess <span style="color: #666666">=</span> pop(newQueue);
+		<span style="color: #008000; font-weight: bold">if</span> (newProcess.process_id <span style="color: #666666">!=</span> <span style="color: #666666">0</span>) {
+			<span style="color: #008000; font-weight: bold">if</span> (newProcess.time <span style="color: #666666">&lt;=</span> global_time) {
+				newProcess.timeWhenReady <span style="color: #666666">=</span> global_time;
+				push(readyQueue, newProcess.service_time, newProcess);
+			} <span style="color: #008000; font-weight: bold">else</span> {
+				push(newQueue, newProcess.time, newProcess);
+		}}
+
+		<span style="color: #408080; font-style: italic">//get process from blocked queue</span>
+		newProcess <span style="color: #666666">=</span> pop(blockedQueue);
+		<span style="color: #008000; font-weight: bold">if</span> (newProcess.process_id <span style="color: #666666">!=</span> <span style="color: #666666">0</span>) {
+			<span style="color: #008000; font-weight: bold">if</span> (newProcess.timeWhenBlocked <span style="color: #666666">+</span> newProcess.waitTime
+					<span style="color: #666666">&lt;=</span> global_time) {
+				newProcess.totalTimeBlocked <span style="color: #666666">+=</span> global_time
+						<span style="color: #666666">-</span> newProcess.timeWhenBlocked;
+				newProcess.timeWhenReady <span style="color: #666666">=</span> global_time;
+				push(readyQueue, newProcess.service_time, newProcess); <span style="color: #408080; font-style: italic">//subract service_time from max int</span>
+		} <span style="color: #008000; font-weight: bold">else</span> {
+				push(blockedQueue,
+						newProcess.timeWhenBlocked <span style="color: #666666">+</span> newProcess.waitTime,
+						newProcess);
+		}
+	}
+
+	<span style="color: #408080; font-style: italic">//run process from readyQueue</span>
+		newProcess <span style="color: #666666">=</span> pop(readyQueue);
+		<span style="color: #008000; font-weight: bold">if</span> (newProcess.process_id <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+			processZero.runningTime <span style="color: #666666">+=</span> <span style="color: #666666">100</span>;
+		} <span style="color: #008000; font-weight: bold">else</span> {
+			i <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+			<span style="color: #008000; font-weight: bold">while</span> (newProcess.ex_time[i] <span style="color: #666666">!=</span> <span style="color: #666666">0</span>) {
+				<span style="color: #008000; font-weight: bold">if</span> (newProcess.runningTime <span style="color: #666666">==</span> newProcess.ex_time[i]) {
+					newProcess.timeWhenBlocked <span style="color: #666666">=</span> global_time;
+					newProcess.waitTime <span style="color: #666666">=</span> <span style="color: #666666">800</span>;
+					newProcess.runningTime <span style="color: #666666">+=</span> <span style="color: #666666">100</span>;
+					newProcess.service_time <span style="color: #666666">-=</span> <span style="color: #666666">100</span>;
+					push(blockedQueue,
+						newProcess.timeWhenBlocked <span style="color: #666666">+</span> newProcess.waitTime,
+						newProcess);
+					blocked <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+					<span style="color: #008000; font-weight: bold">break</span>;
+
+				}
+				i<span style="color: #666666">++</span>;
+			} <span style="color: #408080; font-style: italic">//while end</span>
+			<span style="color: #008000; font-weight: bold">if</span> (blocked <span style="color: #666666">!=</span> <span style="color: #666666">1</span>) {
+				<span style="color: #008000; font-weight: bold">if</span> (newProcess.service_time <span style="color: #666666">&lt;=</span> <span style="color: #666666">0</span>) {
+					newProcess.totalTimeReady <span style="color: #666666">+=</span> global_time<span style="color: #666666">-</span> newProcess.timeWhenReady;
+					printProcess(newProcess);
+				} <span style="color: #008000; font-weight: bold">else</span> {
+					newProcess.totalTimeReady <span style="color: #666666">+=</span> global_time<span style="color: #666666">-</span> newProcess.timeWhenReady;
+					newProcess.service_time <span style="color: #666666">-=</span> <span style="color: #666666">100</span>;
+					newProcess.runningTime <span style="color: #666666">+=</span> <span style="color: #666666">100</span>;
+					newProcess.timeWhenReady <span style="color: #666666">=</span> global_time;
+					push(readyQueue, newProcess.service_time, newProcess);
+					<span style="color: #408080; font-style: italic">//printProcess(newProcess);</span>
+			}
+		}
+		} <span style="color: #408080; font-style: italic">//else end</span>
+	global_time <span style="color: #666666">+=</span> <span style="color: #666666">100</span>;
+		printf(<span style="color: #BA2121">&quot;RQ LEN: %d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, readyQueue<span style="color: #666666">-&gt;</span>len);
+		printf(<span style="color: #BA2121">&quot;BQ LEN: %d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, blockedQueue<span style="color: #666666">-&gt;</span>len);
+
+	} <span style="color: #408080; font-style: italic">//time loop end</span>
+
+	printProcess(processZero);
+
+	<span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
+} <span style="color: #408080; font-style: italic">//main end</span>
+</pre></td></tr></table></div>
+<!-- Code -->
+
+
+<!-- Download -->
+<div class="container">
+  <h2>Download</h2>
+  <a class="btn-lg btn-primary" href="http://www.filedropper.com/flippeddownload" role="button">Download zip (1.1 MB)</a>
+</div>
+<!-- Download -->
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2019. Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>

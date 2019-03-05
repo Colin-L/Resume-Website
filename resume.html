@@ -34,7 +34,6 @@ window.onload = function() {
     gtag('config', 'UA-129132395-1');
   </script>
 </head>
-
 <body>
 
   <!-- Nav Bar -->
@@ -44,11 +43,8 @@ window.onload = function() {
       <a href="resume.html">Resume</a>
       <a href="portfolio.html">Portfolio</a>
       <div class="customnavBar">
-
-
       <div class="customdropdown">
         <button class="customdropbtn" onclick="myFunction()">Contact
-
         </button>
         <div class="customdropdown-content" id="myDropdown">
           <h4>Reach me at:</h4>
@@ -60,14 +56,11 @@ window.onload = function() {
       </div>
       </div>
     </div>
-
   </header>
 
 <script src="javascript/navBar.js"></script>
   <!-- Nav Bar -->
 <div class="resume-header">
-
-
     <div class="content-wrap">
       <img class="profile-img column-narrow" src="images/profile-picture.png" alt="Colin Leslie">
       <!-- <img class="rounded-circle" src="images/colin-leslie.png" alt="Colin Leslie Profile Picture"> -->
@@ -85,41 +78,102 @@ window.onload = function() {
     </div>
 
   </div>
-
   <main>
     <!-- // Skills -->
     <section class="skills">
       <div class="content-wrap">
         <h2>Skills</h2>
         <!-- Skill -->
-        <div>
-          <h3>Programming</h3>
-        </div>
-        <div>
-          <p>Strong background in Java and Python with 3+ years practice using both languages regularly.</p>
-          <p>Experience with Maple, C, C++, 68000 Assembly, SQL and iOS/Swift.</p>
-        </div>
+        <!-- Put in 2 colums if this list gets too long -->
+        <!-- <div class="column"> -->
+        <div class="skills-list">
+          <ul>
+          <li> Mobile app development <a href="https://www.colinleslie.ca/projects/flipped/flipped.html">experience</a></li>
+          <li> Experience with web servers (<a href="https://www.colinleslie.ca/about.html">Apache</a>)</li>
+          <li> Comfortable working in a Linux environment.</li>
+          <li> Experience using git and <a href="https://github.com/Colin-L">github</a></li>
+          <li> Familiarity with Test Driven Development</li>
+          <li>Very comfortable soldering and wiring circuits.</li>
+          <li> Working proficiency and communication skills in verbal and written English</li>
+          <li> Strong math skills</li>
+        </ul>
+      </div>
 
+      <h2>Programming Experience</h2>
+      <div class="vertical-menu">
+        <table>
+          <tr>
+            <th>Language</th>
+            <th>Years Experience</th>
+            <th>Sample Program</th>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/python-logo.png" alt="Python Logo"></td>
+            <td class="center-cell">4+</td>
+            <td><a href="./projects/image-classifier/image-classifier.html" type="button" class="btn btn-info">Simple Image Classifier</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/java-logo.png" alt="Java Logo"></td>
+            <td class="center-cell">3+</td>
+            <td><a href="./projects/file-transfer-program/file-transfer-program.html" type="button" class="btn btn-info">File Transfer Program</a> </td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/arduino-logo.png" alt="Arduino Logo"> Arduino (C++)</td>
+            <td class="center-cell">3+</td>
+            <td><a href="./projects/greenhouse-lights/greenhouse-lights.html" type="button" class="btn btn-info">Greenhouse Lights</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/c-logo.png" alt="C Logo">C Programming Language</td>
+            <td class="center-cell">2+</td>
+            <td><a href="./projects/C-Sample-Program/C-Sample-Program.html" type="button" class="btn btn-info">ProcessScheduler.c</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/html-css-js-logo.png" alt="HTML,CSS,JS Logo"> HTML CSS and Javascript</td>
+            <td class="center-cell">1+</td>
+            <td><a href="./about.html" type="button" class="btn btn-info">About this Website</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/swift-logo.png" alt="Swift Logo">Swift 4</td>
+            <td class="center-cell">1</td>
+            <td><a href="projects\flipped\flipped.html" type="button" class="btn btn-info">Flipped iPhone Game</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/vba-logo.png" alt="VBA Logo">Microsoft Visual Basic</td>
+            <td class="center-cell">1</td>
+            <td><a href="./" type="button" class="btn btn-info" disabled>Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/pic-logo.png" alt="Pic Programming Logo">Pic and Motorola 68k Microcontrollers</td>
+            <td class="center-cell">1+</td>
+            <td><a href="./projects/easy68k/getWords.html" type="button" class="btn btn-info">GetWords.L68</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/sql3-logo.png" alt="SQL Logo">Structured Query Language</td>
+            <td class="center-cell">1</td>
+            <td><a href="./" type="button" class="btn btn-info" disabled>Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td><img src="./images/programming-logos/maple-logo.png" alt="Maplesoft Logo">Mathematics Software</td>
+            <td class="center-cell">1</td>
+            <td><a href="./" type="button" class="btn btn-info"disabled>Coming Soon</a></td>
+          </tr>
+        </table>
+      </div>
         <!-- Skill -->
-        <div>
+        <!-- <div>
           <h3>Hobby Electronics</h3>
         </div>
         <div>
       <p>Completed as well as working on several personal Arduino and Raspberry Pi projects.</p>
       <p>Very comfortable soldering and wiring circuits.</p>
       <p>Developed and completed several arduino and raspberry pi projects, some of which can be viewed in detail <a href="./portfolio.html">here</a>.</p>
-
-        </div>
-
-
+        </div> -->
       </div>
     </section>
     <!-- // Education -->
     <section class="education">
       <div class="content-wrap">
         <h2>Education</h2>
-
-        <!-- School details: copy this block to add more schools. -->
         <h3>Wilfrid Laurier University - Waterloo, ON</h3>
         <h4>Bachelor of Science Student, 2015 - Present</h4>
         <p>4<sup>th</sup> year Computer Science student with a minor in Physics </p>
@@ -129,7 +183,6 @@ window.onload = function() {
     <section class="work">
       <div class="content-wrap">
         <h2>Work Experience</h2>
-
         <!-- Job Details: copy this block to add more positions. -->
         <div class="column-narrow">
           <h3>Construction Labourer</h3>
@@ -149,14 +202,12 @@ window.onload = function() {
               <li>Duties include sitting, standing, bending, reaching, walking during 9 hour shift.</li>
           </ul>
         </div>
-
         <!-- Job Details -->
         <div class="column-narrow">
           <h3>Wedding Setup Coordinator</h3>
           <p>Dyments Farm</p>
           <p>July 2016 - September 2016</p>
         </div>
-
         <div class="column-wide">
           <br>
           <p>Managed the setup and teardown of a wedding venue to the specifications of the clients</p>
@@ -166,10 +217,8 @@ window.onload = function() {
             <li>Maintained high energy levels while working and interacting with guests to ensure consistent and excellent customer service.</li>
             <li>Assisted individuals with mobility challenges; improving guest and client experience .</li>
           </ul>
-
           </p>
         </div>
-
         <!-- Job Details -->
         <div class="column-narrow">
           <h3>Prep Cook</h3>
@@ -190,10 +239,6 @@ window.onload = function() {
       </div>
     </section>
 
-
-
-
-
   <!-- // Footer & contact info -->
   <footer>
     <div class="content-wrap">
@@ -203,11 +248,9 @@ window.onload = function() {
       <div class="contact-info">
         <a href="mailto:colinbleslie@gmail.com">colinbleslie@gmail.com</a>
       </div>
-
-      <p>Copyright 2018 by Colin Leslie</p>
+      <p>Copyright 2019. Colin Leslie</p>
     </div>
   </footer>
 </main>
 </body>
-
 </html>
