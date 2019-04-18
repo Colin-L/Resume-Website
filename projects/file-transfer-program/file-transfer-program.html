@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <!-- <link rel="stylesheet" href="../../css/projects/PROJECT.css"> -->
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <div class="customnavbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../portfolio.html">Portfolio</a>
+        <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.PNG"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "../../images/clipboard.png"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </header>
+
+  <script src="../../javascript/navBar.js"></script>
+    <!-- Nav Bar -->
+
+<!-- Copy Up to here for new projects -->
+<!-- </body>
+</html> -->
+<div class="container">
+
+
+<h2>File Tranfer Program</h2>
+<p>For a computer networks class my partner Luka Sitas and I created a program that can be used to transfer files accross a network.</p>
+<p>The program transfers files using a TCP connection. It has two modes, reliable and unreliable. Thses modes are used to simulate a good and a bad internet connection, this is used to demonstrate that the program can handle packet loss. With the program in the unreliable mode every tenth packet is lost and another has to be resent using TCP protocols.</p>
+<br>
+<p>Click on the images to enlarge them.</p>
+
+<!-- Image Gallary -->
+<div class="row">
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="senderCMD.PNG" target="_blank">
+          <img src="senderCMD.PNG" alt="sender startup arguments" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>The file trasnfer program consists of 2 independent programs; Sender.java and Reciever.Java. The image above shows how to start the Sender program with some sample arguments. The arguments to start the program are &lt;IPaddress&gt; &lt;Receiving Port&gt; &lt;Sender Port&gt; &lt;file to transfer&gt; &lt;timeout (µs)&gt; Sample commands used in image: java Sender localhost 1022 1024 test.txt 10000 </p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="recieverCMD.PNG" target="_blank">
+          <img src="recieverCMD.PNG" alt="receiver startup arguments" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>This is the command line sequence used to compile and run the second part of the file transfer program the file receiver. Files found in the Sender directory can be transfered to the Reciever. The Reciever requires no command line arguments. The reciever has a user interface that is used to name the file and initiate the file transfer. This program can be used to transfer files of any size and type.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="receiverUI.PNG" target="_blank">
+          <img src="receiverUI.PNG" alt="receiver user interface" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>This is the user interface for the sender portion of the program. Each text field is to be filled with the same values as was used when starting the Sender portion of the program. By default when the program is started some recommended values are left in the text fields however, they should be edited to match the ones used to start the Sender.</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="receiverUIunreliable.PNG" target="_blank">
+          <img src="receiverUIunreliable.PNG" alt="receiver user interface unreliable conncection" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>The reciever program has two transfer modes; reliable and unreliable. When in the reliable mode packets are transfered normally. When in the unreliable mode every 10th packet that is recieved is discarded and no acknolagement is sent to the sender. This is there to simulate a poor connection where packet losses occur frequently. </p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="senderFiles.PNG" target="_blank">
+          <img src="senderFiles.PNG" alt="Files in sender package" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>If you use the download link below the sender program comes with 3 files test1.txt, test2.PNG and test3.jpg these can be used to test that the program is working properly. </p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="recieverFiles.PNG" target="_blank">
+          <img src="recieverFiles.PNG" alt="receiver files after tunniing transfering test 1 and test 2" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>This is image was taken inside the reciever directory after files test1.txt and test2.PNG were transfered. Their file size and type are consistant with the original files</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="documentation.PNG" target="_blank">
+          <img src="documentation.PNG" alt="transfer speeds" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>Since my this program was developed for a class in school we were required to make a write-up for the program detailing the transfer times when simulating a reliable and unreliable internet connection</p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  </div>
+<!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
+<!-- Image Gallary -->
+
+<h2 class="code-header">Java Code</h2>
+<h3>Sender.Java</h3>
+<!-- HTML generated using hilite.me -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic"> * @author Luka Sitas &amp; Colin Leslie 2018</span>
+<span style="color: #408080; font-style: italic"> */</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.net.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.nio.file.Files</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.nio.file.Paths</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.nio.file.Path</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.logging.Level</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.logging.Logger</span><span style="color: #666666">;</span>
+
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Sender</span> <span style="color: #666666">{</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">int</span> ackCount <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        InetAddress receiverIP <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+        BufferedReader reader <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+        String recieverAddress <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">;</span>
+        <span style="color: #B00040">int</span> sendPort <span style="color: #666666">=</span> <span style="color: #666666">0,</span> recievePort <span style="color: #666666">=</span> <span style="color: #666666">0,</span> timeout <span style="color: #666666">=</span> <span style="color: #666666">0,</span> packetTotal <span style="color: #666666">=</span> <span style="color: #666666">0;</span>	<span style="color: #408080; font-style: italic">//The port things the Sender sends to the reciever on</span>
+        <span style="color: #408080; font-style: italic">// The port Sender recieves things from the reciever on</span>
+        String fileName <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> sendData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[128];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> recieveData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[4];</span>
+        DatagramSocket connectionSocket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> ack <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[4];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> data <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+        <span style="color: #B00040">long</span> current<span style="color: #666666">;</span>
+        ack<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> <span style="color: #666666">1;</span>
+
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>args<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">&gt;=</span> <span style="color: #666666">5)</span> <span style="color: #666666">{</span>
+            recieverAddress <span style="color: #666666">=</span> args<span style="color: #666666">[0];</span>
+            sendPort <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span><span style="color: #666666">(</span>args<span style="color: #666666">[1]);</span>
+            recievePort <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span><span style="color: #666666">(</span>args<span style="color: #666666">[2]);</span>
+            fileName <span style="color: #666666">=</span> args<span style="color: #666666">[3];</span>
+            timeout <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span><span style="color: #666666">(</span>args<span style="color: #666666">[4]);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+            <span style="color: #408080; font-style: italic">//System.out.println(&quot;Wrong number of arguments&quot;);</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">exit</span><span style="color: #666666">(0);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            receiverIP <span style="color: #666666">=</span> InetAddress<span style="color: #666666">.</span><span style="color: #7D9029">getByName</span><span style="color: #666666">(</span>recieverAddress<span style="color: #666666">);</span>
+            connectionSocket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramSocket<span style="color: #666666">(</span>recievePort<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>UnknownHostException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>SocketException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+
+        Path path <span style="color: #666666">=</span> Paths<span style="color: #666666">.</span><span style="color: #7D9029">get</span><span style="color: #666666">(</span>fileName<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            data <span style="color: #666666">=</span> Files<span style="color: #666666">.</span><span style="color: #7D9029">readAllBytes</span><span style="color: #666666">(</span>path<span style="color: #666666">);</span>   <span style="color: #408080; font-style: italic">//Convert file to bytes</span>
+            packetTotal <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> <span style="color: #666666">(</span>data<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">/</span> <span style="color: #666666">124);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">err</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;IO exception Killing program&quot;</span><span style="color: #666666">);</span>
+            e<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">exit</span><span style="color: #666666">(0);</span>
+        <span style="color: #666666">}</span>
+        DatagramPacket initPacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>recieveData<span style="color: #666666">,</span> recieveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">);</span>
+
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            <span style="color: #408080; font-style: italic">//System.out.println(&quot;waiting for packet&quot;);</span>
+
+            connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">receive</span><span style="color: #666666">(</span>initPacket<span style="color: #666666">);</span>
+            recieveData <span style="color: #666666">=</span> initPacket<span style="color: #666666">.</span><span style="color: #7D9029">getData</span><span style="color: #666666">();</span>
+            <span style="color: #408080; font-style: italic">//System.out.println(&quot;packet recieved&quot;);</span>
+
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #408080; font-style: italic">//System.out.println(&quot;Data: &quot; + recieveData[0]);</span>
+
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">setSoTimeout</span><span style="color: #666666">((</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> timeout <span style="color: #666666">/</span> <span style="color: #666666">1000);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>SocketException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+
+        <span style="color: #408080; font-style: italic">//transfer</span>
+        <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span> i <span style="color: #666666">&lt;</span> packetTotal<span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>ack<span style="color: #666666">,</span> <span style="color: #666666">0,</span> sendData<span style="color: #666666">,</span> <span style="color: #666666">0,</span> <span style="color: #666666">4);</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>data<span style="color: #666666">,</span> ackCount <span style="color: #666666">*</span> <span style="color: #666666">124,</span> sendData<span style="color: #666666">,</span> <span style="color: #666666">4,</span> <span style="color: #666666">124);</span>
+            DatagramPacket sendPacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData<span style="color: #666666">,</span> sendData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> receiverIP<span style="color: #666666">,</span> sendPort<span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+                connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>sendPacket<span style="color: #666666">);</span>
+                connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">receive</span><span style="color: #666666">(</span>initPacket<span style="color: #666666">);</span>
+                <span style="color: #408080; font-style: italic">//System.out.println(&quot;Sent:&quot; + ack[0]);</span>
+                <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>initPacket<span style="color: #666666">.</span><span style="color: #7D9029">getData</span><span style="color: #666666">()[0]</span> <span style="color: #666666">==</span> ack<span style="color: #666666">[0])</span> <span style="color: #666666">{</span>
+                    ack<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> ack_switch<span style="color: #666666">(</span>ack<span style="color: #666666">[0]);</span>
+                <span style="color: #666666">}</span>
+
+            <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>SocketTimeoutException e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                i<span style="color: #666666">--;</span>
+            <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+            <span style="color: #666666">}</span>
+
+        <span style="color: #666666">}</span>
+
+        <span style="color: #B00040">byte</span> <span style="color: #666666">[]</span> sendData2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[</span>data<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> ackCount<span style="color: #666666">*124</span> <span style="color: #666666">+</span> <span style="color: #666666">4];</span>
+        ack<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> <span style="color: #666666">2;</span>
+        ack<span style="color: #666666">[1]</span> <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">byte</span><span style="color: #666666">)(</span>data<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">-</span>ackCount<span style="color: #666666">*124);</span>
+        System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>ack<span style="color: #666666">,</span> <span style="color: #666666">0,</span> sendData2<span style="color: #666666">,</span> <span style="color: #666666">0,</span> <span style="color: #666666">4);</span>
+        System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>data<span style="color: #666666">,</span> ackCount<span style="color: #666666">*124,</span> sendData2<span style="color: #666666">,</span> <span style="color: #666666">4,</span> data<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> ackCount<span style="color: #666666">*124);</span>
+        DatagramPacket sendPacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData2<span style="color: #666666">,</span> sendData2<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> receiverIP<span style="color: #666666">,</span> sendPort<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>sendPacket<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Sender<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #408080; font-style: italic">//System.out.println(&quot;Sent:&quot; + ack[0]);</span>
+        <span style="color: #408080; font-style: italic">//System.out.println(&quot;packet total:&quot; + packetTotal);</span>
+
+    <span style="color: #666666">}</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">byte</span> <span style="color: #0000FF">ack_switch</span><span style="color: #666666">(</span><span style="color: #B00040">byte</span> ack<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>ack <span style="color: #666666">==</span> <span style="color: #666666">0)</span> <span style="color: #666666">{</span>
+            ack <span style="color: #666666">=</span> <span style="color: #666666">1;</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+            ack <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        <span style="color: #666666">}</span>
+        ackCount<span style="color: #666666">++;</span>
+        <span style="color: #008000; font-weight: bold">return</span> ack<span style="color: #666666">;</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+
+<span style="color: #408080; font-style: italic">//wait for timeout and resend on timeout untill ack recieved</span>
+<span style="color: #408080; font-style: italic">//send completion code of 2</span>
+</pre></td></tr></table></div>
+
+
+<h3>Reciever.Java</h3>
+<!-- HTML generated using hilite.me -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic"> * @author Luka Sitas &amp; Colin Leslie 2018</span>
+<span style="color: #408080; font-style: italic"> */</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.net.InetAddress</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.net.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.logging.Level</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.logging.Logger</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.Date.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.lang.*</span><span style="color: #666666">;</span>
+
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Receiver</span> <span style="color: #008000; font-weight: bold">extends</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JFrame</span> <span style="color: #666666">{</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> senderPort<span style="color: #666666">,</span> receiverPort<span style="color: #666666">,</span> ackCount <span style="color: #666666">=</span> <span style="color: #666666">-1,</span> connectionType <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+    <span style="color: #008000; font-weight: bold">private</span> InetAddress senderIP<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> String saveFile<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> DatagramSocket connectionSocket<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> BufferedReader serverIn<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> PrintWriter out<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">long</span> timeInit<span style="color: #666666">,</span> timeComplete<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> timeTotal<span style="color: #666666">;</span>
+
+    <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">     * Creates new form Receiver</span>
+<span style="color: #408080; font-style: italic">     */</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">Receiver</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        initComponents<span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+    <span style="color: #AA22FF">@SuppressWarnings</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;unchecked&quot;</span><span style="color: #666666">)</span>
+    <span style="color: #408080; font-style: italic">// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents</span>
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">initComponents</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+
+        jFileChooser1 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JFileChooser</span><span style="color: #666666">();</span>
+        jFileChooser2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JFileChooser</span><span style="color: #666666">();</span>
+        jTextField1 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span><span style="color: #666666">();</span>
+        jTextField2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span><span style="color: #666666">();</span>
+        jLabel1 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jLabel2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jToggleButton1 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JToggleButton</span><span style="color: #666666">();</span>
+        jTextField3 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span><span style="color: #666666">();</span>
+        jTextField4 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span><span style="color: #666666">();</span>
+        jLabel3 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jLabel4 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jButton1 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JButton</span><span style="color: #666666">();</span>
+        jLabel5 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jTextField6 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span><span style="color: #666666">();</span>
+        jLabel6 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+        jLabel7 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span><span style="color: #666666">();</span>
+
+        setDefaultCloseOperation<span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">WindowConstants</span><span style="color: #666666">.</span><span style="color: #7D9029">EXIT_ON_CLOSE</span><span style="color: #666666">);</span>
+
+        jTextField1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;localhost&quot;</span><span style="color: #666666">);</span>
+        jTextField1<span style="color: #666666">.</span><span style="color: #7D9029">addActionListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">actionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                jTextField1ActionPerformed<span style="color: #666666">(</span>evt<span style="color: #666666">);</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+
+        jTextField2<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;1024&quot;</span><span style="color: #666666">);</span>
+
+        jLabel1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sender IP:&quot;</span><span style="color: #666666">);</span>
+
+        jLabel2<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sender Port:&quot;</span><span style="color: #666666">);</span>
+
+        jToggleButton1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;UNRELIABLE&quot;</span><span style="color: #666666">);</span>
+        jToggleButton1<span style="color: #666666">.</span><span style="color: #7D9029">addChangeListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ChangeListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">stateChanged</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ChangeEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                jToggleButton1StateChanged<span style="color: #666666">(</span>evt<span style="color: #666666">);</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+
+        jTextField3<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;test.txt&quot;</span><span style="color: #666666">);</span>
+        jTextField3<span style="color: #666666">.</span><span style="color: #7D9029">addActionListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">actionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                jTextField3ActionPerformed<span style="color: #666666">(</span>evt<span style="color: #666666">);</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+
+        jTextField4<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;1022&quot;</span><span style="color: #666666">);</span>
+
+        jLabel3<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Receiver Port:&quot;</span><span style="color: #666666">);</span>
+
+        jLabel4<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Save File:&quot;</span><span style="color: #666666">);</span>
+
+        jButton1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Transfer&quot;</span><span style="color: #666666">);</span>
+        jButton1<span style="color: #666666">.</span><span style="color: #7D9029">addActionListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">actionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                jButton1ActionPerformed<span style="color: #666666">(</span>evt<span style="color: #666666">);</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+
+        jLabel5<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Packets Received:&quot;</span><span style="color: #666666">);</span>
+
+        jTextField6<span style="color: #666666">.</span><span style="color: #7D9029">setEditable</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">);</span>
+        jTextField6<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;0&quot;</span><span style="color: #666666">);</span>
+
+        jLabel6<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Connection Type&quot;</span><span style="color: #666666">);</span>
+
+        javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span> layout <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">(</span>getContentPane<span style="color: #666666">());</span>
+        getContentPane<span style="color: #666666">().</span><span style="color: #7D9029">setLayout</span><span style="color: #666666">(</span>layout<span style="color: #666666">);</span>
+        layout<span style="color: #666666">.</span><span style="color: #7D9029">setHorizontalGroup</span><span style="color: #666666">(</span>
+            layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+            <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(36,</span> <span style="color: #666666">36,</span> <span style="color: #666666">36)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel1<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel4<span style="color: #666666">))</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+                            <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField3<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> <span style="color: #666666">200,</span> Short<span style="color: #666666">.</span><span style="color: #7D9029">MAX_VALUE</span><span style="color: #666666">)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField1<span style="color: #666666">))</span>
+                            <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jButton1<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> <span style="color: #666666">119,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">))</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+                            <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel5<span style="color: #666666">)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField6<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">))</span>
+                            <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel2<span style="color: #666666">)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField2<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                                <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel3<span style="color: #666666">)))</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField4<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(0,</span> <span style="color: #666666">83,</span> Short<span style="color: #666666">.</span><span style="color: #7D9029">MAX_VALUE</span><span style="color: #666666">))</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel6<span style="color: #666666">)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jToggleButton1<span style="color: #666666">)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel7<span style="color: #666666">)</span>
+                        <span style="color: #666666">.</span><span style="color: #7D9029">addContainerGap</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> Short<span style="color: #666666">.</span><span style="color: #7D9029">MAX_VALUE</span><span style="color: #666666">))))</span>
+        <span style="color: #666666">);</span>
+        layout<span style="color: #666666">.</span><span style="color: #7D9029">setVerticalGroup</span><span style="color: #666666">(</span>
+            layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+            <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createSequentialGroup</span><span style="color: #666666">()</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(58,</span> <span style="color: #666666">58,</span> <span style="color: #666666">58)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">BASELINE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField1<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField2<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel1<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel2<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField4<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel3<span style="color: #666666">))</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(18,</span> <span style="color: #666666">18,</span> <span style="color: #666666">18)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">LEADING</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel4<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField3<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> <span style="color: #666666">22,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">))</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(30,</span> <span style="color: #666666">30,</span> <span style="color: #666666">30)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">BASELINE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jButton1<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel5<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jTextField6<span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">DEFAULT_SIZE</span><span style="color: #666666">,</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">PREFERRED_SIZE</span><span style="color: #666666">))</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGap</span><span style="color: #666666">(26,</span> <span style="color: #666666">26,</span> <span style="color: #666666">26)</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addGroup</span><span style="color: #666666">(</span>layout<span style="color: #666666">.</span><span style="color: #7D9029">createParallelGroup</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">GroupLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">Alignment</span><span style="color: #666666">.</span><span style="color: #7D9029">BASELINE</span><span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jToggleButton1<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel6<span style="color: #666666">)</span>
+                    <span style="color: #666666">.</span><span style="color: #7D9029">addComponent</span><span style="color: #666666">(</span>jLabel7<span style="color: #666666">))</span>
+                <span style="color: #666666">.</span><span style="color: #7D9029">addContainerGap</span><span style="color: #666666">(21,</span> Short<span style="color: #666666">.</span><span style="color: #7D9029">MAX_VALUE</span><span style="color: #666666">))</span>
+        <span style="color: #666666">);</span>
+
+        pack<span style="color: #666666">();</span>
+    <span style="color: #666666">}</span><span style="color: #408080; font-style: italic">// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">jTextField1ActionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//GEN-FIRST:event_jTextField1ActionPerformed</span>
+
+    <span style="color: #666666">}</span><span style="color: #408080; font-style: italic">//GEN-LAST:event_jTextField1ActionPerformed</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">jTextField3ActionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//GEN-FIRST:event_jTextField3ActionPerformed</span>
+    <span style="color: #666666">}</span><span style="color: #408080; font-style: italic">//GEN-LAST:event_jTextField3ActionPerformed</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">jToggleButton1StateChanged</span><span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ChangeEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//GEN-FIRST:event_jToggleButton1StateChanged</span>
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>jToggleButton1<span style="color: #666666">.</span><span style="color: #7D9029">isSelected</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+            jToggleButton1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;RELIABLE&quot;</span><span style="color: #666666">);</span>
+            connectionType <span style="color: #666666">=</span> <span style="color: #666666">1;</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+            jToggleButton1<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;UNRELIABLE&quot;</span><span style="color: #666666">);</span>
+            connectionType <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span><span style="color: #408080; font-style: italic">//GEN-LAST:event_jToggleButton1StateChanged</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">jButton1ActionPerformed</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">event</span><span style="color: #666666">.</span><span style="color: #7D9029">ActionEvent</span> evt<span style="color: #666666">)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//GEN-FIRST:event_jButton1ActionPerformed</span>
+        ackCount <span style="color: #666666">=</span> <span style="color: #666666">-1;</span>
+        connect<span style="color: #666666">();</span>
+    <span style="color: #666666">}</span><span style="color: #408080; font-style: italic">//GEN-LAST:event_jButton1ActionPerformed</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">connect</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            senderIP <span style="color: #666666">=</span> InetAddress<span style="color: #666666">.</span><span style="color: #7D9029">getByName</span><span style="color: #666666">(</span>jTextField1<span style="color: #666666">.</span><span style="color: #7D9029">getText</span><span style="color: #666666">());</span>
+            senderPort <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span><span style="color: #666666">(</span>jTextField2<span style="color: #666666">.</span><span style="color: #7D9029">getText</span><span style="color: #666666">());</span>
+            receiverPort <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span><span style="color: #666666">(</span>jTextField4<span style="color: #666666">.</span><span style="color: #7D9029">getText</span><span style="color: #666666">());</span>
+            saveFile <span style="color: #666666">=</span> jTextField3<span style="color: #666666">.</span><span style="color: #7D9029">getText</span><span style="color: #666666">();</span>
+            connectionSocket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramSocket<span style="color: #666666">(</span>receiverPort<span style="color: #666666">);</span>
+            jLabel7<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>connectionType <span style="color: #666666">==</span> <span style="color: #666666">0)</span> <span style="color: #666666">{</span>
+                <span style="color: #408080; font-style: italic">//System.out.println(&quot;trasnfer start&quot;);</span>
+                transferReliable<span style="color: #666666">();</span>
+            <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+                transferUnReliable<span style="color: #666666">();</span>
+            <span style="color: #666666">}</span>
+
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>SocketException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>UnknownHostException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+
+    <span style="color: #666666">}</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">transferReliable</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> receiveData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[128];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> sendData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[4];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> byteFile <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[124</span><span style="color: #408080; font-style: italic">/*8096 * 1024 * 4*/</span><span style="color: #666666">];</span> <span style="color: #408080; font-style: italic">//Max file size 32Mb</span>
+        <span style="color: #B00040">byte</span> ack <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        <span style="color: #B00040">boolean</span> complete <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">;</span>
+        DatagramPacket sendPacket<span style="color: #666666">;</span>
+        sendData<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> ack<span style="color: #666666">;</span>
+        ack <span style="color: #666666">=</span> ack_switch<span style="color: #666666">(</span>ack<span style="color: #666666">);</span>
+        timeInit <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">currentTimeMillis</span><span style="color: #666666">();</span>
+        DatagramPacket init <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData<span style="color: #666666">,</span> sendData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> senderIP<span style="color: #666666">,</span> senderPort<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>init<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #408080; font-style: italic">//System.out.println(sendData[0] + &quot;sent&quot;);</span>
+
+        <span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(!</span>complete<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            DatagramPacket receivePacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+                <span style="color: #408080; font-style: italic">//receive data</span>
+                connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">receive</span><span style="color: #666666">(</span>receivePacket<span style="color: #666666">);</span>
+                receiveData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span> <span style="color: #666666">[128];</span>
+                receiveData <span style="color: #666666">=</span> receivePacket<span style="color: #666666">.</span><span style="color: #7D9029">getData</span><span style="color: #666666">();</span>
+                <span style="color: #408080; font-style: italic">//System.out.println(&quot;received:&quot; + receiveData[0]);</span>
+                <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>receiveData<span style="color: #666666">[0]</span> <span style="color: #666666">==</span> ack<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                    System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> <span style="color: #666666">4,</span> byteFile<span style="color: #666666">,</span> <span style="color: #666666">0</span><span style="color: #408080; font-style: italic">/*124 * ackCount*/</span><span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> <span style="color: #666666">4);</span><span style="color: #408080; font-style: italic">//check here</span>
+                    writeTo<span style="color: #666666">(</span>byteFile<span style="color: #666666">);</span>
+                    sendData<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> ack<span style="color: #666666">;</span>
+                    sendPacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData<span style="color: #666666">,</span> sendData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> senderIP<span style="color: #666666">,</span> senderPort<span style="color: #666666">);</span>
+                    connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>sendPacket<span style="color: #666666">);</span>
+                    <span style="color: #408080; font-style: italic">//System.out.println(sendData[0] + &quot;sent&quot;);</span>
+
+                    ack <span style="color: #666666">=</span> ack_switch<span style="color: #666666">(</span>ack<span style="color: #666666">);</span>
+                <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>receiveData<span style="color: #666666">[0]</span> <span style="color: #666666">==</span> <span style="color: #666666">2)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//complete</span>
+                    complete <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+                    timeComplete <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">currentTimeMillis</span><span style="color: #666666">();</span>
+                    timeTotal <span style="color: #666666">=</span> timeComplete <span style="color: #666666">-</span> timeInit<span style="color: #666666">;</span>
+                    <span style="color: #B00040">byte</span> <span style="color: #666666">[]</span> byteFile2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[124];</span>
+                    System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> <span style="color: #666666">4,</span> byteFile2<span style="color: #666666">,</span> <span style="color: #666666">0</span><span style="color: #408080; font-style: italic">/*124 * ackCount*/</span><span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> <span style="color: #666666">4);</span><span style="color: #408080; font-style: italic">//check here</span>
+                    <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">(</span>FileOutputStream writer <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileOutputStream<span style="color: #666666">(</span>saveFile<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">))</span> <span style="color: #666666">{</span>
+                        <span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+                        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">[1]);</span>
+                        <span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span>i<span style="color: #666666">&lt;(</span><span style="color: #B00040">int</span><span style="color: #666666">)(</span>receiveData<span style="color: #666666">[1])){</span>
+                            writer<span style="color: #666666">.</span><span style="color: #7D9029">write</span><span style="color: #666666">(</span>byteFile2<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+                            i<span style="color: #666666">++;</span>
+                        <span style="color: #666666">}</span>
+                    <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>FileNotFoundException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                        Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+                    <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                        Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+                    <span style="color: #666666">}</span>
+                    jLabel7<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span>String<span style="color: #666666">.</span><span style="color: #7D9029">format</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Transfer Completed in %.4f s&quot;</span><span style="color: #666666">,</span> timeTotal <span style="color: #666666">/</span> <span style="color: #666666">1000));</span>
+                    connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">close</span><span style="color: #666666">();</span>
+                <span style="color: #666666">}</span>
+
+            <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">transferUnReliable</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> receiveData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[128];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> sendData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[4];</span>
+        <span style="color: #B00040">byte</span><span style="color: #666666">[]</span> byteFile <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[124];</span>
+        <span style="color: #B00040">byte</span> ack <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        <span style="color: #B00040">boolean</span> complete <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">;</span>
+        <span style="color: #B00040">int</span> dropCount <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        DatagramPacket sendPacket<span style="color: #666666">;</span>
+        sendData<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> ack<span style="color: #666666">;</span>
+        ack <span style="color: #666666">=</span> ack_switch<span style="color: #666666">(</span>ack<span style="color: #666666">);</span>
+        timeInit <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">currentTimeMillis</span><span style="color: #666666">();</span>
+        DatagramPacket init <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData<span style="color: #666666">,</span> sendData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> senderIP<span style="color: #666666">,</span> senderPort<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>init<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #408080; font-style: italic">//System.out.println(sendData[0] + &quot;sent&quot;);</span>
+
+        <span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(!</span>complete<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            DatagramPacket receivePacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+                <span style="color: #408080; font-style: italic">//receive data</span>
+                connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">receive</span><span style="color: #666666">(</span>receivePacket<span style="color: #666666">);</span>
+                receiveData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span> <span style="color: #666666">[128];</span>
+                receiveData <span style="color: #666666">=</span> receivePacket<span style="color: #666666">.</span><span style="color: #7D9029">getData</span><span style="color: #666666">();</span>
+                <span style="color: #408080; font-style: italic">//System.out.println(&quot;received:&quot; + receiveData[0]);</span>
+                <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>receiveData<span style="color: #666666">[0]</span> <span style="color: #666666">==</span> ack<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>dropCount <span style="color: #666666">!=</span> <span style="color: #666666">10)</span> <span style="color: #666666">{</span>
+                        System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> <span style="color: #666666">4,</span> byteFile<span style="color: #666666">,</span> <span style="color: #666666">0</span><span style="color: #408080; font-style: italic">/*124 * ackCount*/</span><span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> <span style="color: #666666">4);</span><span style="color: #408080; font-style: italic">//check here</span>
+                        writeTo<span style="color: #666666">(</span>byteFile<span style="color: #666666">);</span>
+                        sendData<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> ack<span style="color: #666666">;</span>
+                        sendPacket <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DatagramPacket<span style="color: #666666">(</span>sendData<span style="color: #666666">,</span> sendData<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">,</span> senderIP<span style="color: #666666">,</span> senderPort<span style="color: #666666">);</span>
+                        connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>sendPacket<span style="color: #666666">);</span>
+                        <span style="color: #408080; font-style: italic">//System.out.println(sendData[0] + &quot;sent&quot;);</span>
+                        dropCount<span style="color: #666666">++;</span>
+                        ack <span style="color: #666666">=</span> ack_switch<span style="color: #666666">(</span>ack<span style="color: #666666">);</span>
+                    <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+                        dropCount <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+                    <span style="color: #666666">}</span>
+                <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>receiveData<span style="color: #666666">[0]</span> <span style="color: #666666">==</span> <span style="color: #666666">2)</span> <span style="color: #666666">{</span><span style="color: #408080; font-style: italic">//complete</span>
+                    complete <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+                    timeComplete <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">currentTimeMillis</span><span style="color: #666666">();</span>
+                    timeTotal <span style="color: #666666">=</span> timeComplete <span style="color: #666666">-</span> timeInit<span style="color: #666666">;</span>
+                    <span style="color: #B00040">byte</span> <span style="color: #666666">[]</span> byteFile2 <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">byte</span><span style="color: #666666">[124];</span>
+                    System<span style="color: #666666">.</span><span style="color: #7D9029">arraycopy</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">,</span> <span style="color: #666666">4,</span> byteFile2<span style="color: #666666">,</span> <span style="color: #666666">0</span><span style="color: #408080; font-style: italic">/*124 * ackCount*/</span><span style="color: #666666">,</span> receiveData<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">-</span> <span style="color: #666666">4);</span><span style="color: #408080; font-style: italic">//check here</span>
+                    <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">(</span>FileOutputStream writer <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileOutputStream<span style="color: #666666">(</span>saveFile<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">))</span> <span style="color: #666666">{</span>
+                        <span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+                        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span>receiveData<span style="color: #666666">[1]);</span>
+                        <span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span>i<span style="color: #666666">&lt;(</span><span style="color: #B00040">int</span><span style="color: #666666">)(</span>receiveData<span style="color: #666666">[1])){</span>
+                            writer<span style="color: #666666">.</span><span style="color: #7D9029">write</span><span style="color: #666666">(</span>byteFile2<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+                            i<span style="color: #666666">++;</span>
+                        <span style="color: #666666">}</span>
+                    <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>FileNotFoundException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                        Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+                    <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                        Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+                    <span style="color: #666666">}</span>
+                    jLabel7<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span>String<span style="color: #666666">.</span><span style="color: #7D9029">format</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Transfer Completed in %.4f s&quot;</span><span style="color: #666666">,</span> timeTotal <span style="color: #666666">/</span> <span style="color: #666666">1000));</span>
+                    connectionSocket<span style="color: #666666">.</span><span style="color: #7D9029">close</span><span style="color: #666666">();</span>
+                <span style="color: #666666">}</span>
+
+            <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">byte</span> <span style="color: #0000FF">ack_switch</span><span style="color: #666666">(</span><span style="color: #B00040">byte</span> ack<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>ack <span style="color: #666666">==</span> <span style="color: #666666">0)</span> <span style="color: #666666">{</span>
+            ack <span style="color: #666666">=</span> <span style="color: #666666">1;</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+            ack <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+        <span style="color: #666666">}</span>
+        ackCount<span style="color: #666666">++;</span>
+        jTextField6<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span>String<span style="color: #666666">.</span><span style="color: #7D9029">valueOf</span><span style="color: #666666">(</span>ackCount<span style="color: #666666">));</span>
+        <span style="color: #008000; font-weight: bold">return</span> ack<span style="color: #666666">;</span>
+    <span style="color: #666666">}</span>
+
+    <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">writeTo</span><span style="color: #666666">(</span><span style="color: #B00040">byte</span><span style="color: #666666">[]</span> data<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">(</span>FileOutputStream writer <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileOutputStream<span style="color: #666666">(</span>saveFile<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">))</span> <span style="color: #666666">{</span>
+            writer<span style="color: #666666">.</span><span style="color: #7D9029">write</span><span style="color: #666666">(</span>data<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>FileNotFoundException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IOException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            Logger<span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>Level<span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+        <span style="color: #408080; font-style: italic">//jLabel7.setText(String.format(&quot;Transfer Completed in %.4f s&quot;, timeTotal / 1000));</span>
+        <span style="color: #408080; font-style: italic">//connectionSocket.close();</span>
+    <span style="color: #666666">}</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">UIManager</span><span style="color: #666666">.</span><span style="color: #7D9029">LookAndFeelInfo</span> info <span style="color: #666666">:</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">UIManager</span><span style="color: #666666">.</span><span style="color: #7D9029">getInstalledLookAndFeels</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+                <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span><span style="color: #BA2121">&quot;Nimbus&quot;</span><span style="color: #666666">.</span><span style="color: #7D9029">equals</span><span style="color: #666666">(</span>info<span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()))</span> <span style="color: #666666">{</span>
+                    javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">UIManager</span><span style="color: #666666">.</span><span style="color: #7D9029">setLookAndFeel</span><span style="color: #666666">(</span>info<span style="color: #666666">.</span><span style="color: #7D9029">getClassName</span><span style="color: #666666">());</span>
+                    <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+                <span style="color: #666666">}</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>ClassNotFoundException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Logger</span><span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Level</span><span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>InstantiationException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Logger</span><span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Level</span><span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>IllegalAccessException ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Logger</span><span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Level</span><span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">UnsupportedLookAndFeelException</span> ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Logger</span><span style="color: #666666">.</span><span style="color: #7D9029">getLogger</span><span style="color: #666666">(</span>Receiver<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()).</span><span style="color: #7D9029">log</span><span style="color: #666666">(</span>java<span style="color: #666666">.</span><span style="color: #7D9029">util</span><span style="color: #666666">.</span><span style="color: #7D9029">logging</span><span style="color: #666666">.</span><span style="color: #7D9029">Level</span><span style="color: #666666">.</span><span style="color: #7D9029">SEVERE</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span> ex<span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+
+        java<span style="color: #666666">.</span><span style="color: #7D9029">awt</span><span style="color: #666666">.</span><span style="color: #7D9029">EventQueue</span><span style="color: #666666">.</span><span style="color: #7D9029">invokeLater</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> Runnable<span style="color: #666666">()</span> <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">run</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+                <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">Receiver</span><span style="color: #666666">().</span><span style="color: #7D9029">setVisible</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">);</span>
+
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+
+    <span style="color: #666666">}</span>
+
+    <span style="color: #408080; font-style: italic">// Variables declaration - do not modify//GEN-BEGIN:variables</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JButton</span> jButton1<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JFileChooser</span> jFileChooser1<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JFileChooser</span> jFileChooser2<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel1<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel2<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel3<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel4<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel5<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel6<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JLabel</span> jLabel7<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span> jTextField1<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span> jTextField2<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span> jTextField3<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span> jTextField4<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JTextField</span> jTextField6<span style="color: #666666">;</span>
+    <span style="color: #008000; font-weight: bold">private</span> javax<span style="color: #666666">.</span><span style="color: #7D9029">swing</span><span style="color: #666666">.</span><span style="color: #7D9029">JToggleButton</span> jToggleButton1<span style="color: #666666">;</span>
+    <span style="color: #408080; font-style: italic">// End of variables declaration//GEN-END:variables</span>
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+<!-- Code end -->
+
+<!-- Download -->
+<div class="container">
+  <h2>Download</h2>
+  <a class="btn-lg btn-primary" href="http://www.filedropper.com/a215" role="button">Download zip (5.87 MB)</a>
+</div>
+<!-- Download -->
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2019. Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>
