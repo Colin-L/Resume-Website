@@ -57,3 +57,8 @@ Updating programs that start on boot
 sudo nano ~/.config/lxsession/LXDE-pi/autostart
 
 sudo /usr/bin/python3 /home/pi/PYTHON/time-lapse.py
+
+When IP address changes:
+
+Find new ip: google "Whats my ip"
+Goto cloudflare > DNS > Change www and colinleslie.ca records to new IP
