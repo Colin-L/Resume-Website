@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colin Leslie resume website" />
+    <meta name="keywords" content="Resume, Colin Leslie, Portfolio, Contact" />
+    <meta name="author" content="Colin Leslie" />
+    <title>Colin Leslie</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/projects/global-project-styles.css">
+    <link rel="stylesheet" href="../../css/projects/PROJECT.css">
+    <link rel="stylesheet" href="../../css/global-styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="../../images/favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129132395-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129132395-1');
+    </script>
+  </head>
+  <body>
+
+    <!-- Nav Bar -->
+    <header>
+      <div class="customnavbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../portfolio.html">Portfolio</a>
+        <div class="customnavBar">
+
+
+        <div class="customdropdown">
+          <button class="customdropbtn" onclick="myFunction()">Contact
+
+          </button>
+          <div class="customdropdown-content" id="myDropdown">
+            <h4>Reach me at:</h4>
+            <h4 id="email"><a href="mailto:colinbleslie@gmail.com">Colinbleslie@gmail.com</a></h4>
+            <!-- <button id = "cpy_btn" onclick="copyToClipboard()" title="Copy to Clipboard"><img src = "images/clipboard.png"></button> -->
+            <div id="secretInfo" style="display: none;">colinbleslie@gmail.com</div>
+            <button type="button" onclick="buttonFunction(this)" id="btnCopy" title="Copy to Clipboard"><img id=clipboardImg src = "../../images/clipboard.png"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </header>
+
+  <script src="../../javascript/navBar.js"></script>
+    <!-- Nav Bar -->
+
+<!-- Copy Up to here for new projects -->
+<!-- </body>
+</html> -->
+<div class="container">
+
+
+<h2>Autonomous Robot</h2>
+<p>For a microprocessor class me and my lab partner Paul Hohbaum were tasked with creating a robot that can autonomously navigate a room and detect infrared beacons. We used the <a href="http://denethor.wlu.ca/cp316/hardware_pic_316.shtml">PIC18F452</a> chip which was connected to a <a href="http://denethor.wlu.ca/cp316/hardware_qwik_316.shtml">QwikFlash Development Board to accomplish this.</a></p>
+<p>The robot runs on two servo motors and uses 2 echo location distance sensors to navigate. To find infrared beacon's the device uses an infrared sensor that will stop the robot to pickup the signal.</p>
+<p>The main challenge in building this robot was that the entire program had to be written in assembly.</p>
+<br>
+<p>Click on the images to enlarge them.</p>
+
+<!-- Image Gallary -->
+<div class="row">
+
+  <!-- Image -->
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a href="robotLabeled.png" target="_blank">
+          <img src="robotLabeled.png" alt="Overhead shot of the robot" style="width:100%">
+        </a>
+          <div class="caption">
+            <p>An overhead view of the robot. It has 2 ultrasonic distance sensors, one in front and one on this side. It is able to navigate a room using only these 2 distance sensors, to do this it will hug a right wall and turn according to what is in front of it and to the right of it. The robot also regularly reads its infrared sensor to detect nearby beacons.  </p>
+          </div>
+      </div>
+    </div>
+  <!-- Image -->
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="img2.jpg" target="_blank">
+        <img src="img2.jpg" alt="infrared beacons" style="width:100%">
+      </a>
+        <div class="caption">
+          <p>One of the infrared beacons used in our tests. The device consits of 4 infrared leds, an oscillator and a 9V battery. The infrared beacons will pulse at a set frequency which the robot can detect. When an infrared beacon is detected one of the QwikFlash's onboard LEDs will blink to indicated a successful detection.</p>
+        </div>
+    </div>
+  </div>
+<!-- Image -->
+<div class="col-md-6">
+  <div class="thumbnail">
+    <a href="img3.jpg" target="_blank">
+      <img src="img3.jpg" alt="infrared LED closeup" style="width:100%">
+    </a>
+      <div class="caption">
+        <p>A closeup shot of the robots infrared LED. This is used to detect the beacons. Check out the code and video demo below, try it out for yourself and let me know what you think at colinbleslie@gmail.com</p>
+      </div>
+  </div>
+</div>
+
+  </div>
+<!-- Check out the code below, try it out for yourself and let me know what you think at colinbleslie@gmail.com -->
+<!-- Image Gallary -->
+
+
+<!-- Video -->
+<div class="container">
+  <h2>Video Demo</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/gjcpMa9dqYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+<!-- Video -->
+
+<h2 class="code-header">Assembly Code</h2>
+<!-- Code -->
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">;;;Assembler directives</span>
+  <span style="color: #408080; font-style: italic">LIST</span>  <span style="color: #408080; font-style: italic">P=PIC18F452, F=INHX32, C=160, N=0, ST=OFF, MM=OFF, X=ON</span>
+  <span style="color: #408080; font-style: italic">#include  P18F452.INC</span>
+  <span style="color: #408080; font-style: italic">CONFIG</span>  <span style="color: #408080; font-style: italic">OSC=HS</span>      <span style="color: #408080; font-style: italic">;select HS oscillator</span>
+  <span style="color: #408080; font-style: italic">CONFIG</span>  <span style="color: #408080; font-style: italic">PWRT=ON, BOR=ON, BORV=42</span>
+  <span style="color: #408080; font-style: italic">CONFIG</span>  <span style="color: #408080; font-style: italic">WDT=OFF, LVP=OFF</span>  <span style="color: #408080; font-style: italic">;disable watchdog timer</span>
+          <span style="color: #408080; font-style: italic">; and low voltage power</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;;Constants Section</span>
+  <span style="color: #408080; font-style: italic">constant LEFT_MOTOR</span>  <span style="color: #408080; font-style: italic">= d&#39;5&#39;</span>    <span style="color: #408080; font-style: italic">;Green</span>
+  <span style="color: #408080; font-style: italic">constant RIGHT_MOTOR = d&#39;4&#39;</span>    <span style="color: #408080; font-style: italic">;Red</span>
+
+  <span style="color: #408080; font-style: italic">constant WHEEL_FORWARD_PULSE_WIDTH = d&#39;2500&#39;*d&#39;21&#39;/d&#39;10&#39;</span>  <span style="color: #408080; font-style: italic">;2.1*2500 = 2.1 ms delay</span>
+  <span style="color: #408080; font-style: italic">constant WHEEL_BACKWARDS_PULSE_WIDTH = d&#39;2500&#39;*d&#39;71&#39;/d&#39;50&#39; ;1.42*2500 = 1.42 ms delay</span>   <span style="color: #408080; font-style: italic">;1.3 for straight</span>
+
+  <span style="color: #408080; font-style: italic">constant WHEEL_SLOW_FORWARD_PULSE_WIDTH = d&#39;2500&#39;*d&#39;17&#39;/d&#39;10&#39;</span>  <span style="color: #408080; font-style: italic">;1.7*2500 = 1.7 ms delay</span>
+
+
+  <span style="color: #408080; font-style: italic">constant PULSE_WAIT_TIME = d&#39;2500&#39;*d&#39;20&#39;-WHEEL_FORWARD_PULSE_WIDTH-WHEEL_BACKWARDS_PULSE_WIDTH ;Used to wait out the rest of the 20ms for Forward,backwards</span>
+  <span style="color: #408080; font-style: italic">constant TURN_PULSE_WAIT_TIME = d&#39;2500&#39;*d&#39;20&#39;-WHEEL_FORWARD_PULSE_WIDTH ;Used to wait out the rest of the 20ms for Turning</span>
+
+  <span style="color: #408080; font-style: italic">constant RIGHT_DIST_ECHO = d&#39;3&#39;</span>  <span style="color: #408080; font-style: italic">; Right distance sensor echo pin</span>
+  <span style="color: #408080; font-style: italic">constant FRONT_DIST_ECHO = d&#39;2&#39;</span>  <span style="color: #408080; font-style: italic">; Front distance sensor echo pin</span>
+  <span style="color: #408080; font-style: italic">constant RIGHT_DIST_TRIG = d&#39;1&#39;</span>  <span style="color: #408080; font-style: italic">; Right distance sensor trigger pin</span>
+  <span style="color: #408080; font-style: italic">constant FRONT_DIST_TRIG = d&#39;0&#39;</span>  <span style="color: #408080; font-style: italic">; Front distance sensor trigger pin</span>
+
+  <span style="color: #408080; font-style: italic">constant INFRARED_RECEIVER = d&#39;4&#39; ;Infrared sensor is on pin RC4</span>
+
+  <span style="color: #408080; font-style: italic">constant NEGATIVE = d&#39;4&#39;</span>
+  <span style="color: #408080; font-style: italic">constant OVERFLOW = d&#39;3&#39;</span>
+  <span style="color: #408080; font-style: italic">constant ZERO</span>     <span style="color: #408080; font-style: italic">= d&#39;2&#39;</span>
+
+  <span style="color: #408080; font-style: italic">constant CLOSE_WALL</span>   <span style="color: #408080; font-style: italic">= d&#39;7&#39;</span>
+  <span style="color: #408080; font-style: italic">constant CLOSE_WALLR</span>  <span style="color: #408080; font-style: italic">= d&#39;4&#39;</span>
+  <span style="color: #408080; font-style: italic">constant MAX_DISTANCE = d&#39;8&#39;</span>
+
+  <span style="color: #408080; font-style: italic">constant NINETY_DEGREE_LEFT</span>  <span style="color: #408080; font-style: italic">= d&#39;90&#39;</span>
+  <span style="color: #408080; font-style: italic">constant NINETY_DEGREE_RIGHT = d&#39;90&#39;</span>
+  <span style="color: #408080; font-style: italic">constant CORRECTION_DEGREE = d&#39;20&#39;</span>
+
+  <span style="color: #408080; font-style: italic">constant MAX_FREQUENCY = d&#39;50&#39;</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;__</span>      <span style="color: #408080; font-style: italic">__</span>  <span style="color: #408080; font-style: italic">______</span>    <span style="color: #408080; font-style: italic">_____</span>   <span style="color: #408080; font-style: italic">_______</span>    <span style="color: #408080; font-style: italic">____</span>    <span style="color: #408080; font-style: italic">_____</span>     <span style="color: #408080; font-style: italic">_____</span>
+<span style="color: #408080; font-style: italic">; \ \</span>    <span style="color: #408080; font-style: italic">/ / |</span>  <span style="color: #408080; font-style: italic">____|</span>  <span style="color: #408080; font-style: italic">/ ____| |__</span>   <span style="color: #408080; font-style: italic">__|</span>  <span style="color: #408080; font-style: italic">/ __ \</span>  <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">__ \</span>   <span style="color: #408080; font-style: italic">/ ____|</span>
+<span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">\ \</span>  <span style="color: #408080; font-style: italic">/ /</span>  <span style="color: #408080; font-style: italic">| |__</span>    <span style="color: #408080; font-style: italic">| |</span>         <span style="color: #408080; font-style: italic">| |</span>    <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | | |__) | | (___</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">\ \/ /</span>   <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">__|</span>   <span style="color: #408080; font-style: italic">| |</span>         <span style="color: #408080; font-style: italic">| |</span>    <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | |</span>  <span style="color: #408080; font-style: italic">_</span>  <span style="color: #408080; font-style: italic">/</span>   <span style="color: #408080; font-style: italic">\___ \</span>
+<span style="color: #408080; font-style: italic">;</span>    <span style="color: #408080; font-style: italic">\</span>  <span style="color: #408080; font-style: italic">/</span>    <span style="color: #408080; font-style: italic">| |____</span>  <span style="color: #408080; font-style: italic">| |____</span>     <span style="color: #408080; font-style: italic">| |</span>    <span style="color: #408080; font-style: italic">| |__| | | | \ \</span>   <span style="color: #408080; font-style: italic">____) |</span>
+<span style="color: #408080; font-style: italic">;</span>     <span style="color: #408080; font-style: italic">\/</span>     <span style="color: #408080; font-style: italic">|______|</span>  <span style="color: #408080; font-style: italic">\_____|</span>    <span style="color: #408080; font-style: italic">|_|</span>     <span style="color: #408080; font-style: italic">\____/</span>  <span style="color: #408080; font-style: italic">|_|</span>  <span style="color: #408080; font-style: italic">\_\ |_____/</span>
+<span style="color: #408080; font-style: italic">;</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+        <span style="color: #408080; font-style: italic">org</span>   <span style="color: #408080; font-style: italic">0x0000</span>                   <span style="color: #408080; font-style: italic">; Reset vector.</span>
+        <span style="color: #408080; font-style: italic">nop</span>
+        <span style="color: #408080; font-style: italic">goto</span>  <span style="color: #408080; font-style: italic">Main</span>
+
+        <span style="color: #408080; font-style: italic">org</span>   <span style="color: #408080; font-style: italic">0x0008</span>                   <span style="color: #408080; font-style: italic">; High priority interrupt vector.</span>
+        <span style="color: #408080; font-style: italic">goto</span>  <span style="color: #408080; font-style: italic">$</span>                        <span style="color: #408080; font-style: italic">; If interrupt is generated, go into this infinite loop.</span>
+
+        <span style="color: #408080; font-style: italic">org</span>   <span style="color: #408080; font-style: italic">0x0018</span>                   <span style="color: #408080; font-style: italic">; Low priority interrupt vector.</span>
+        <span style="color: #408080; font-style: italic">goto</span>  <span style="color: #408080; font-style: italic">$</span>                        <span style="color: #408080; font-style: italic">; If interrupt is generated, go into this infinite loop.</span>
+
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;;Variables Section</span>
+  <span style="color: #408080; font-style: italic">cblock</span>  <span style="color: #408080; font-style: italic">0x000</span>
+  <span style="color: #408080; font-style: italic">front_dist</span>
+  <span style="color: #408080; font-style: italic">right_dist</span>
+  <span style="color: #408080; font-style: italic">IR_sensor</span>
+  <span style="color: #408080; font-style: italic">multiplyValue</span>
+  <span style="color: #408080; font-style: italic">max_count</span>
+  <span style="color: #408080; font-style: italic">middle_count</span>
+  <span style="color: #408080; font-style: italic">max_loops</span>
+
+  <span style="color: #408080; font-style: italic">max_countD</span>
+  <span style="color: #408080; font-style: italic">middle_countD</span>
+  <span style="color: #408080; font-style: italic">max_loopsD</span>
+
+  <span style="color: #408080; font-style: italic">endc</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">__</span>  <span style="color: #408080; font-style: italic">__</span>               <span style="color: #408080; font-style: italic">_____</span>   <span style="color: #408080; font-style: italic">_____</span>     <span style="color: #408080; font-style: italic">____</span>     <span style="color: #408080; font-style: italic">_____</span>
+<span style="color: #408080; font-style: italic">; |</span>  <span style="color: #408080; font-style: italic">\/</span>  <span style="color: #408080; font-style: italic">|</span>     <span style="color: #408080; font-style: italic">/\</span>      <span style="color: #408080; font-style: italic">/ ____| |</span>  <span style="color: #408080; font-style: italic">__ \</span>   <span style="color: #408080; font-style: italic">/ __ \</span>   <span style="color: #408080; font-style: italic">/ ____|</span>
+<span style="color: #408080; font-style: italic">; | \</span>  <span style="color: #408080; font-style: italic">/ |</span>    <span style="color: #408080; font-style: italic">/</span>  <span style="color: #408080; font-style: italic">\</span>    <span style="color: #408080; font-style: italic">| |</span>      <span style="color: #408080; font-style: italic">| |__) | | |</span>  <span style="color: #408080; font-style: italic">| | | (___</span>
+<span style="color: #408080; font-style: italic">; | |\/| |</span>   <span style="color: #408080; font-style: italic">/ /\ \</span>   <span style="color: #408080; font-style: italic">| |</span>      <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">_</span>  <span style="color: #408080; font-style: italic">/</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">\___ \</span>
+<span style="color: #408080; font-style: italic">; | |</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">/ ____ \</span>  <span style="color: #408080; font-style: italic">| |____</span>  <span style="color: #408080; font-style: italic">| | \ \</span>  <span style="color: #408080; font-style: italic">| |__| |</span>  <span style="color: #408080; font-style: italic">____) |</span>
+<span style="color: #408080; font-style: italic">; |_|</span>  <span style="color: #408080; font-style: italic">|_| /_/</span>    <span style="color: #408080; font-style: italic">\_\</span>  <span style="color: #408080; font-style: italic">\_____| |_|</span>  <span style="color: #408080; font-style: italic">\_\</span>  <span style="color: #408080; font-style: italic">\____/</span>  <span style="color: #408080; font-style: italic">|_____/</span>
+<span style="color: #408080; font-style: italic">;</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- MULWL</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- MOVLF_HIGH</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- MOVLF_LOW</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- MOVLF</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">MULWL macro literal;Multiplys a literal with the working register</span>
+  <span style="color: #408080; font-style: italic">MOVLF literal,multiplyValue</span>
+  <span style="color: #408080; font-style: italic">MULWF multiplyValue</span>
+  <span style="color: #408080; font-style: italic">endm</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">; Moves the high byte into a register</span>
+<span style="color: #408080; font-style: italic">MOVLF_HIGH</span>   <span style="color: #408080; font-style: italic">macro</span>  <span style="color: #408080; font-style: italic">literal,dest</span>
+  <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">high literal</span>
+  <span style="color: #408080; font-style: italic">movwf</span>  <span style="color: #408080; font-style: italic">dest</span>
+  <span style="color: #408080; font-style: italic">endm</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">; Moves the high byte into a register</span>
+<span style="color: #408080; font-style: italic">MOVLF_LOW</span>   <span style="color: #408080; font-style: italic">macro</span>  <span style="color: #408080; font-style: italic">literal,dest</span>
+  <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">low</span>  <span style="color: #408080; font-style: italic">literal</span>
+  <span style="color: #408080; font-style: italic">movwf</span>  <span style="color: #408080; font-style: italic">dest</span>
+  <span style="color: #408080; font-style: italic">endm</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">; Lets the programmer store a literal value in a RAM location directly.</span>
+<span style="color: #408080; font-style: italic">MOVLF</span>   <span style="color: #408080; font-style: italic">macro</span>  <span style="color: #408080; font-style: italic">literal,dest</span>
+  <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">literal</span>
+  <span style="color: #408080; font-style: italic">movwf</span>  <span style="color: #408080; font-style: italic">dest</span>
+  <span style="color: #408080; font-style: italic">endm</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">; __</span>  <span style="color: #408080; font-style: italic">__</span>              <span style="color: #408080; font-style: italic">_____</span>   <span style="color: #408080; font-style: italic">_</span>   <span style="color: #408080; font-style: italic">_</span>
+<span style="color: #408080; font-style: italic">;|</span>  <span style="color: #408080; font-style: italic">\/</span>  <span style="color: #408080; font-style: italic">|</span>     <span style="color: #408080; font-style: italic">/\</span>     <span style="color: #408080; font-style: italic">|_</span>   <span style="color: #408080; font-style: italic">_| | \ | |</span>
+<span style="color: #408080; font-style: italic">;| \</span>  <span style="color: #408080; font-style: italic">/ |</span>    <span style="color: #408080; font-style: italic">/</span>  <span style="color: #408080; font-style: italic">\</span>      <span style="color: #408080; font-style: italic">| |</span>   <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">\| |</span>
+<span style="color: #408080; font-style: italic">;| |\/| |</span>   <span style="color: #408080; font-style: italic">/ /\ \</span>     <span style="color: #408080; font-style: italic">| |</span>   <span style="color: #408080; font-style: italic">| . ` |</span>
+<span style="color: #408080; font-style: italic">;| |</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">/ ____ \</span>   <span style="color: #408080; font-style: italic">_| |_</span>  <span style="color: #408080; font-style: italic">| |\</span>  <span style="color: #408080; font-style: italic">|</span>
+<span style="color: #408080; font-style: italic">;|_|</span>  <span style="color: #408080; font-style: italic">|_| /_/</span>    <span style="color: #408080; font-style: italic">\_\ |_____| |_| \_|</span>
+<span style="color: #408080; font-style: italic">;</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">Main</span>
+  <span style="color: #408080; font-style: italic">rcall INITIAL</span>
+
+<span style="color: #408080; font-style: italic">; This function makes the robot drive</span>
+<span style="color: #408080; font-style: italic">drive</span>  <span style="color: #408080; font-style: italic">rcall short_forward</span>  <span style="color: #408080; font-style: italic">;robot moves forward</span>
+       <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+       <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+
+<span style="color: #408080; font-style: italic">driveF bra checkFrontDist ;robot checks the front distance sensor</span>
+       <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+       <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+
+<span style="color: #408080; font-style: italic">driveR bra checkRightDist ;checks the right distance sensor</span>
+       <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+       <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+       <span style="color: #408080; font-style: italic">bra drive</span>       <span style="color: #408080; font-style: italic">;loops</span>
+
+
+<span style="color: #408080; font-style: italic">; This function checks the distance to the front sensor</span>
+<span style="color: #408080; font-style: italic">checkFrontDist</span>  <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">frontDistance ;gets the distance, puts it in front_dist</span>
+          <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">CLOSE_WALL</span>    <span style="color: #408080; font-style: italic">;moves the &quot;close to wall&quot; constant into WREG</span>
+         <span style="color: #408080; font-style: italic">cpfslt</span>  <span style="color: #408080; font-style: italic">front_dist</span>    <span style="color: #408080; font-style: italic">;is it close to a wall?</span>
+            <span style="color: #408080; font-style: italic">bra</span>  <span style="color: #408080; font-style: italic">driveR</span>        <span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">no -&gt; go back to driving</span>
+      <span style="color: #408080; font-style: italic">bra</span>  <span style="color: #408080; font-style: italic">objectF</span>       <span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">yes -&gt; theres an object! go to objectF</span>
+
+<span style="color: #408080; font-style: italic">; This function checks the distance to the front sensor</span>
+<span style="color: #408080; font-style: italic">checkRightDist</span>  <span style="color: #408080; font-style: italic">rcall rightDistance ;gets the distance, puts it in right_dist</span>
+          <span style="color: #408080; font-style: italic">movlw CLOSE_WALLR</span>    <span style="color: #408080; font-style: italic">;moves the &quot;close to wall&quot; constant into WREG</span>
+         <span style="color: #408080; font-style: italic">cpfslt right_dist</span>    <span style="color: #408080; font-style: italic">;is it close to a wall?</span>
+      <span style="color: #408080; font-style: italic">bra drive</span>         <span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">no -&gt; go back to driving</span>
+      <span style="color: #408080; font-style: italic">bra objectR</span>       <span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">yes -&gt; theres an object! go to objectR</span>
+
+
+<span style="color: #408080; font-style: italic">; This function checks the front distance sensor</span>
+
+
+<span style="color: #408080; font-style: italic">; This function tells the robot what to do when it sees the beacon, right now the robot just stops</span>
+
+<span style="color: #408080; font-style: italic">; This function corrects the robot&#39;s course, if it got here the right distance</span>
+<span style="color: #408080; font-style: italic">; sensor is close to something but the front sensor is not</span>
+<span style="color: #408080; font-style: italic">objectR rcall left_turn_correct</span>
+          <span style="color: #408080; font-style: italic">bra drive</span>
+
+<span style="color: #408080; font-style: italic">; There is an object in front of the front sensor</span>
+<span style="color: #408080; font-style: italic">objectF rcall</span>  <span style="color: #408080; font-style: italic">rightDistance</span>     <span style="color: #408080; font-style: italic">;Checks the right sensor</span>
+  <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">CLOSE_WALL</span>
+  <span style="color: #408080; font-style: italic">CPFSGT right_dist</span>  <span style="color: #408080; font-style: italic">;Checks if there is an object close to the right sensor</span>
+  <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">objectFR</span>    <span style="color: #408080; font-style: italic">; if there is turn left</span>
+  <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">left_turn_ninety</span>  <span style="color: #408080; font-style: italic">; if there isn&#39;t turn right</span>
+  <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">driveR</span>
+
+<span style="color: #408080; font-style: italic">; There is an object in front of the front sensor and right sensor, so turn left</span>
+<span style="color: #408080; font-style: italic">objectFR rcall left_turn_ninety</span>
+   <span style="color: #408080; font-style: italic">bra driveR</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">_____</span>   <span style="color: #408080; font-style: italic">_</span>    <span style="color: #408080; font-style: italic">_</span>   <span style="color: #408080; font-style: italic">____</span>    <span style="color: #408080; font-style: italic">_____</span>     <span style="color: #408080; font-style: italic">____</span>    <span style="color: #408080; font-style: italic">_</span>    <span style="color: #408080; font-style: italic">_</span>   <span style="color: #408080; font-style: italic">_______</span>   <span style="color: #408080; font-style: italic">_____</span>   <span style="color: #408080; font-style: italic">_</span>   <span style="color: #408080; font-style: italic">_</span>   <span style="color: #408080; font-style: italic">______</span>    <span style="color: #408080; font-style: italic">_____</span>
+<span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">/ ____| | |</span>  <span style="color: #408080; font-style: italic">| | |</span>  <span style="color: #408080; font-style: italic">_ \</span>  <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">__ \</span>   <span style="color: #408080; font-style: italic">/ __ \</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | |__</span>   <span style="color: #408080; font-style: italic">__| |_</span>   <span style="color: #408080; font-style: italic">_| | \ | | |</span>  <span style="color: #408080; font-style: italic">____|</span>  <span style="color: #408080; font-style: italic">/ ____|</span>
+<span style="color: #408080; font-style: italic">; | (___</span>   <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | | |_) | | |__) | | |</span>  <span style="color: #408080; font-style: italic">| | | |</span>  <span style="color: #408080; font-style: italic">| |</span>    <span style="color: #408080; font-style: italic">| |</span>      <span style="color: #408080; font-style: italic">| |</span>   <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">\| | | |__</span>    <span style="color: #408080; font-style: italic">| (___</span>
+<span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">\___ \</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | |</span>  <span style="color: #408080; font-style: italic">_ &lt;</span>  <span style="color: #408080; font-style: italic">|</span>  <span style="color: #408080; font-style: italic">_</span>  <span style="color: #408080; font-style: italic">/</span>  <span style="color: #408080; font-style: italic">| |</span>  <span style="color: #408080; font-style: italic">| | | |</span>  <span style="color: #408080; font-style: italic">| |</span>    <span style="color: #408080; font-style: italic">| |</span>      <span style="color: #408080; font-style: italic">| |</span>   <span style="color: #408080; font-style: italic">| . ` | |</span>  <span style="color: #408080; font-style: italic">__|</span>    <span style="color: #408080; font-style: italic">\___ \</span>
+<span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">____) | | |__| | | |_) | | | \ \</span>  <span style="color: #408080; font-style: italic">| |__| | | |__| |</span>    <span style="color: #408080; font-style: italic">| |</span>     <span style="color: #408080; font-style: italic">_| |_</span>  <span style="color: #408080; font-style: italic">| |\</span>  <span style="color: #408080; font-style: italic">| | |____</span>   <span style="color: #408080; font-style: italic">____) |</span>
+<span style="color: #408080; font-style: italic">; |_____/</span>   <span style="color: #408080; font-style: italic">\____/</span>  <span style="color: #408080; font-style: italic">|____/</span>  <span style="color: #408080; font-style: italic">|_|</span>  <span style="color: #408080; font-style: italic">\_\</span>  <span style="color: #408080; font-style: italic">\____/</span>   <span style="color: #408080; font-style: italic">\____/</span>     <span style="color: #408080; font-style: italic">|_|</span>    <span style="color: #408080; font-style: italic">|_____| |_| \_| |______| |_____/</span>
+<span style="color: #408080; font-style: italic">;</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">0) INITIAL</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">1) Functions with return values</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">2) Functions for the wheels</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">3) Delay Subroutines</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">INITIAL</span>
+        <span style="color: #408080; font-style: italic">MOVLF B&#39;11000000&#39;, SSPSTAT</span>     <span style="color: #408080; font-style: italic">;</span>  <span style="color: #408080; font-style: italic">to use with a 2.5 MHz clock.</span>
+        <span style="color: #408080; font-style: italic">MOVLF B&#39;10000001&#39;, T1CON</span>       <span style="color: #408080; font-style: italic">; continue setting up T1 to CCP1.</span>
+        <span style="color: #408080; font-style: italic">MOVLF B&#39;00001011&#39;, CCP1CON</span>     <span style="color: #408080; font-style: italic">; Set up to trigger special event so that PIR1, CCP1IF will be set.</span>
+  <span style="color: #408080; font-style: italic">CLRF PORTB ; Initialize PORTB by</span>
+  <span style="color: #408080; font-style: italic">CLRF PORTC ; clearing portb</span>
+
+  <span style="color: #408080; font-style: italic">CLRF LATB ; Clear data latches</span>
+  <span style="color: #408080; font-style: italic">CLRF LATC</span>
+
+  <span style="color: #408080; font-style: italic">MOVLW b&#39;00010000&#39; ;Set RC4 to input for infrared reciever</span>
+  <span style="color: #408080; font-style: italic">MOVWF TRISC</span>
+
+  <span style="color: #408080; font-style: italic">MOVLW b&#39;11001100&#39; ; Value used to initialize datadirection ;0 Output ;1 Input</span>
+  <span style="color: #408080; font-style: italic">MOVWF TRISB</span>
+
+  <span style="color: #408080; font-style: italic">; initialize PORT A registers for leds</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF</span>   <span style="color: #408080; font-style: italic">b&#39;01100001&#39;,TRISA ;set data direction</span>
+  <span style="color: #408080; font-style: italic">MOVLF</span>   <span style="color: #408080; font-style: italic">b&#39;10001110&#39;,ADCON1</span>  <span style="color: #408080; font-style: italic">;set digital/analog functions</span>
+  <span style="color: #408080; font-style: italic">clrf</span>  <span style="color: #408080; font-style: italic">PORTA</span>     <span style="color: #408080; font-style: italic">;initialize L, C, R LEDs to off</span>
+  <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;; Functions with return values</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- frontDistance</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- rightDistance</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">frontDistance</span>     <span style="color: #408080; font-style: italic">bsf LATB,FRONT_DIST_TRIG</span>  <span style="color: #408080; font-style: italic">;Send short trigger pulse</span>
+        <span style="color: #408080; font-style: italic">rcall triggerDelay</span>
+        <span style="color: #408080; font-style: italic">bcf LATB,FRONT_DIST_TRIG</span>
+        <span style="color: #408080; font-style: italic">clrf</span>  <span style="color: #408080; font-style: italic">front_dist</span>
+
+<span style="color: #408080; font-style: italic">frontDistanceLoop</span>   <span style="color: #408080; font-style: italic">btfss PORTB,FRONT_DIST_ECHO ;Count until echo is recieved</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">frontDistanceLoop</span>
+        <span style="color: #408080; font-style: italic">movlw d&#39;0&#39;</span>
+
+<span style="color: #408080; font-style: italic">frontDistanceLoop2</span>  <span style="color: #408080; font-style: italic">addlw d&#39;1&#39; ; basicaly, count how many times it overflows, then increment the counter</span>
+        <span style="color: #408080; font-style: italic">btfsc STATUS,OVERFLOW</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">incFront</span>
+        <span style="color: #408080; font-style: italic">btfsc PORTB,FRONT_DIST_ECHO ;Pulse counted, store value</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">frontDistanceLoop2</span>  <span style="color: #408080; font-style: italic">;1</span>
+        <span style="color: #408080; font-style: italic">bcf</span>   <span style="color: #408080; font-style: italic">PORTB,FRONT_DIST_ECHO</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">frontDistanceRet</span>
+
+<span style="color: #408080; font-style: italic">incFront</span>      <span style="color: #408080; font-style: italic">incf</span>   <span style="color: #408080; font-style: italic">front_dist</span>
+        <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">MAX_DISTANCE</span>
+        <span style="color: #408080; font-style: italic">cpfseq front_dist</span>
+        <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">frontDistanceLoop2</span>
+        <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">frontDistanceRet</span>
+
+<span style="color: #408080; font-style: italic">frontDistanceRet</span>    <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">rightDistance</span>     <span style="color: #408080; font-style: italic">bsf LATB,RIGHT_DIST_TRIG</span>  <span style="color: #408080; font-style: italic">;Send short trigger pulse</span>
+        <span style="color: #408080; font-style: italic">rcall triggerDelay</span>
+        <span style="color: #408080; font-style: italic">bcf LATB,RIGHT_DIST_TRIG</span>
+        <span style="color: #408080; font-style: italic">clrf</span>  <span style="color: #408080; font-style: italic">right_dist</span>
+
+<span style="color: #408080; font-style: italic">rightDistanceLoop</span>   <span style="color: #408080; font-style: italic">btfss PORTB,RIGHT_DIST_ECHO ;Count until echo is recieved</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">rightDistanceLoop</span>
+        <span style="color: #408080; font-style: italic">movlw d&#39;0&#39;</span>
+
+<span style="color: #408080; font-style: italic">rightDistanceLoop2</span>  <span style="color: #408080; font-style: italic">addlw d&#39;1&#39; ; basicaly, count how many times it overflows, then increment the counter</span>
+        <span style="color: #408080; font-style: italic">btfsc STATUS,OVERFLOW</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">incRight</span>
+        <span style="color: #408080; font-style: italic">btfsc PORTB,RIGHT_DIST_ECHO ;Pulse counted, store value</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">rightDistanceLoop2</span>  <span style="color: #408080; font-style: italic">;1</span>
+        <span style="color: #408080; font-style: italic">bcf</span>   <span style="color: #408080; font-style: italic">PORTB,RIGHT_DIST_ECHO</span>
+        <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">rightDistanceRet</span>
+
+<span style="color: #408080; font-style: italic">incRight</span>      <span style="color: #408080; font-style: italic">incf</span>  <span style="color: #408080; font-style: italic">right_dist</span>
+        <span style="color: #408080; font-style: italic">movlw</span>  <span style="color: #408080; font-style: italic">MAX_DISTANCE</span>
+        <span style="color: #408080; font-style: italic">cpfseq right_dist</span>
+        <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">rightDistanceLoop2</span>
+        <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">rightDistanceRet</span>
+
+<span style="color: #408080; font-style: italic">rightDistanceRet</span>    <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">beaconDetected btfss PORTC,INFRARED_RECEIVER</span>  <span style="color: #408080; font-style: italic">;We want to start the frequency counter as soon as the pulse is low</span>
+         <span style="color: #408080; font-style: italic">nop</span>
+         <span style="color: #408080; font-style: italic">bra displayFrequency</span>
+
+         <span style="color: #408080; font-style: italic">bra sensorLow</span>      <span style="color: #408080; font-style: italic">;If the wave starts low, wait until high and then low again to start counter</span>
+         <span style="color: #408080; font-style: italic">bra sensorHigh</span>     <span style="color: #408080; font-style: italic">;If the wave starts high, wait until low then start counter</span>
+
+<span style="color: #408080; font-style: italic">sensorHigh</span>     <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+         <span style="color: #408080; font-style: italic">bra sensorHigh</span>
+         <span style="color: #408080; font-style: italic">bra startCount</span>
+
+<span style="color: #408080; font-style: italic">sensorLow</span>      <span style="color: #408080; font-style: italic">btfss PORTC,INFRARED_RECEIVER</span>
+         <span style="color: #408080; font-style: italic">bra sensorLow</span>
+         <span style="color: #408080; font-style: italic">bra sensorHigh</span>
+
+<span style="color: #408080; font-style: italic">startCount</span>     <span style="color: #408080; font-style: italic">addlw d&#39;1&#39; ; basicaly, count how many times it overflows, then increment the counter</span>
+         <span style="color: #408080; font-style: italic">btfsc STATUS,OVERFLOW</span>
+               <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">IRoverflow</span>
+         <span style="color: #408080; font-style: italic">btfss PORTC,INFRARED_RECEIVER</span>  <span style="color: #408080; font-style: italic">;If signal is still on keep counting</span>
+         <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">startCount</span>
+         <span style="color: #408080; font-style: italic">bra</span>   <span style="color: #408080; font-style: italic">IRsensorRet</span>    <span style="color: #408080; font-style: italic">;Else return w register contains counter</span>
+         <span style="color: #408080; font-style: italic">MOVWF</span>  <span style="color: #408080; font-style: italic">IR_sensor</span>   <span style="color: #408080; font-style: italic">; I want to move w reg into IR_sensor is this how I do this?</span>
+         <span style="color: #408080; font-style: italic">bra</span>  <span style="color: #408080; font-style: italic">displayFrequency</span>   <span style="color: #408080; font-style: italic">;Turns on leds based on frequcy</span>
+
+<span style="color: #408080; font-style: italic">;Display frequency Looks at IR_sensor and turns on leds based on the value</span>
+<span style="color: #408080; font-style: italic">displayFrequency</span>
+         <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+                 <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+                 <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+                 <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+                 <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+                 <span style="color: #408080; font-style: italic">BSF</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;turn left LED on</span>
+         <span style="color: #408080; font-style: italic">rcall</span>    <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">BTG</span>  <span style="color: #408080; font-style: italic">LATA,4</span>      <span style="color: #408080; font-style: italic">;breakpoints</span>
+         <span style="color: #408080; font-style: italic">rcall</span>  <span style="color: #408080; font-style: italic">fiveSecDelay</span>
+         <span style="color: #408080; font-style: italic">return</span>
+
+<span style="color: #408080; font-style: italic">IRoverflow</span>     <span style="color: #408080; font-style: italic">bra IRsensorRet</span>  <span style="color: #408080; font-style: italic">;If it overflows the its been too long for an IR signal</span>
+
+<span style="color: #408080; font-style: italic">IRsensorRet</span>    <span style="color: #408080; font-style: italic">return</span>   <span style="color: #408080; font-style: italic">;Returns to the main program</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;Functions for the wheels</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">1) Main wheel functions</span>
+<span style="color: #408080; font-style: italic">; - short_forward</span>
+<span style="color: #408080; font-style: italic">; - right_turn_ninety</span>
+<span style="color: #408080; font-style: italic">; - left_turn_ninety</span>
+<span style="color: #408080; font-style: italic">; - left_turn_correct</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">2) Helper wheel functions</span>
+<span style="color: #408080; font-style: italic">; - leftTurn</span>
+<span style="color: #408080; font-style: italic">; - rightTurn</span>
+<span style="color: #408080; font-style: italic">; - fastForward</span>
+<span style="color: #408080; font-style: italic">; - fastBackward</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">short_forward</span>   <span style="color: #408080; font-style: italic">MOVLF d&#39;1&#39;,max_loops ;moves the roboto a short distance forward</span>
+<span style="color: #408080; font-style: italic">del_out_forward</span>   <span style="color: #408080; font-style: italic">MOVLF d&#39;50&#39;,max_count ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_forward</span>    <span style="color: #408080; font-style: italic">rcall fastForward</span>     <span style="color: #408080; font-style: italic">;kill some time</span>
+
+       <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+       <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+
+       <span style="color: #408080; font-style: italic">decfsz max_count</span>   <span style="color: #408080; font-style: italic">;decrement count</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_in_forward</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">decfsz max_loops</span>   <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_out_forward</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">return</span>     <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;; Right Turn 90 Degrees Subroutine</span>
+<span style="color: #408080; font-style: italic">right_turn_ninety</span>  <span style="color: #408080; font-style: italic">MOVLF d&#39;1&#39;,max_loops ;turns the robot 90 degrees to the right</span>
+<span style="color: #408080; font-style: italic">del_out_ninetyR</span>   <span style="color: #408080; font-style: italic">MOVLF NINETY_DEGREE_RIGHT,max_count ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_ninetyR</span>    <span style="color: #408080; font-style: italic">rcall rightTurn</span>     <span style="color: #408080; font-style: italic">;kill some time</span>
+       <span style="color: #408080; font-style: italic">decfsz max_count</span>   <span style="color: #408080; font-style: italic">;decrement count</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_in_ninetyR</span>    <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">decfsz max_loops</span>   <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_out_ninetyR</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">return</span>     <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;; Left Turn 90 Degrees Subroutine</span>
+<span style="color: #408080; font-style: italic">left_turn_ninety</span>  <span style="color: #408080; font-style: italic">MOVLF d&#39;1&#39;,max_loops ;turns the robot 90 degrees to the right</span>
+<span style="color: #408080; font-style: italic">del_out_ninetyL</span>   <span style="color: #408080; font-style: italic">MOVLF NINETY_DEGREE_LEFT,max_count ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_ninetyL</span>    <span style="color: #408080; font-style: italic">rcall leftTurn</span>  <span style="color: #408080; font-style: italic">;kill some time</span>
+
+    <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+    <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+           <span style="color: #408080; font-style: italic">decfsz max_count ;decrement count</span>
+              <span style="color: #408080; font-style: italic">bra del_in_ninetyL</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+           <span style="color: #408080; font-style: italic">decfsz max_loops ;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+              <span style="color: #408080; font-style: italic">bra del_out_ninetyL ;loop if not zero</span>
+           <span style="color: #408080; font-style: italic">return</span>           <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;; Left Turn Correct Subroutine</span>
+<span style="color: #408080; font-style: italic">left_turn_correct MOVLF d&#39;1&#39;,max_loops</span>
+<span style="color: #408080; font-style: italic">del_out_correct</span>   <span style="color: #408080; font-style: italic">MOVLF CORRECTION_DEGREE,max_count ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_correct</span>    <span style="color: #408080; font-style: italic">rcall leftTurn</span>  <span style="color: #408080; font-style: italic">;kill some time</span>
+    <span style="color: #408080; font-style: italic">btfsc PORTC,INFRARED_RECEIVER</span>
+    <span style="color: #408080; font-style: italic">rcall beaconDetected</span>
+     <span style="color: #408080; font-style: italic">decfsz max_count ;decrement count</span>
+              <span style="color: #408080; font-style: italic">bra del_in_correct</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+           <span style="color: #408080; font-style: italic">decfsz max_loops ;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+              <span style="color: #408080; font-style: italic">bra del_out_correct ;loop if not zero</span>
+           <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">; Helper wheel functions</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">leftTurn</span>
+  <span style="color: #408080; font-style: italic">;20ms wheel cycle</span>
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1H</span>  <span style="color: #408080; font-style: italic">;Set loop to right wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH TURN_PULSE_WAIT_TIME, CCPR1H ;Wait out the rest of the time</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">TURN_PULSE_WAIT_TIME, CCPR1L</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;wait for remainder of 20ms</span>
+
+  <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">rightTurn</span>
+  <span style="color: #408080; font-style: italic">;20ms wheel cycle</span>
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_FORWARD_PULSE_WIDTH , CCPR1H ;Set the left wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_FORWARD_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,LEFT_MOTOR ;Set left wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,LEFT_MOTOR ;Set left wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH TURN_PULSE_WAIT_TIME, CCPR1H ;Wait out the rest of the time</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">TURN_PULSE_WAIT_TIME, CCPR1L</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;wait for remainder of 20ms</span>
+
+  <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">fastForward</span>
+  <span style="color: #408080; font-style: italic">;20ms wheel cycle</span>
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_FORWARD_PULSE_WIDTH , CCPR1H</span>  <span style="color: #408080; font-style: italic">;Set loop to left wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_FORWARD_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,LEFT_MOTOR ;Set left wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,LEFT_MOTOR ;Set left wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1H ;Set the right wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH PULSE_WAIT_TIME, CCPR1H ;Wait out the rest of the time</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">PULSE_WAIT_TIME, CCPR1L</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;wait for remainder of 20ms</span>
+
+  <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">fastBackward</span>
+  <span style="color: #408080; font-style: italic">;20ms wheel cycle</span>
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_FORWARD_PULSE_WIDTH , CCPR1H</span>  <span style="color: #408080; font-style: italic">;Set loop to right wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_FORWARD_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,RIGHT_MOTOR</span>  <span style="color: #408080; font-style: italic">;Set right wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1H ;Set the left wheel pulse width</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">WHEEL_BACKWARDS_PULSE_WIDTH , CCPR1L</span>
+  <span style="color: #408080; font-style: italic">BSF LATB,LEFT_MOTOR ;Set left wheel pin high</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;Wait</span>
+  <span style="color: #408080; font-style: italic">BCF LATB,LEFT_MOTOR ;Set left wheel pin low</span>
+
+  <span style="color: #408080; font-style: italic">MOVLF_HIGH PULSE_WAIT_TIME, CCPR1H ;Wait out the rest of the time</span>
+  <span style="color: #408080; font-style: italic">MOVLF_LOW</span>  <span style="color: #408080; font-style: italic">PULSE_WAIT_TIME, CCPR1L</span>
+  <span style="color: #408080; font-style: italic">rcall LoopTime</span>    <span style="color: #408080; font-style: italic">;wait for remainder of 20ms</span>
+
+  <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;Delay Subroutines</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- LoopTime</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- triggerDelay</span>
+<span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">- fiveSecDelay</span>
+<span style="color: #408080; font-style: italic">;-----------------------------------------------------------------------------------</span>
+
+<span style="color: #408080; font-style: italic">;;;;;;; LoopTime subroutine ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #408080; font-style: italic">;CCP1 Loop</span>
+<span style="color: #408080; font-style: italic">LoopTime</span>
+
+<span style="color: #408080; font-style: italic">L46</span>
+        <span style="color: #408080; font-style: italic">;UNTIL_ PIR1, CCP1IF == 1</span>
+        <span style="color: #408080; font-style: italic">btfss PIR1,CCP1IF</span>
+        <span style="color: #408080; font-style: italic">bra L46</span>
+<span style="color: #408080; font-style: italic">RL46</span>
+        <span style="color: #408080; font-style: italic">bcf</span>    <span style="color: #408080; font-style: italic">PIR1, CCP1IF</span>            <span style="color: #408080; font-style: italic">; When it has, reset it to start over.</span>
+        <span style="color: #408080; font-style: italic">return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;; Trigger delay subroutine</span>
+<span style="color: #408080; font-style: italic">triggerDelay MOVLF d&#39;1&#39;,max_loops ;initialize number of loops</span>
+<span style="color: #408080; font-style: italic">del_out_trig MOVLF d&#39;5&#39;,max_count ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_trig</span>  <span style="color: #408080; font-style: italic">nop</span>      <span style="color: #408080; font-style: italic">;kill some time</span>
+       <span style="color: #408080; font-style: italic">decfsz max_count</span>   <span style="color: #408080; font-style: italic">;decrement count</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_in_trig</span>   <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">decfsz max_loops</span>   <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_out_trig</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">return</span>     <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else return</span>
+<span style="color: #408080; font-style: italic">;-------------------------------------------------------------------------------</span>
+<span style="color: #408080; font-style: italic">;;; 5 second delay subroutine</span>
+<span style="color: #408080; font-style: italic">fiveSecDelay MOVLF h&#39;FF&#39;,max_loopsD ;initialize number of loops</span>
+<span style="color: #408080; font-style: italic">del_out_five MOVLF h&#39;FF&#39;,max_countD ;initialize loop counter</span>
+<span style="color: #408080; font-style: italic">del_in_five</span>  <span style="color: #408080; font-style: italic">nop</span>      <span style="color: #408080; font-style: italic">;kill some time</span>
+       <span style="color: #408080; font-style: italic">decfsz max_countD</span>    <span style="color: #408080; font-style: italic">;decrement count</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_in_five</span>   <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">decfsz max_loopsD</span>    <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else decrement loop number</span>
+       <span style="color: #408080; font-style: italic">bra</span>    <span style="color: #408080; font-style: italic">del_out_five</span>  <span style="color: #408080; font-style: italic">;loop if not zero</span>
+       <span style="color: #408080; font-style: italic">return</span>     <span style="color: #408080; font-style: italic">;</span>   <span style="color: #408080; font-style: italic">else return</span>
+    <span style="color: #408080; font-style: italic">end</span>
+</pre></td></tr></table></div>
+
+
+<!-- Download -->
+<div class="container">
+  <h2>Download</h2>
+  <a class="btn-lg btn-primary" href="http://www.filedropper.com/finalproject_3" role="button">Download ASM file (19.2 KB)</a>
+</div>
+<!-- Download -->
+
+<!-- Footer -->
+<footer>
+  <div class="content-wrap">
+
+    <p>Copyright 2019. Colin Leslie</p>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+
+</body>
+</html>
