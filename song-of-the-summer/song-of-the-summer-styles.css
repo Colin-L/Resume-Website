@@ -1,0 +1,46 @@
+.track-name{
+  padding-right: 40%;
+  margin-right: 20%;
+  width: 40%;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.song img {
+  margin-right: 10px;
+}
+
+.song:hover {
+  background-color: #99ccff;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.song:hover img {
+  filter: brightness(70%);
+}
+
+.song:hover p {
+  font-weight: bold;
+}
+
+#footer-button{
+  margin-left: 2px;
+}
+
+/* Makes background extend all the way to the botom on mobile */
+body, html {
+  min-height:100%;
+  height:100%;
+}

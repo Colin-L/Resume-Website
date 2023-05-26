@@ -3,6 +3,44 @@ toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+
+
+async function callEndpoint() {
+  
+  const url = 'http://localhost:3000/api/asd/endpoint';
+const method = 'POST';
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer your_token'
+};
+const body = {
+  key1: 'value1',
+  key2: 'value2'
+};
+  
+  
+  try {
+    const response = await fetch(url, {
+      method: method,
+      headers: headers,
+      body: JSON.stringify(body)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log('Request successful!');
+      console.log('Response:', data);
+    } else {
+      console.log('Request failed!');
+      console.log('Error:', data);
+    }
+  } catch (error) {
+    console.log('An error occurred:', error);
+  }
+}
+
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.customdropbtn')) {
