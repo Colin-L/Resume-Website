@@ -1,7 +1,7 @@
 // Global Variables. Shh don't look here
 var token = '';
-var client_id = 'ff10514aeb7449c3a36513d03138a1ec';
-var client_secret = '9386f00e9ea4481eb0cdc234a38fbb76';
+var client_id = 'xxx';
+var client_secret = 'xxx';
 
 async function activate() {
   token = await getAuthKey();
