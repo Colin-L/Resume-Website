@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal Example</title>
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none; /* Hide the modal by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Overlay background */
+    }
+    
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+    }
+    
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .modal-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modal Example</h1>
+  
+  <button onclick="openModal()">Open Modal</button>
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <img src="path/to/your/image.jpg" alt="Modal Image">
+      <button onclick="vote()">Vote</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
