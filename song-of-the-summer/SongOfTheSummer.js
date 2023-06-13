@@ -309,17 +309,16 @@ function showSpoopyImage() {
   setTimeout(function () {
     closeModal();
   }, 4000);
+}
 
-  async function sendVote(voteData) {
-    try {
-      const response = await axios.post('/api/sots/vote', voteData);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
+async function sendVote(voteData) {
+  try {
+    const response = await axios.post('/api/sots/vote', voteData);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
-
 }
 
 activate();

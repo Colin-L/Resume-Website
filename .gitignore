@@ -3,3 +3,6 @@ PI SD CARD BACKUP/PI SD CARD BACKUP.png
 PI SD CARD BACKUP/SD card full backup.img
 node_modules/
 start.bat
+server/secrets.env
+server/.env
+.env

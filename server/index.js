@@ -5,12 +5,15 @@ const port = 3000;
 app.use(express.json());
 app.use(cors()); // Enable CORS for all routes
 const axios = require('axios');
+let lastAuthKeyTime = null;
+require('dotenv').config();
+
 
 
 
 var token = '';
-var client_id = '';
-var client_secret = '';
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
 
 async function activate() {
   app.listen(port, () => {
@@ -58,8 +61,14 @@ async function fetchWebApi(endpoint, method, body) {
     });
     return response.data;
   } catch (error) {
-    console.error(error);
-    throw error;
+    if (!lastAuthKeyTime || (currentTime - lastAuthKeyTime) >= 30 * 60 * 1000) {
+      await getAuthKey();
+      await getPlaylist();
+    }else{
+
+      console.error(error);
+      throw error;
+    }
   }
 }
 
@@ -82,9 +91,8 @@ function getAuthKey() {
         var data = response.data;
         var token = data.access_token;
         console.log(token);
-        // Use the token as needed
-
-        resolve(token); // Resolve the promise with the token
+        lastAuthKeyTime = new Date();
+        resolve(token); // Resolve the promise with the tokenuu
       })
       .catch(function (error) {
         console.error(error);
